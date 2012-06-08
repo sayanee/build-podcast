@@ -1,6 +1,6 @@
 #Build Podcast Ep 1 - Web Dev Tools
 
-[Screencast link](http://build-podcast.com)
+[Screencast link](http://build-podcast.com/web-dev-tools/)
 
 ________________
 

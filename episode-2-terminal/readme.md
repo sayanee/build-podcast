@@ -1,6 +1,6 @@
 #Build Podcast Ep 2 - Terminal
 
-[Screencast link](http://build-podcast.com)
+[Screencast link](http://build-podcast.com/terminal/)
 
 ________________
 
@@ -23,7 +23,7 @@ Experimentation with:
 1. Directory access: `pwd`, `ls`, `cd`, tab, `open .`
 1. File Manipulation: `touch`, `mkdir`, `mv`, `rm`, `cp`, `pico` text editor
 1. File Permissions: `ls -al`, `chmod` ([learn more](http://ss64.com/bash/chmod.html)), `sudo`, `sudo !!`
-1. Help for commands: `man` for lookup and `q` to exit
+1. Help for commands: `man <command>` for lookup and `q` to exit
 
 ________________________
 
