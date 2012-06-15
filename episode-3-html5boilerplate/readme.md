@@ -1,6 +1,6 @@
 #Build Podcast Ep 3 - HTML5 Boilerplate
 
-[Screencast link ](http://build-podcast.com/terminal/)
+[Screencast link ](http://build-podcast.com/html5-boilerplate/)
 
 ________________
 
