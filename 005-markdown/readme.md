@@ -33,6 +33,7 @@ Common Markdown syntax:
 - bold and italic
 - lists
 - code spans
+
 ________________________________
 
 More resources:
