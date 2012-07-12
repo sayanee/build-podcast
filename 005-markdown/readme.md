@@ -48,7 +48,7 @@ Uses of Markdown:
 2. [readme](https://github.com/new) file for new repositories in Github
 3. [Stackoverflow](http://stackoverflow.com/)
 4. [Forrst](http://forrst.com/)
-
+5. [Node.js based blogging engine](https://github.com/creationix/wheat)
 
 ________________________
 
