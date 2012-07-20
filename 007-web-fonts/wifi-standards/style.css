@@ -1,0 +1,32 @@
+h1{
+	font-size: 5.5em;
+	text-align: center;
+}
+
+/* Typekit */
+#typekit{
+	font-family: "fertigo-script",cursive;
+	color: olive;
+	text-shadow: 2px 2px 2px #000;
+}
+
+/* CSS3 Font Face */
+@font-face {
+    font-family: 'blackout';
+    src: url('blackout.eot');
+    src: url('blackout.eot?#iefix') format('embedded-opentype'),
+         url('blackout.woff') format('woff'),
+         url('blackout.ttf') format('truetype'),
+         url('blackout.svg#blackout') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#fontface{
+	font-family: 'blackout', Helvetica, sans-serif;
+}
+
+/* Google Web Font */
+#googlewebfont{
+	font-family: 'Plaster', cursive;
+}
