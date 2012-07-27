@@ -23,7 +23,7 @@ Sublime is a powerful text editor for coding. We will explore it's features like
 
 1. Preferences > Settings > Default to view all default settings
 1. Preferences > Settings > User to edit my own settings
-    - add `"ignored_packages": ["Vintage"]` to enable [Vim mode](http://www.sublimetext.com/docs/2/vintage.html)
+    - add `"ignored_packages": []` and remove the default "Vintage" to enable [Vim mode](http://www.sublimetext.com/docs/2/vintage.html)
     - add `"vintage_start_in_command_mode": true` to start Vim mode on startup
     
 ###Package Control
