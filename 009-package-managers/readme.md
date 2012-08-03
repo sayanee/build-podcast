@@ -1,6 +1,6 @@
 #Build Podcast Ep 9 - Package Managers
 
-[Screencast link ](http://build-podcast.com/package-managers/)
+[Screencast link ](http://build-podcast.com/009-package-managers/)
 
 Package manager is a collection of tools for installing, upgrading, configuring and removing software packages in a computer. We will explore some commonly used ones such as [rubygems](http://rubygems.org/) for ruby, [pip](http://pypi.python.org/pypi/pip/) for python, [composer](http://getcomposer.org/) for php and [npm](http://npmjs.org/) for node.js.
 
