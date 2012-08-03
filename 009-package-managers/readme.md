@@ -48,46 +48,45 @@ Run these command in the command line.
 	</tr>
 	<tr>
 		<td>Info about a package</td>
-		<td><code>npm show [package-name]</code></td>
-		<td><code>composer show [package-name]</code></td>
+		<td><code>npm show <br>[package-name]</code></td>
+		<td><code>composer show <br>[package-name]</code></td>
 		<td><code></code></td>
-		<td><code></code></td>
-		<td><code></code></td>
+		<td><code>gem list <br>[package-name]</code></td>
 	</tr>
 	<tr>
 		<td>Install a package</td>
 		<td><code>npm install <br>[package-name] -g</code></td>
 		<td><a href="http://getcomposer.org/doc/00-intro.md#declaring-dependencies">create composer.json</a>,<br>run <code>composer install</code></td>
 		<td><code>pip install<br>[package-name]</code></td>
-		<td><code></code></td>
+		<td><code>gem install <br>[package-name]</code></td>
 	</tr>
 	<tr>
 		<td>Uninstall a package</td>
 		<td><code>npm uninstall <br>[package-name] -g</code></td>
 		<td>edit composer.json and run <code>composer update</code></td>
 		<td><code>pip uninstall<br>[package-name]</code></td>
-		<td><code></code></td>
+		<td><code>gem uninstall<br>[package-name]</code></td>
 	</tr>
 	<tr>
 		<td>Outdated packages</td>
 		<td><code>npm -g outdated</code></td>
 		<td><code></code></td>
 		<td><code></code></td>
-		<td><code></code></td>
+		<td><code>gem outdated</code></td>
 	</tr>
 	<tr>
 		<td>Updated packages</td>
 		<td><code>npm -g update <br>[package-name]</code></td>
 		<td>edit composer.json and run <code>composer update</code></td>
 		<td><code>pip install<br>--upgrade [package-name]</code></td>
-		<td><code></code></td>
+		<td><code>gem update</code></td>
 	</tr>
 	<tr>
 		<td>Help</td>
 		<td><code>npm help</td>
 		<td><code>composer help</code></td>
 		<td><code>pip help</code></td>
-		<td><code></code></td>
+		<td><code>gem help</code></td>
 	</tr>
 </table>
 
@@ -128,7 +127,7 @@ Run these command in the command line.
 	<tr>
 		<td>Other links</td>
 		<td><a href="http://tobyho.com/2012/02/09/tour-of-npm/">tour of npm</a></td>
-		<td><a href="http://net.tutsplus.com/tutorials/php/easy-package-management-with-composer/">easy package management with composer</a></td>
+		<td><a href="http://net.tutsplus.com/tutorials/php/easy-package-management-with-composer/">package management</a></td>
 		<td></td>
 		<td></td>
 	</tr>
@@ -137,4 +136,4 @@ Run these command in the command line.
 
 ##Build Link of this Episode
 
-[Nettuts+](#)
+[Nettuts+](http://net.tutsplus.com/) is a site aimed at providing tutorials for web development and design with editor [Jeffrey Way](jeffrey_way) and [many other talented people](http://net.tutsplus.com/meet-the-staff/).
