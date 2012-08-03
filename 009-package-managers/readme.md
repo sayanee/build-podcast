@@ -127,7 +127,7 @@ Run these command in the command line.
 	<tr>
 		<td>Browse for packages</td>
 		<td><a href="http://nodejs.org/api/">npm</a></td>
-		<td><a href="http://packagist.org/packages/">composer</a></td>
+		<td><a href="http://packagist.org/packages/">packagist</a></td>
 		<td><a href="http://pypi.python.org/pypi?%3Aaction=index">pip</a></td>
 		<td><a href="http://rubygems.org/gems">rubygems</a></td>
 	</tr>
