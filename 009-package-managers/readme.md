@@ -63,7 +63,7 @@ Run these command in the command line.
 	<tr>
 		<td>Install a package</td>
 		<td><code>npm install <br>[package-name] -g</code></td>
-		<td><code>composer require [package-name]</code> <br>and run <code>composer install</code></td>
+		<td><code>composer require <br>[package-name]</code> <br>and run <code>composer install</code></td>
 		<td><code>pip install<br>[package-name]</code></td>
 		<td><code>gem install <br>[package-name]</code></td>
 	</tr>
