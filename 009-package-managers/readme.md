@@ -56,14 +56,14 @@ Run these command in the command line.
 	</tr>
 	<tr>
 		<td>Install a package</td>
-		<td><code>sudo npm install [package name] -g</code></td>
+		<td><code>npm install <br>[package-name] -g</code></td>
 		<td><a href="http://getcomposer.org/doc/00-intro.md#declaring-dependencies">create composer.json</a> and then run <code>composer install</code></td>
 		<td><code>pip install [package-name]</code></td>
 		<td><code></code></td>
 	</tr>
 	<tr>
 		<td>Uninstall a package</td>
-		<td><code>sudo npm uninstall <package name> -g</code></td>
+		<td><code>npm uninstall <br>[package-name] -g</code></td>
 		<td>edit composer.json and run <code>composer update</code></td>
 		<td><code>pip uninstall [package-name]</code></td>
 		<td><code></code></td>
@@ -77,7 +77,7 @@ Run these command in the command line.
 	</tr>
 	<tr>
 		<td>Updated packages</td>
-		<td><code>sudo npm -g update [package-name]</code></td>
+		<td><code>npm -g update <br>[package-name]</code></td>
 		<td>edit composer.json and run <code>composer update</code></td>
 		<td><code>pip install --upgrade [package-name]</code></td>
 		<td><code></code></td>
