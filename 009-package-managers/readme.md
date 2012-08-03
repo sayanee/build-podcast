@@ -48,7 +48,7 @@ Run these command in the command line.
 	</tr>
 	<tr>
 		<td>Info about a package</td>
-		<td><code>npm show <package-name></code></td>
+		<td><code>npm show [package-name]</code></td>
 		<td><code></code></td>
 		<td><code></code></td>
 		<td><code></code></td>
