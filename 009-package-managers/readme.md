@@ -49,7 +49,7 @@ Run these command in the command line.
 	<tr>
 		<td>List of all packages installed globally</td>
 		<td><code>npm ls -g</code></td>
-		<td><code>composer show</code></td>
+		<td><code>composer show <br>--installed</code> (locally)</td>
 		<td><code>pip freeze</code></td>
 		<td><code>gem list</code></td>
 	</tr>
@@ -63,7 +63,7 @@ Run these command in the command line.
 	<tr>
 		<td>Install a package</td>
 		<td><code>npm install <br>[package-name] -g</code></td>
-		<td><a href="http://getcomposer.org/doc/00-intro.md#declaring-dependencies">create composer.json</a>,<br>run <code>composer install</code></td>
+		<td><code>composer require <br>[package-name]</code> <br>and run <code>composer install</code></td>
 		<td><code>pip install<br>[package-name]</code></td>
 		<td><code>gem install <br>[package-name]</code></td>
 	</tr>
@@ -77,14 +77,14 @@ Run these command in the command line.
 	<tr>
 		<td>Outdated packages</td>
 		<td><code>npm -g outdated</code></td>
-		<td><code></code></td>
+		<td><code>composer update --dry-run</code></td>
 		<td><code></code></td>
 		<td><code>gem outdated</code></td>
 	</tr>
 	<tr>
 		<td>Updated packages</td>
 		<td><code>npm -g update <br>[package-name]</code></td>
-		<td>edit composer.json <br>and run <code>composer update</code></td>
+		<td><code>composer update</code></td>
 		<td><code>pip install<br>--upgrade [package-name]</code></td>
 		<td><code>gem update <br>[package-name]</code></td>
 	</tr>
@@ -127,7 +127,7 @@ Run these command in the command line.
 	<tr>
 		<td>Browse for packages</td>
 		<td><a href="http://nodejs.org/api/">npm</a></td>
-		<td><a href="http://packagist.org/packages/">composer</a></td>
+		<td><a href="http://packagist.org/packages/">packagist</a></td>
 		<td><a href="http://pypi.python.org/pypi?%3Aaction=index">pip</a></td>
 		<td><a href="http://rubygems.org/gems">rubygems</a></td>
 	</tr>
