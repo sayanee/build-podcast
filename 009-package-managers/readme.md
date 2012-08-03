@@ -100,7 +100,7 @@ Run these command in the command line.
 ##Resources on Package Managers
 
 - what is a [package manager](http://en.wikipedia.org/wiki/Package_manager)
-- [list of software pckage management systems](http://en.wikipedia.org/wiki/List_of_software_package_management_systems)
+- [list of software package management systems](http://en.wikipedia.org/wiki/List_of_software_package_management_systems)
 
 <table>
 	<tr>
