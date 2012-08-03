@@ -64,7 +64,7 @@ Run these command in the command line.
 	<tr>
 		<td>Uninstall a package</td>
 		<td><code>sudo npm uninstall <package name> -g</code></td>
-		<td>edit composer.json to remove the package and run <code>composer update</code></td>
+		<td>edit composer.json and run <code>composer update</code></td>
 		<td><code>pip uninstall [package-name]</code></td>
 		<td><code></code></td>
 	</tr>
@@ -78,7 +78,7 @@ Run these command in the command line.
 	<tr>
 		<td>Updated packages</td>
 		<td><code>sudo npm -g update [package-name]</code></td>
-		<td><code>edit composer.json to remove the package and run <code>composer update</code></code></td>
+		<td>edit composer.json and run <code>composer update</code></td>
 		<td><code>pip install --upgrade [package-name]</code></td>
 		<td><code></code></td>
 	</tr>
@@ -113,26 +113,24 @@ Run these command in the command line.
 	</tr>
 	<tr>
 		<td>Documentation</td>
-		<td><a href="https://npmjs.org/doc/">npm</a></td>
-		<td><a href="http://getcomposer.org/doc/">composer</a></td>
-		<td><a href="#">pip</a></td>
-		<td><a href="#">rubygem</a></td>
+		<td><a href="https://npmjs.org/doc/">doc</a></td>
+		<td><a href="http://getcomposer.org/doc/">doc</a></td>
+		<td><a href="http://pypi.python.org/pypi/pip/">doc</a></td>
+		<td><a href="http://guides.rubygems.org/">guides</a></td>
 	</tr>
 	<tr>
 		<td>Browse for packages</td>
 		<td><a href="http://nodejs.org/api/">npm</a></td>
 		<td><a href="http://packagist.org/packages/">composer</a></td>
-		<td><a href="#">pip</a></td>
-		<td><a href="#">rubygem</a></td>
+		<td><a href="http://pypi.python.org/pypi?%3Aaction=index">pip</a></td>
+		<td><a href="http://rubygems.org/gems">rubygems</a></td>
 	</tr>
 	<tr>
 		<td>Other links</td>
 		<td><a href="http://tobyho.com/2012/02/09/tour-of-npm/">tour of npm</a></td>
 		<td><a href="http://net.tutsplus.com/tutorials/php/easy-package-management-with-composer/">easy package management with composer</a></td>
-		<td><a href=""></a></td>
-		<td><a href=""></a></td>
-		<td><a href=""></a></td>
-		<td><a href=""></a></td>
+		<td></td>
+		<td></td>
 	</tr>
 </table>
 
