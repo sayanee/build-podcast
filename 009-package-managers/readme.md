@@ -7,10 +7,10 @@ Package manager is a collection of tools for installing, upgrading, configuring 
 
 ##Tools used:
 
-1. [npm](http://npmjs.org/) for node.js
+1. [npm](http://npmjs.org/) for node.js with example [nide text editor](http://coreh.github.com/nide/)
 1. [rubygems](http://rubygems.org/) for ruby
-1. [pip](http://pypi.python.org/pypi/pip/) for python
-1. [composer](http://getcomposer.org/) for php
+1. [pip](http://pypi.python.org/pypi/pip/) for python with example [markdown for python](http://packages.python.org/Markdown/install.html)
+1. [composer](http://getcomposer.org/) for php with example [mustache for php](https://github.com/bobthecow/mustache.php)
 2. Command line with [Terminal](http://en.wikipedia.org/wiki/Terminal_(OS_X)
 
 ##Commands for Packager managers
@@ -42,48 +42,51 @@ Run these command in the command line.
 	<tr>
 		<td>List of all packages installed globally</td>
 		<td><code>npm ls -g</code></td>
-		<td><code></code></td>
+		<td><code>composer show</code></td>
 		<td><code>pip freeze</code></td>
 		<td><code>gem list</code></td>
 	</tr>
 	<tr>
 		<td>Info about a package</td>
 		<td><code>npm show [package-name]</code></td>
-		<td><code></code></td>
+		<td><code>composer show [package-name]</code></td>
 		<td><code></code></td>
 		<td><code></code></td>
 		<td><code></code></td>
 	</tr>
 	<tr>
 		<td>Install a package</td>
-		<td><code>npm install <package name> -g</code></td>
-		<td><code></code></td>
-		<td><code></code></td>
-		<td><code></code></td>
+		<td><code>sudo npm install [package name] -g</code></td>
+		<td><a href="http://getcomposer.org/doc/00-intro.md#declaring-dependencies">create composer.json</a> and then run <code>composer install</code></td>
+		<td><code>pip install [package-name]</code></td>
 		<td><code></code></td>
 	</tr>
 	<tr>
 		<td>Uninstall a package</td>
-		<td><code>npm uninstall <package name> -g</code></td>
+		<td><code>sudo npm uninstall <package name> -g</code></td>
+		<td>edit composer.json to remove the package and run <code>composer update</code></td>
+		<td><code>pip uninstall [package-name]</code></td>
 		<td><code></code></td>
+	</tr>
+	<tr>
+		<td>Outdated packages</td>
+		<td><code>npm -g outdated</code></td>
 		<td><code></code></td>
 		<td><code></code></td>
 		<td><code></code></td>
 	</tr>
 	<tr>
-		<td>Query for outdated packages</td>
-		<td><code>npm install <package name> -g</code></td>
-		<td><code></code></td>
-		<td><code></code></td>
-		<td><code></code></td>
+		<td>Updated packages</td>
+		<td><code>sudo npm -g update [package-name]</code></td>
+		<td><code>edit composer.json to remove the package and run <code>composer update</code></code></td>
+		<td><code>pip install --upgrade [package-name]</code></td>
 		<td><code></code></td>
 	</tr>
 	<tr>
 		<td>Help</td>
 		<td><code>npm help</td>
-		<td><code></code></td>
-		<td><code></code></td>
-		<td><code></code></td>
+		<td><code>composer help</code></td>
+		<td><code>pip help</code></td>
 		<td><code></code></td>
 	</tr>
 </table>
@@ -104,23 +107,32 @@ Run these command in the command line.
 	<tr>
 		<td>Download & Install</td>
 		<td>install <a href="http://nodejs.org/#download">node.js and npm</a> for node</td>
-		<td>install <a href="http://getcomposer.org/doc/00-intro.md#globally">globally</a> for php. edit the <a href="http://stackoverflow.com/questions/9343151/where-is-php-ini-in-mac-os-x-lion-thought-it-was-in-usr-local-php5-lib">php.ini</a> file if needed</td>
+		<td>install <a href="https://github.com/composer/composer#global-installation-of-composer-manual">globally</a> for php. edit the <a href="http://stackoverflow.com/questions/9343151/where-is-php-ini-in-mac-os-x-lion-thought-it-was-in-usr-local-php5-lib">php.ini</a> file if needed</td>
 		<td>install <a href="http://pypi.python.org/pypi/pip/#downloads">pip</a> for python</td>
 		<td>install <a href="http://rubygems.org/pages/download/">rubygems</a> for ruby</td>
 	</tr>
 	<tr>
 		<td>Documentation</td>
-		<td><a href="#">npm</a></td>
-		<td><a href="#">composer</a></td>
+		<td><a href="https://npmjs.org/doc/">npm</a></td>
+		<td><a href="http://getcomposer.org/doc/">composer</a></td>
 		<td><a href="#">pip</a></td>
 		<td><a href="#">rubygem</a></td>
 	</tr>
 	<tr>
 		<td>Browse for packages</td>
 		<td><a href="http://nodejs.org/api/">npm</a></td>
-		<td><a href="#">composer</a></td>
+		<td><a href="http://packagist.org/packages/">composer</a></td>
 		<td><a href="#">pip</a></td>
 		<td><a href="#">rubygem</a></td>
+	</tr>
+	<tr>
+		<td>Other links</td>
+		<td><a href="http://tobyho.com/2012/02/09/tour-of-npm/">tour of npm</a></td>
+		<td><a href="http://net.tutsplus.com/tutorials/php/easy-package-management-with-composer/">easy package management with composer</a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
+		<td><a href=""></a></td>
 	</tr>
 </table>
 
