@@ -27,7 +27,7 @@ Run these command in the command line.
 	</tr>
 	<tr>
 		<td>Install</td>
-		<td>install [node.js and npm](http://nodejs.org/#download)</td>
+		<td>install <a href="http://nodejs.org/#download">node.js and npm</a></td>
 		<td>install composer</td>
 		<td>install pip</td>
 		<td>install rubygem</td>
