@@ -1,0 +1,17 @@
+{
+    "hash": "75daac2f48baa840cc78beda45c07dd8",
+    "packages": [
+        {
+            "package": "mustache/mustache",
+            "version": "v2.0.0"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ]
+}
