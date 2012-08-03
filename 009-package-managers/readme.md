@@ -17,14 +17,22 @@ Package manager is a collection of tools for installing, upgrading, configuring 
 
 Run these command in the command line.
 
-| | npm | composer | pip | rubygem |
-|------------|------------ |--------------|
-| Install | [install npm](http://nodejs.org/#download) | install composer | install pip | install rubygem | 
-| Check version | column | column | | `gem -v`|
-| will       |        will |     will     |
-| be         |          be |      be      |
-| left       |       right |    center    |
-| aligned    |     aligned |   aligned    |
+<table>
+	<tr>
+		<th></th>
+		<th>npm</th>
+		<th>composer</th>
+		<th>pip</th>
+		<th>rubygem</th>
+	</tr>
+	<tr>
+		<td>Install</td>
+		<td>install npm</td>
+		<td>install composer</td>
+		<td>install pip</td>
+		<td>install rubygem</td>
+	</tr>
+</table>
 
 ##Resources on Package Managers
 
