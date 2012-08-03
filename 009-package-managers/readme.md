@@ -7,10 +7,10 @@ Package manager is a collection of tools for installing, upgrading, configuring 
 
 ##Tools used:
 
-1. [npm](http://npmjs.org/) for node.js with example [nide text editor](http://coreh.github.com/nide/)
-1. [rubygems](http://rubygems.org/) for ruby
-1. [pip](http://pypi.python.org/pypi/pip/) for python with example [markdown for python](http://packages.python.org/Markdown/install.html)
-1. [composer](http://getcomposer.org/) for php with example [mustache for php](https://github.com/bobthecow/mustache.php)
+1. [npm](http://npmjs.org/) for node.js with example package [nide text editor](http://coreh.github.com/nide/)
+1. [rubygems](http://rubygems.org/) for ruby with example package [sass css preprocessor](http://sass-lang.com/)
+1. [pip](http://pypi.python.org/pypi/pip/) for python with example package [markdown for python](http://packages.python.org/Markdown/install.html)
+1. [composer](http://getcomposer.org/) for php with example package [mustache for php](https://github.com/bobthecow/mustache.php)
 2. Command line with [Terminal](http://en.wikipedia.org/wiki/Terminal_(OS_X)
 
 ##Commands for Packager managers
@@ -24,6 +24,13 @@ Run these command in the command line.
 		<th>composer</th>
 		<th>pip</th>
 		<th>rubygem</th>
+	</tr>
+	<tr>
+		<td>Language</td>
+		<td><code>node -v</code></td>
+		<td><code>php --version</code></td>
+		<td><code>python --version</code></td>
+		<td><code>ruby -v</code></td>
 	</tr>
 	<tr>
 		<td>Version</td>
@@ -106,7 +113,7 @@ Run these command in the command line.
 	<tr>
 		<td>Download & Install</td>
 		<td>install <a href="http://nodejs.org/#download">node.js and npm</a> for node</td>
-		<td>install <a href="https://github.com/composer/composer#global-installation-of-composer-manual">globally</a> for php. edit the <a href="http://stackoverflow.com/questions/9343151/where-is-php-ini-in-mac-os-x-lion-thought-it-was-in-usr-local-php5-lib">php.ini</a> file if needed</td>
+		<td>install <a href="https://github.com/composer/composer#global-installation-of-composer-manual">globally</a> for php. <br>edit the <a href="http://stackoverflow.com/questions/9343151/where-is-php-ini-in-mac-os-x-lion-thought-it-was-in-usr-local-php5-lib">php.ini</a> file if needed</td>
 		<td>install <a href="http://pypi.python.org/pypi/pip/#downloads">pip</a> for python</td>
 		<td>install <a href="http://rubygems.org/pages/download/">rubygems</a> for ruby</td>
 	</tr>
