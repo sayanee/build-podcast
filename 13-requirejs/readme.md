@@ -1,7 +1,7 @@
 #Build Podcast Ep 13 - Require.js
 [Screencast link ](http://build-podcast.com/requirejs/)
 
-[Require.js](http://requirejs.org/) is a JavaScript file and module loader. A modular approach can improve the speed and quality of our code. In this episode, we will use requirejs to combine a page containing a js library and 3 plugins from a previous episode.
+[Require.js](http://requirejs.org/) is a JavaScript file and module loader. A modular approach can improve the maintainability and quality of our code. In this episode, we will see how we can convert a project containing many script tags to just a single script tag, with greater suport for dependancies and modules.
 
 
 ##Tools used for Require.js:
