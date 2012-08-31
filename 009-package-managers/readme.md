@@ -144,3 +144,5 @@ Run these command in the command line.
 ##Build Link of this Episode
 
 [Nettuts+](http://net.tutsplus.com/) is a site aimed at providing tutorials for web development and design with editor [Jeffrey Way](jeffrey_way) and [many other talented people](http://net.tutsplus.com/meet-the-staff/).
+
+####Thanks to [Uzyn](http://twitter.com/uzyn) and [Mic](http://twitter.com/coderkungfu) for advise on php package managers
