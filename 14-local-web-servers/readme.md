@@ -41,6 +41,7 @@ We often want to test and develop our applications locally. Here we will learn h
 1. Download [MAMP](http://www.mamp.info/en/index.html)
 2. Edit the host file located at `/private/etc/hosts` with the line `127.0.0.1    dev.yourdomainname`
 3. Edit the virtual hosts configuration file located at `/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf` with the code [amend the file path accordingly]:
+
 ```
 <VirtualHost *:80>
   ServerName dev.yourdomainname
@@ -57,6 +58,7 @@ We often want to test and develop our applications locally. Here we will learn h
 6. Download [Wordpress](http://wordpress.org/) in the project folder
 7. Go to [localhost/phpMyAdmin/](http://localhost/phpMyAdmin/) and create a Database
 8. Edit `wp-config.php` file with the following lines:
+
 ```
 define('DB_NAME', 'wordpress_yourDBname');
 define('DB_USER', 'root');
@@ -71,6 +73,7 @@ define('DB_HOST', 'localhost');
 1. Check that nginx has been install with the command line in Terminal: `nginx -v` and locate apache program file path with `which nginx`
 2. Edit the host file located at `/private/etc/hosts` with the line `127.0.0.1    dev.yourdomainname`
 3. Edit the nginx configuration file located at `/opt/local/etc/nginx/nginx.conf` (or another location depending on the installation) with the following code inside the http code block:
+
 ```
 server {
         listen          80;
@@ -93,6 +96,7 @@ server {
     1. [Documentation](http://httpd.apache.org/docs/)
     2. Examples of [vhost configuration files](http://httpd.apache.org/docs/2.2/vhosts/)
     3. Setup MAC [Mountain Lion's built in Apache, PHP](http://damianoferrari.com/set-up-apache-and-php-on-os-x-10-8-mountain-lion/)
+3. Show your [localhost to the world](http://progrium.com/localtunnel/): Localtunnel
 
 #Build Link of this Episode
 
