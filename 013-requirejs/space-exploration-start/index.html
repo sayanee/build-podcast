@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Space Exploration</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+  <link rel="stylesheet" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+  <div id="container">
+
+    <h1>Space Exploration</h1>
+
+    <h2 id="tagline"></h2>
+
+    <p>From this distant vantage point, the Earth might not seem of any particular interest. But for us, it's different. Consider again that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every "superstar," every "supreme leader," every saint and sinner in the history of our species lived there – on a mote of dust suspended in a sunbeam.</p>
+    <p>~ Carl Sagan on The Pale Blue Dot, a photograph of planet Earth taken in 1990 by the Voyager 1 spacecraft from a record distance of about 6 billion kilometers from Earth</p>
+
+    <ul class="rslides">
+      <li><img src="img/1.jpg" alt=""></li>
+      <li><img src="img/2.jpg" alt=""></li>
+      <li><img src="img/3.jpg" alt=""></li>
+    </ul>
+
+  </div>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery-1.8.0.min.js"></script>
+
+  <script src="js/plugins/fittext.js"></script>
+  <script>
+    $("h1").fitText(0.8);
+  </script>
+
+  <script src="js/plugins/slides.js"></script>
+  <script>
+    $(function () {
+      $(".rslides").responsiveSlides();
+    });
+  </script>
+
+</body>
+</html>

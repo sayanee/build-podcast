@@ -1,0 +1,72 @@
+<!doctype html>
+<head>
+  <title>O-Notation</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Quando' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+  <div id="container">
+    <h1>O-Notation</h1>
+    <table rules="rows">
+      <tr>
+        <td>Notation</td>
+        <td>Name</td>
+        <td>Example</td>
+      </tr>
+      <tr>
+        <td>O(1)</td>
+        <td>constant</td>
+        <td>access an array element</td>
+      </tr>
+      <tr>
+        <td>O(lg(n))</td>
+        <td>logarithmic</td>
+        <td>binary search</td>
+      </tr>
+      <tr>
+        <td>O(n)</td>
+        <td>linear</td>
+        <td>sequential search</td>
+      </tr>
+      <tr>
+        <td>O(n lg(n))</td>
+        <td></td>
+        <td>quicksort, heapsort</td>
+      </tr>
+      <tr>
+        <td>O(n<sup>2</sup>)</td>
+        <td>square</td>
+        <td>selection sort</td>
+      </tr>
+      <tr>
+        <td>O(n<sup>3</sup>)</td>
+        <td>cubic</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>O(c<sup>n</sup>)</td>
+        <td>exponential</td>
+        <td>traveling salesman</td>
+      </tr>
+      <tr>
+        <td>O(n!)</td>
+        <td>factorial</td>
+        <td>traveling salesman problem via brute-force search</td>
+      </tr>
+    </table>
+  </div>
+
+  <script type="text/javascript" src='http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery-1.8.0.min.js'></script>
+  <script type="text/javascript" src='https://raw.github.com/davatron5000/Lettering.js/master/jquery.lettering.js'></script>
+  <script>
+  $(document).ready(function() {
+    $("h1").lettering();
+  });
+  </script>
+
+</body>
+</html>
