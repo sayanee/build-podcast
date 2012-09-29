@@ -97,6 +97,8 @@ git push origin
 1. [http request methods](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)
 2. [http method definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)
 
+#Related Episodes
+1. [Git](http://build-podcast.com/git/)
 
 #Build Link of this Episode
 
