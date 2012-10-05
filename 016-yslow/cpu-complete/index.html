@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>History of Processors</title>
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Allan:bold|Cardo' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+	<div class="container">
+		<h1>Processor History</h1>
+
+		<div class="video">
+			<iframe width="420" height="315" src="http://www.youtube.com/embed/iSKGVncs_ZQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+
+		<ul class="cpu-list">
+			<li>
+				<div class="cpu3"></div>
+				<ul class="cpu-info">
+					<li>1974</li>
+					<li>3.1MHz</li>
+					<li>8-bit</li>
+					<li><a href="http://en.wikipedia.org/wiki/Intel_8080">Find out More!</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="cpu1"></div>
+				<ul class="cpu-info">
+					<li>1985</li>
+					<li>33MHz</li>
+					<li>32-bit</li>
+					<li><a href="http://en.wikipedia.org/wiki/Intel_80386">Find out More!</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="cpu2"></div>
+				<ul class="cpu-info">
+					<li>2008</li>
+					<li>3.46GHz</li>
+					<li>64-bit</li>
+					<li><a href="http://www.intel.com/content/www/us/en/processors/core/core-i7-processor.html">Find out More!</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="js/plugin.js"></script>
+	<script>
+	  $(document).ready(function(){
+	  	$("h1").fitText(0.65);
+	    $(".video").fitVids();
+	  });
+	</script>
+
+</body>
+</html>
