@@ -1,0 +1,129 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: url(../img/bg.png);
+  font-family: 'Cardo', Georgia, Times, serif;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.container{
+  width: 960px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Allan', Helvetica, Arial, sans-serif;
+  font-size: 120px;
+  line-height: 1.5em;
+  text-align: center;
+
+  color: white;
+  text-shadow: 1px 1px #FE4902, 2px 2px #FE4902, 3px 3px #FE4902, 4px 4px #FE4902;
+}
+
+menu {
+  list-style: none;
+  text-align: center;
+}
+
+menu li{
+  display: inline;
+}
+
+menu a{
+  display: inline-block;
+  color: black;
+  margin: 0 20px;
+  padding: 10px 20px;
+  border: 3px solid #FE4902;
+  text-decoration: none;
+  background-color: rgba(256, 256, 256, 0.5);
+  border-radius: 10px;
+  font-size: 1.5em;
+}
+
+menu a:hover {
+  background-color: #FE4902;
+  color: white;
+}
+
+article {
+  width: 750px;
+  margin: 20px auto;
+}
+
+.cpu-list{
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.cpu-list:hover{
+  cursor: pointer;
+}
+
+.cpu-list > li{
+  display: inline-block;
+  margin: 0 2.0833333% 0 0;
+  vertical-align: top;
+  width: 31.6666667%;
+}
+
+.cpu-info{
+  display: none;
+  list-style: none;
+  color: black;
+  margin: 20px auto 0 auto;
+  padding: 10px;
+  width: 100%;
+  background-color: rgba(256, 256, 256, 0.5);
+  border-radius: 10px;
+  border: 3px solid #FE4902;
+}
+
+.cpu-list > li:hover .cpu-info{
+  display: block;
+}
+
+.cpu-info li:nth-child(1):before{
+  content: 'Introduction Year: ';
+}
+
+.cpu-info li:nth-child(2):before{
+  content: 'Max-Clock Speed: ';
+}
+
+.cpu-info li:nth-child(3):before{
+  content: 'Data Width: ';
+}
+
+.cpu-list > li:nth-child(3n){
+  display: inline-block;
+  margin-right: -4px;
+}
+
+.cpu1, .cpu2, .cpu3{
+  width: 304px;
+  height: 304px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.cpu1{
+  background:url(../img/cpu.jpg) no-repeat 0 0;
+}
+
+.cpu2{
+  background:url(../img/cpu.jpg) no-repeat -304px 0;
+}
+
+.cpu3{
+  background:url(../img/cpu.jpg) no-repeat -608px 0;
+}

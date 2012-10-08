@@ -1,0 +1,17 @@
+!!! 5
+html(lang='en')
+  head
+    include partials/_head
+  body
+    div.container
+      include partials/_header
+
+      ul.cpu-list
+        cpus = [{ year: '1974', speed: '3.1MHz', data: '8-bit', name: 'cpu1' }, { year: '1985', speed: '33MHz', data: '32-bit', name: 'cpu2' }, { year: '2008', speed: '3.46GHz', data: '64-bit', name: 'cpu3' }]
+        each cpu in cpus
+          li
+            div(class=cpu.name)
+            ul.cpu-info
+              li= cpu.year
+              li= cpu.speed
+              li= cpu.data
