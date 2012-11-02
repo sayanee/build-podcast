@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>A Brand New nanoc Site - <%= @item[:title] %></title>
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc <%= Nanoc::VERSION %>">
+  </head>
+  <body>
+    <div id="main">
+      <h1><%= @item[:title] %></h1>
+      <p class="created_at"><%= @item[:created_at] %></p>
+      <%= yield %>
+
+      <% if (@item[:kind] == 'article') %>
+        <p><%= previous_link %> | <%= next_link %></p>
+      <% end %>
+
+      <% if (@item[:title] == 'Welcome') %>
+      <ul>
+        <% (@site.sorted_articles[0..30]).each do |post| %>
+        <li>
+          <%= link_to(post[:title], post.path) %>
+          <%= post[:created_at] %>
+        </li>
+        <% end %>
+      </ul>
+      <% end %>
+    </div>
+
+    <%= render 'sidebar' %>
+
+  </body>
+</html>

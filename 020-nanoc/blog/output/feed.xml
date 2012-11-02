@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:3000/</id>
+  <title>My Blog</title>
+  <updated>2012-09-03T16:00:00Z</updated>
+  <link rel="alternate" href="http://localhost:3000/"/>
+  <link rel="self" href="http://localhost:3000/feed.xml"/>
+  <author>
+    <name>Sayanee</name>
+    <uri>http://localhost:3000</uri>
+  </author>
+  <entry>
+    <id>tag:localhost:3000,2012-09-04:/fourth-novel/</id>
+    <title type="html">Fourth Novel</title>
+    <published>2012-09-03T16:00:00Z</published>
+    <updated>2012-09-03T16:00:00Z</updated>
+    <link rel="alternate" href="http://localhost:3000/fourth-novel/"/>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;Some blockquote!&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:localhost:3000,2012-09-03:/third-essay/</id>
+    <title type="html">Third Essay</title>
+    <published>2012-09-02T16:00:00Z</published>
+    <updated>2012-09-02T16:00:00Z</updated>
+    <link rel="alternate" href="http://localhost:3000/third-essay/"/>
+    <content type="html">&lt;h4 id="header-4"&gt;header 4&lt;/h4&gt;
+
+&lt;p&gt;I can have &lt;strong&gt;bold&lt;/strong&gt; and &lt;em&gt;italic&lt;/em&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:localhost:3000,2012-09-02:/second-post/</id>
+    <title type="html">Second Post</title>
+    <published>2012-09-01T16:00:00Z</published>
+    <updated>2012-09-01T16:00:00Z</updated>
+    <link rel="alternate" href="http://localhost:3000/second-post/"/>
+    <content type="html">&lt;h4 id="header-4"&gt;header 4&lt;/h4&gt;
+
+&lt;p&gt;my second article!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="/assets/p.jpg" alt="maribor" /&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <id>tag:localhost:3000,2012-09-01:/hello-world/</id>
+    <title type="html">Hello World</title>
+    <published>2012-08-31T16:00:00Z</published>
+    <updated>2012-08-31T16:00:00Z</updated>
+    <link rel="alternate" href="http://localhost:3000/hello-world/"/>
+    <content type="html">&lt;h3 id="header-3"&gt;header 3&lt;/h3&gt;
+
+&lt;p&gt;i can write a list!&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;list one&lt;/li&gt;
+  &lt;li&gt;list two&lt;/li&gt;
+  &lt;li&gt;list three&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+  </entry>
+</feed>
