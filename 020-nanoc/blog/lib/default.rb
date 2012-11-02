@@ -4,20 +4,20 @@ include Nanoc::Helpers::Rendering
 include Nanoc3::Helpers::LinkTo
 include Nanoc3::Helpers::Blogging
 
-def previous_link
-	prv = sorted_articles.index(@item) - 1
-	if sorted_articles[prv].nil?
-		return ""
-	else
-		link_to('← Previous', sorted_articles[prv].reps[0])
-	end
-end
-
 def next_link
-	nxt = sorted_articles.index(@item) + 1
+	nxt = sorted_articles.index(@item) - 1
 	if sorted_articles[nxt].nil?
 		return ""
 	else
-	link_to('Next &rarr;', sorted_articles[nxt].reps.find { |r| r.name == :default })
+		link_to('Next', sorted_articles[nxt].reps[0])
+	end
+end
+
+def previous_link
+	prv = sorted_articles.index(@item) + 1
+	if sorted_articles[prv].nil?
+		return ""
+	else
+	link_to('Prev', sorted_articles[prv].reps.find { |r| r.name == :default })
 	end
 end
