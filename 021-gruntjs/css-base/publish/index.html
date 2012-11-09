@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>CSS Reset and Normalise</title>
+  <meta name="description" content="Understanding the differences between css reset and normalise">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="wrapper">
+      <ul class="choose-tag">
+        <li><input type="checkbox" checked="checked" value="header"><label>header</label></li>
+        <li><input type="checkbox" checked="checked" value="paragraph"><label>paragraph & hyperlinks</label></li>
+        <li><input type="checkbox" checked="checked" value="blockquote"><label>blockquote</label></li>
+        <li><input type="checkbox" checked="checked" value="table"><label>table</label></li>
+        <li><input type="checkbox" checked="checked" value="list"><label>lists</label></li>
+      </ul>
+
+      <ul class="choose-css">
+        <li><button data-file="reset">Reset</button></li>
+        <li><button data-file="normalize" class="active">Normalize</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <h1>Header 1</h1>
+    <h2>Header 2</h2>
+    <h3>Header 3</h3>
+    <h4>Header 4</h4>
+    <h5>Header 5</h5>
+    <h6>Header 6</h6>
+
+    <p><strong>CSS Reset:</strong> The goal of a reset stylesheet is to <em>reduce browser inconsistencies</em> in things like default line heights, margins and font sizes of headings, and so on. [download <a href="http://meyerweb.com/eric/tools/css/reset/">reset.css</a>]</p>
+
+    <p><strong>CSS Normalize:</strong> Normalize makes browsers <em>render all elements more consistently and in line with modern standards</em>. It precisely targets only the styles that need normalizing. [download <a href="http://necolas.github.com/normalize.css/">normalise.css</a>]</p>
+
+    <blockquote>It's very easy to be different, but very difficult to be better. — Jonathan Ive</blockquote>
+
+    <table border=1>
+      <tr>
+        <th>Year</th>
+        <th>Version</th>
+      </tr>
+      <tr>
+        <td>1996</td>
+        <td>CSS1</td>
+      </tr>
+      <tr>
+        <td>1998</td>
+        <td>CSS2</td>
+      </tr>
+      <tr>
+        <td>in development</td>
+        <td>CSS3</td>
+      </tr>
+    </table>
+
+    <ul>
+      <li>css preprocessors
+        <ul>
+          <li>stylus</li>
+          <li>less</li>
+          <li>sass & compass</li>
+        </ul>
+      </li>
+
+    </ul>
+
+    <ol>
+      <li>cool css3 properties:
+        <ol>
+          <li>media queries</li>
+          <li>box-shadow</li>
+          <li>gradients</li>
+          <li>border-radius</li>
+        </ol>
+      </li>
+
+    </ol>
+  </div>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

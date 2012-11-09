@@ -1,0 +1,90 @@
+.wrapper{
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+nav{
+  height: 50px;
+  padding: 10px 0;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: yellow;
+  background-color: #d44413;
+  background-image: -moz-linear-gradient(top, #ce4213, #dd4814);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ce4213), to(#dd4814));
+  background-image: -webkit-linear-gradient(top, #ce4213, #dd4814);
+  background-image: -o-linear-gradient(top, #ce4213, #dd4814);
+  background-image: linear-gradient(to bottom, #ce4213, #dd4814);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffce4213', endColorstr='#ffdd4814', GradientType=0);
+  border: 1px solid #c64012;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+
+.choose-tag, .choose-css{
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  vertical-align: top;
+  top: 0
+}
+
+.choose-tag li, .choose-css li{
+  display: inline-block;
+  margin: 0 20px 0 0;
+}
+
+.choose-tag li{
+  margin-top: 3px;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.choose-css li{
+  margin-top: -3px;
+}
+
+.choose-tag input[type=checkbox]{
+  margin: 0 5px 0 0;
+  height: 12px;
+  width: 16px;
+}
+
+.choose-css{
+  position: absolute;
+  right: 0;
+}
+
+.choose-css button{
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.choose-css button:hover, .active{
+  background-color: #a5360f;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.container{
+  width: 960px;
+  margin: 80px auto 20px auto;
+}
+
+.invisible{
+  display: none;
+}
