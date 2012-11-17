@@ -1,0 +1,112 @@
+#Build Podcast Ep 22 - SSH
+[Screencast link](http://build-podcast.com/ssh/)
+
+[Secure Shell (SSH)](http://www.openssh.com/) is a program to securely log in to another computer over a network and execute commands in that machine. In this episode, we will look into how to generate keys, ssh configurations, secure copy, known hosts and even [aws](http://aws.amazon.com/) login. 
+
+#Background on SSH:
+
+1. What is [Secure Shell (SSH)](http://en.wikipedia.org/wiki/Secure_Shell)?
+1. [Open SSH Manual](http://www.openssh.com/manual.html)
+1. [Getting started with SSH](http://kimmo.suominen.com/docs/ssh/)
+1. [Fun with SSH](https://www.msu.edu/~nixonjos/ssh.html)
+2. requiring ssh for [github](https://help.github.com/articles/generating-ssh-keys)
+
+#Things to learn with SSH
+
+We will work with 2 computers: [client and server](http://en.wikipedia.org/wiki/Client%E2%80%93server_model). The server can be another computer in the same network as the client, a web host provider (most common), [aws](http://aws.amazon.com/), etc.
+
+###1. background on ssh
+
+In the client computer, in the command line:
+
+1. check ssh version with `ssh -V`
+2. check the manual for ssh with `man ssh`
+3. locate the program file for ssh with `which ssh`
+
+
+###2. login/logout the server computer
+
+In the client computer, in the command line:
+
+1. `ssh username@hostname` with password and it's just like logging into another computer
+2. when we login for the first time, the hostname will get added to the file `~/.ssh/known_hosts`
+2. `ls` to look at the folders and files in the current directory
+3. `cd` to change dirctories
+4. `logout` to exit the server computer
+
+###3. create encryption keys
+
+We will work with 2 command line tabs:
+
+1. **SERVER**: `ssh username@hotname`
+2. **CLIENT**: `cd ~/.ssh`
+
+In the client's command line:
+
+1. generate encryption keys: `ssh-keygen -t rsa -f learnssh -C "sayanee@gmail.com"`
+3. generate the fingerprint seperately: `ssh-keygen -l -f filename.pub`
+3. secure copy and transfer the generated encryption key to the server's home directory: `scp -p learnssh.pub sayanee@10.0.1.21:`
+
+In the server's command line:
+
+1. check that `learnssh.pub` has indeed been transferred with `ls -al learnssh.pub`
+2. concat the contents of `learnssh.pub` to the file `/etc/ssh/sshd_config` with the command `cat learnssh.pub > ~/.ssh/authorized_keys`
+2. uncomment line `AuthorizedKeysFile	%h/.ssh/authorized_keys` inside the file `/etc/ssh/sshd_config` 
+3. `logout` exit 
+4. this time there won't be any password prompt. login again with `ssh username@hostname`
+4. `logout`
+
+In the client's command line:
+
+1. create a file `~/.ssh/config` with the following in the content:
+
+    ```
+    Host ubuntubox
+    Hostname 10.0.1.21
+    User sayanee
+    IdentityFile ~/.ssh/learnssh
+    ```
+In the server's command line:
+
+1. how we can login with a shorter command `ssh ubuntubox` without any password prompt
+
+###4. ssh with amazon web services (aws)
+
+1. go to [aws](http://aws.amazon.com/) > My Account/Console > AWS Management Console > Amazon Web Services > EC2
+2. Left Column > Instances > Instances > Launch Instance
+3. Through the Wizard > 5 steps:
+    1. Choose an AMI> Choose Ubuntu Server Free Tier
+    2. Instance Details > choose default/continue
+    3. Create Key Pair > Create a new Key Pair > `learnsshaws` > Create and download your key pair > `learnsshaws.pem`
+    4. Configure firewall > default/continue
+    5. Review > default/continue
+4. Click the instance, and copy the public DNS address
+5. copy the downloaded `learnsshaws.pem` to folder `~/.ssh`
+6. change the permission with `chmod 600 learnsshaws.pem`
+7. login to aws via ssh `ssh -i /Users/username/.ssh/learnsshaws.pem -v ubuntu@publicdns`
+8. to login such a long ssh command, amend the `~/.ssh/config` file with the following contents:
+
+    ```
+    Host awstest
+    Hostname aws-public-dns
+    User ubuntu
+    IdentityFile ~/.ssh/learnsshaws.pem
+    ```
+9. now we can login to aws with a shorter command and no password with `ssh awestest`
+
+#More Resources on SSH
+1. 01 uses of open ssh, [part 1](http://www.linuxjournal.com/article/4412?page=0,0), [part 2](http://www.linuxjournal.com/article/4413)
+1. [How to ssh into remote web server without using a password](http://apple.stackexchange.com/questions/48685/how-to-ssh-to-remote-web-server-without-using-a-password)
+1. [SSH: What and How?](http://net.tutsplus.com/tutorials/tools-and-tips/ssh-what-and-how/)
+1. [The Perfect workflow: Git, Github, SSH](http://net.tutsplus.com/tutorials/other/the-perfect-workflow-with-git-github-and-ssh/)
+2. [30 epic resources on how to ssh](http://www.andysowards.com/blog/2012/30-epic-resources-on-how-to-ssh/)
+
+#Related Build Podcast episodes
+
+- [Terminal, Command Line](http://build-podcast.com/terminal/) 
+- [Bash and Shell scripting](http://build-podcast.com/bash/)
+- [Github](http://build-podcast.com/github/) using ssh
+
+#Build Link of this Episode
+
+[hak5](http://hak5.org/), a tech show covering networking, security, operating systems and many fundamental hardcore tech stuff very well explained by one of the hosts, [Darren Kitchen](http://twitter.com/hak5darren)!
