@@ -8,6 +8,18 @@ Why a show on **tools** you might ask? Because humans are essentially **tools bu
 
 > Computers are like a bicycle for our minds. ~ Steve Jobs
 
+##Equipment and tools used for the scrrencasts:
+
+1. [C01U USB Studio Condensor Microphone](http://www.samsontech.com/samson/products/microphones/usb-microphones/c01u/) generously gifted by [Preetam Rai](https://twitter.com/preetamrai)
+2. [Quicktime](http://www.apple.com/quicktime/download/) to record the screencasts
+3. [iMovie](http://www.apple.com/ilife/imovie/) to edit the screencasts
+
+##Credits
+
+Many thanks to my friends (fellow developers and designers) for their tips and tricks that I constantly pick up and feed back into the podcast: [Veronica](http://twitter.com/veronism), [Wolfgang](http://twitter.com/njyo), [Thomas](http://twitter.com/serrynaimo), [Sebastiaan](http://twitter.com/sebdeckers), [Uzyn](http://twitter.com/uzyn), [Michael](http://twitter.com/coderkungfu), [Chinmay](http://twitter.com/ntt). 
+
+
+
 
 
 
