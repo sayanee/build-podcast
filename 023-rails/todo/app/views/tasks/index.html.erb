@@ -1,0 +1,29 @@
+<h1>Listing tasks</h1>
+
+<table>
+  <tr>
+    <th>Done</th>
+    <th>Description</th>
+    <th>Tag</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tasks.each do |task| %>
+  <tr>
+    <td><%= task.done %>, <%= distance_of_time_in_words(Time.now, task.updated_at) %> ago</td>
+    <td><%= task.description %></td>
+    <td><%= task.tag %></td>
+    <td><%= link_to 'Show', task %></td>
+    <td><%= link_to 'Edit', edit_task_path(task) %></td>
+    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Task', new_task_path %>
+<br>
+<%= link_to 'Completed Tasks', '/completed' %>
