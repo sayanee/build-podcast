@@ -39,4 +39,4 @@
 
 #Build Link of this Episode
 
-[24 Ways]()
+[24 Ways](http://24ways.org/) - an awesome wen editorial on all things web technology!
