@@ -22,10 +22,11 @@ Big thanks to the open source community and free softwares!
 5. [Levelator](http://www.conversationsnetwork.org/levelator) for audio normalisation
 6. [mouse locator](http://mouse-locator.en.softonic.com/mac) to highlight portions during screencast
 
-##Credits
+##License
 
-Many thanks to my friends (fellow developers and designers) for their tips and tricks that I constantly pick up and feed back into the podcast. I'm learning and sharing every week!
+![Creative Commons](http://i.creativecommons.org/l/by/3.0/88x31.png)
 
+[Build Podcast](http://build-podcast.com/) by [Sayanee](http://sayan.ee/) is licensed under a [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/deed.en_US).
 
 
 
