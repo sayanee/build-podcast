@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Slideshow</title>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+  <script src="js/modernizr.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    yepnope({
+      test : Modernizr.cssanimations,
+      yep  : 'css/slides.css',
+      nope : 'js/slides.js'
+    });
+  </script>
+
+</head>
+<body>
+
+  <header>
+    <h1>Single Board Computers</h1>
+  </header>
+
+	<ul class="slides">
+    <li><img src="img/arduino.jpg"><h2>Arduino</h2></li>
+    <li><img src="img/rasberrypi.jpg"><h2>RasberryPI</h2></li>
+    <li><img src="img/pandaboard.jpg"><h2>Panda Board</h2></li>
+    <li><img src="img/beagleboard.jpg"><h2>Beagle Board</h2></li>
+  </ul>
+
+</body>
+</html>

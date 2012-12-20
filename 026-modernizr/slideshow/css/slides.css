@@ -1,0 +1,131 @@
+@-webkit-keyframes cycle1 {
+  0% { opacity: 1; }
+
+  21% { opacity: 1} /* fade out */
+  25% { opacity: 0; }
+
+  50% { opacity: 0; }
+  75% { opacity: 0; }
+
+  96% { opcaity: 0} /* fade in */
+  100% {opacity: 1;}
+}
+@-ms-keyframes cycle1 {
+  0% { opacity: 1; }
+
+  21% { opacity: 1} /* fade out */
+  25% { opacity: 0; }
+
+  50% { opacity: 0; }
+  75% { opacity: 0; }
+
+  96% { opcaity: 0} /* fade in */
+  100% {opacity: 1;}
+}
+@-webkit-keyframes cycle2 {
+  0% { opacity: 0; }
+
+  21% { opacity: 0;} /* fade in */
+  25% { opacity: 1; }
+
+  46% { opacity: 1;} /* fade out */
+  50% { opacity: 0; }
+
+  75% { opacity: 0; }
+  100% {opacity: 0;}
+}
+@-ms-keyframes cycle2 {
+  0% { opacity: 0; }
+
+  21% { opacity: 0;} /* fade in */
+  25% { opacity: 1; }
+
+  46% { opacity: 1;} /* fade out */
+  50% { opacity: 0; }
+
+  75% { opacity: 0; }
+  100% {opacity: 0;}
+}
+@-webkit-keyframes cycle3 {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+
+  46% { opacity: 0;} /* fade in */
+  50% { opacity: 1; }
+
+  71% { opacity: 1; } /* fade out */
+  75% { opacity: 0; }
+
+  100% {opacity: 0;}
+}
+@-ms-keyframes cycle3 {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+
+  46% { opacity: 0;} /* fade in */
+  50% { opacity: 1; }
+
+  71% { opacity: 1; } /* fade out */
+  75% { opacity: 0; }
+
+  100% {opacity: 0;}
+}
+@-webkit-keyframes cycle4 {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+  50% { opacity: 0; }
+
+  71% { opacity: 0; } /* fade in */
+  75% { opacity: 1; }
+
+  96% { opacity: 1;} /* fade out */
+  100% {opacity: 0;}
+}
+@-ms-keyframes cycle4 {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+  50% { opacity: 0; }
+
+  71% { opacity: 0; } /* fade in */
+  75% { opacity: 1; }
+
+  96% { opacity: 1;} /* fade out */
+  100% {opacity: 0;}
+}
+
+.slides li:nth-child(1) {
+  -webkit-animation: cycle1 16s linear infinite;
+  -ms-animation: cycle1 16s linear infinite;
+}
+.slides li:nth-child(2) {
+  -webkit-animation: cycle2 16s linear infinite;
+  -ms-animation: cycle2 16s linear infinite;
+}
+.slides li:nth-child(3){
+  -webkit-animation: cycle3 16s linear infinite;
+  -ms-animation: cycle3 16s linear infinite;
+}
+.slides li:nth-child(4){
+  -webkit-animation: cycle4 16s linear infinite;
+  -ms-animation: cycle4 16s linear infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
