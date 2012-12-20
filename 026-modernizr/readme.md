@@ -1,14 +1,14 @@
 #Build Podcast Ep 25 - Modernizr
-[Screencast link](http://build-podcast.com/midernizr/)
+[Screencast link](http://build-podcast.com/modernizr/)
 
-[Modernizr](http://modernizr.com/) is a library for detecting whether the user's browsers have certain features and based on the availability, we developers will trigger certain functions or styles. In this episode, we will take a simple slideshow and user both javascript and css3 to make the transitions based on features available. Most importantly, we will scratch the surface of what is [graceful degradation](http://en.wikipedia.org/wiki/Graceful_degradation) and [progressive enhancement](http://en.wikipedia.org/wiki/Progressive_enhancement).
+[Modernizr](http://modernizr.com/) is a library for detecting whether the user's browsers have certain features and based on the availability, we developers will trigger certain functions or styles. In this episode, we will take a simple slideshow and use both javascript and css3 to make the transitions based on features available with libraries such as [yepnope](http://yepnopejs.com/) and [html5shiv](https://github.com/aFarkas/html5shiv). Most importantly, we will scratch the surface of what is [graceful degradation](http://en.wikipedia.org/wiki/Graceful_degradation) and [progressive enhancement](http://en.wikipedia.org/wiki/Progressive_enhancement).
 
 #Background on Modernizr and Tools
 
 1. [Modernizr](http://modernizr.com/) and [documentation](http://modernizr.com/docs/)
 2. [Understand Progressive Enhancement](http://www.alistapart.com/articles/understandingprogressiveenhancement/) and [wikipedia page](http://en.wikipedia.org/wiki/Progressive_enhancement)
 3. [Graceful degradation](http://en.wikipedia.org/wiki/Graceful_degradation)
-4. meanings of [shim](http://en.wikipedia.org/wiki/Shim_(computing)) (or shiv) and [polyfill](http://remysharp.com/2010/10/08/what-is-a-polyfill/)
+4. meanings of [shim](http://en.wikipedia.org/wiki/Shim_(computing)) (or shiv) and [polyfill](http://remysharp.com/2010/10/08/what-is-a-polyfill/) - use with [html5shiv](http://paulirish.com/2011/the-history-of-the-html5-shiv/)
 5. [Lynkx](http://lynx.isc.org/) - text-only www browser: [Can we visit top websites with Lynx](http://royal.pingdom.com/2012/06/25/using-web-browser-lynx-visit-top-websites/)?
 4. [deCSS3 bookmarklet](http://davatron5000.github.com/deCSS3/)
 5. [html5 shim](http://code.google.com/p/html5shiv/)
@@ -46,7 +46,18 @@
           border: 3px solid grey;
         }
         ```
-    -  use [deCSS3 bookmarklet](http://davatron5000.github.com/deCSS3/) to easily test for with or without css3
+    - if a css property is available:
+
+        ```
+        .box{
+          border: 3px solid grey;
+        }
+        .boxshadow .box{
+          box-shadow: 0 0 10px 1px #666;
+        }
+        ```
+
+    -  use [deCSS3 bookmarklet](http://davatron5000.github.com/deCSS3/) to easily test for with or without css3 - open up web dev console and copy the desired class needed from the `<html>`
 3. **html5 tags:**
     - include the option for html5shiv when generating the [modernizr](http://modernizr.com/download/)
     - now semantic html5 tags are easily seen in older browser as well
@@ -71,10 +82,10 @@
 
 #Related Build Podcast episodes
 
-- [gruntjs](http://build-podcast.com/gruntjs/) - to integrate grunt-modernizr
+- [gruntjs](http://build-podcast.com/gruntjs/) - to integrate [grunt-modernizr](https://github.com/doctyper/grunt-modernizr)
 - [virtualbox](http://build-podcast.com/virtualbox/) - to run Windows 8 (for IE10 browser that can simulate older browsers) or other Linux distributions.
 - [SASS](http://build-podcast.com/sass/) - use css preprocessor to generate the vendor prefixes automatically
 
 #Build Link of this Episode
 
-[The Big Web Show](http://5by5.tv/bigwebshow) hosted by Jeffrey Zeldman.
+[The Big Web Show](http://5by5.tv/bigwebshow) hosted by [Jeffrey Zeldman](http://zeldman.com/).
