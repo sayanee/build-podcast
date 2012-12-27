@@ -1,4 +1,4 @@
-#Build Podcast Ep 25 - Modernizr
+#Build Podcast Ep 26 - Modernizr
 [Screencast link](http://build-podcast.com/modernizr/)
 
 [Modernizr](http://modernizr.com/) is a library for detecting whether the user's browsers have certain features and based on the availability, we developers will trigger certain functions or styles. In this episode, we will take a simple slideshow and use both javascript and css3 to make the transitions based on features available with libraries such as [yepnope](http://yepnopejs.com/) and [html5shiv](https://github.com/aFarkas/html5shiv). Most importantly, we will scratch the surface of what is [graceful degradation](http://en.wikipedia.org/wiki/Graceful_degradation) and [progressive enhancement](http://en.wikipedia.org/wiki/Progressive_enhancement).
@@ -8,7 +8,7 @@
 1. [Modernizr](http://modernizr.com/) and [documentation](http://modernizr.com/docs/)
 2. [Understand Progressive Enhancement](http://www.alistapart.com/articles/understandingprogressiveenhancement/) and [wikipedia page](http://en.wikipedia.org/wiki/Progressive_enhancement)
 3. [Graceful degradation](http://en.wikipedia.org/wiki/Graceful_degradation)
-4. meanings of [shim](http://en.wikipedia.org/wiki/Shim_(computing)) (or shiv) and [polyfill](http://remysharp.com/2010/10/08/what-is-a-polyfill/) - use with [html5shiv](http://paulirish.com/2011/the-history-of-the-html5-shiv/)
+4. meanings of [shim](http://en.wikipedia.org/wiki/Shim_(computing\)) (or shiv) and [polyfill](http://remysharp.com/2010/10/08/what-is-a-polyfill/) - use with [html5shiv](http://paulirish.com/2011/the-history-of-the-html5-shiv/)
 5. [Lynkx](http://lynx.isc.org/) - text-only www browser: [Can we visit top websites with Lynx](http://royal.pingdom.com/2012/06/25/using-web-browser-lynx-visit-top-websites/)?
 4. [deCSS3 bookmarklet](http://davatron5000.github.com/deCSS3/)
 5. [html5 shim](http://code.google.com/p/html5shiv/)

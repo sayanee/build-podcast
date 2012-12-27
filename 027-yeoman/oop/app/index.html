@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learning OOP</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="components/prism/prism.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="hero-unit">
+      <h1>Object-Oriented Programming</h1>
+      <p>a programming paradigm that uses abstraction to create models based on the real world</p>
+    </div>
+
+    <h2>Class <small>Defines the data type or characteristics of the Object</small></h2>
+    <pre><code class="language-javascript">class Vehicle {
+
+  // members or fields
+  wheels: number;
+  speed: number;
+  color: string;
+
+  // constructor
+  constructor ( distance: number, duration: number, public destination: string ) {
+    this.speed = distance / duration;
+    this.wheels = 4
+  };
+
+  // methods
+  honk() {
+    return "At " + this.destination + ", the average speed was " + this.speed + " km/h";
+  }
+  hello() {
+    return "Hello! I'm a " + this.wheels + "-wheeler vehicle!";
+  }
+}</code></pre>
+
+
+    <h2>Object <small>An Instance of a Class</small></h2>
+    <pre><code class="language-javascript">var car = new Vehicle(300, 5, "Brussels");</code></pre>
+
+    <h2>Property <small>characteristics, fields or members of an object</small></h2>
+    <pre><code class="language-javascript">wheels: number;
+speed: number;
+color: string;</code></pre>
+
+    <h2>Method <small>function or capability of an object</small></h2>
+    <pre><code class="language-javascript">honk() {
+  return "At " + this.destination + ", the average speed was " + this.speed + " km/h";
+}
+hello() {
+  return "Hello! I'm a " + this.color + "vehicle!";
+}</code></pre>
+
+    <h2>Constructor <small>a function called at instantiation</small></h2>
+    <pre><code class="language-javascript">constructor ( distance: number, duration: number, public destination: string ) {
+  this.speed = distance / duration;
+  this.color = "white"
+};</code></pre>
+
+    <h2>Inheritance <small>a derived class can inherit characteristics from a base class</small></h2>
+    <pre><code class="language-javascript">class Bicycle extends Vehicle {
+
+  constructor ( distance: number, duration: number, public destination: string ) {
+    super( distance, duration, destination ); // calls the base class constructor
+    this.speed = distance / duration;
+    this.wheels = 2
+  };
+
+  hello() {
+    return "Hello! I'm a " + this.wheels + "-wheeler vehicle!";
+  }
+}</code></pre>
+
+    <hr>
+
+    <footer>
+      <p><a href="http://www.typescriptlang.org/">typescript</a> syntax is used. checkout the <a href="scripts/vehicle.js">compiled javascript file</a> and run it in browser console.</p>
+    </footer>
+
+  </div>
+
+  <script src="components/prism/prism.js"></script>
+
+</body>
+</html>

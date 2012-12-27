@@ -25,13 +25,13 @@ Big thanks to the open source community and free softwares!
 
     ```
     # change format from mov to mp4 for web video
-    ffmpeg -i imovie-output.mov -c copy new-video-format.mp4
+    ffmpeg -i 026-modernizr.mov -c copy 026-modernizr.mp4
     
     # extract just the audio
-    ffmpeg -i input-video.mp4 audio.wav 
+    ffmpeg -i 026-modernizr.mp4 audio.wav 
     
     # normalise audio and recombine with video
-    ffmpeg -i input-video-without-audio-normalisation.mp4 -i audio.output.wav -vcodec copy -acodec aac -strict experimental -ac 2 -ab 114k -map 0:0 -map 1:0 output-video-with-audio-normalisation.mp4
+    ffmpeg -i 026-modernizr.mp4 -i audio.wav -vcodec copy -acodec aac -strict experimental -ac 2 -ab 114k -map 0:0 -map 1:0 026-modernizr.normalize.mp4
     ```
 5. [Levelator](http://www.conversationsnetwork.org/levelator) for audio normalisation (if ffmpeg is not used)
 
