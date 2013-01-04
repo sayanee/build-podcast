@@ -91,7 +91,7 @@ server {
 #More Resources on Web Servers
 
 1. What is a [web server](http://en.wikipedia.org/wiki/Web_server)?
-2. [Common](http://royal.pingdom.com/2012/05/22/75-percent-top-10k-websites-served-by-open-source-software/) web servers include: [Apache](http://httpd.apache.org/), [Nginx](http://nginx.org/), [IIS](http://www.iis.net/), Google Web Server, [Lighttpd](http://www.lighttpd.net/)
+2. [Common](http://royal.pingdom.com/2012/05/22/75-percent-top-10k-websites-served-by-open-source-software/) web servers include: [Apache](http://httpd.apache.org/), [Nginx](http://nginx.org/), [IIS](http://www.iis.net/), Google Web Server, [Lighttpd](http://www.lighttpd.net/), [simpleHTTPserver](http://docs.python.org/2/library/simplehttpserver.html)
 2. For Apache:
     1. [Documentation](http://httpd.apache.org/docs/)
     2. Examples of [vhost configuration files](http://httpd.apache.org/docs/2.2/vhosts/)

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Memories of 2012</title>
+  <style>
+    .repos li, .photos li{
+      list-style-type: none;
+      margin: 0 20px 0 0;
+      display: inline-block;
+      vertical-align: top;
+    }
+  </style>
+</head>
+<body>
+
+  <h1><span class="name"></span>'s Memories of 2012!</h1>
+  <img class="pic" src="">
+
+  <h1>I travelled to...</h1>
+  <img src="http://maps.googleapis.com/maps/api/staticmap?center=Zagreb,Croatia&zoom=15&size=400x200&sensor=false" alt="">
+
+  <h1>I thought about...</h1>
+  <ul class="tweets"></ul>
+
+  <h1>I took pictures of...</h1>
+  <ul class="photos"></ul>
+
+  <h1>I visited...</h1>
+  <ul class="places"></ul>
+
+  <h1>I coded...</h1>
+  <ul class="repos"></ul>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+  <script>
+
+    var Info = {
+      fetch: function(name) {
+
+        var urlName = 'https://graph.facebook.com/' + name,
+          urlPic = 'https://graph.facebook.com/'+ name + '/picture';
+
+        $.getJSON( urlName, function( json ) {
+          // console.log(json);
+          // console.log(json);
+          // console.log(json.first_name);
+          $('.name').html(json.first_name);
+        });
+        $(".pic").attr("src",urlPic);
+      }
+    };
+
+    var Tweets = {
+      fetch: function(handle) {
+
+        var url = 'https://api.twitter.com/1/statuses/user_timeline.json?callback=?&include_entities=true&include_rts=true&screen_name=' + handle + '&count=10';
+        $.getJSON( url, function( json ) {
+          var len = json.length;
+          // console.log(json);
+          // console.log(json[0].text);
+          for ( var i = 0; i < len; i++) {
+            $(".tweets").append('<li>' + json[i].text + '</li>');
+          }
+        });
+      }
+    };
+
+    var Places = {
+      fetch: function() {
+
+        var limit = 5,
+
+          oauth_token = 'JA0D50UCUXROMFUZTV5R1POX3GG1AALGEMGKBE0CKPCLFG0T',
+          // generate the url from https://developer.foursquare.com/docs/explore#req=users%2Fself%2Fcheckins
+
+          url = 'https://api.foursquare.com/v2/users/self/checkins?limit='
+          + limit + '&oauth_token=' + oauth_token + '&v=20130103';
+
+        $.getJSON(url, function(json) {
+          var checkins = json.response.checkins.items;
+          // console.log(checkins);
+          // console.log(checkins[0].shout);
+          // console.log(checkins[0].venue.name);
+
+          for ( var i = 0; i < limit; i++) {
+            $(".places").append('<li>' + checkins[i].shout + ' @ ' + checkins[i].venue.name + '</li>');
+          }
+        });
+      }
+    }
+
+    var Repos = {
+      fetch: function(user) {
+        var url = 'https://api.github.com/users/'+ user +'/repos';
+
+        $.getJSON(url, function(json) {
+          // console.log(json);
+          // console.log(json[0].name);
+          // console.log(json[0].html_url);
+          var len = json.length
+          for ( var i = 0; i < len; i++) {
+            $(".repos").append('<li><a href="' + json[i].html_url + '">' + json[i].name + '</a></li>');
+          }
+        });
+      }
+    }
+
+    var Photos = {
+      fetch: function(userID) {
+
+        // generate the url from:
+        // http://www.flickr.com/services/api/flickr.people.getPublicPhotos.html
+        var url = 'http://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=ebe9ba7a3f772faf07f747abd70d9786&user_id=' + userID + '&extras=url_s&per_page=10&page=1&format=json&nojsoncallback=1&api_sig=e064b3f992110d15cbbe31e74e224727';
+
+        $.getJSON(url, function(json) {
+          // console.log(json.photos.photo);
+          var len = 4,
+            pic = json.photos.photo;
+
+          for ( var i = 0; i < len; i++) {
+            $(".photos").append('<li><img src="' + pic[i].url_s + '"></li>');
+          }
+
+        });
+      }
+    }
+
+    Info.fetch('sayanee'); // Facebook
+    Tweets.fetch('sayanee_'); // Twitter
+    Places.fetch(); // Foursquare
+    Repos.fetch('sayanee'); // Github
+    Photos.fetch('57773342@N00'); // Flickr
+
+    // points to improve:
+    // 1. Database: store the data from various API calls to a server side db
+    // 2. Authentication: required for each application to create data/access private data
+    // 3. Templating: for easier data insertion into the html/dom. E.g. Mustache/Handlebars, etc
+    // 4. Create our own apps with API/json data
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+#Build Podcast Ep 28 - API
+[Screencast link](http://build-podcast.com/api/)
+
+[API or application programming interface](http://en.wikipedia.org/wiki/Application_programming_interface) is a protocol to communicate with other software components. In the world of web API, content created in one place can be displayed or updated from another location in the web. In this episode, we will create a little fun memory page for 2012 using [Facebook](https://developers.facebook.com/), [Twitter](https://dev.twitter.com/), [Foursquare](https://developer.foursquare.com/), [Github](http://developer.github.com/v3/), [Flickr](http://www.flickr.com/services/api/) and [Google Maps](https://developers.google.com/maps/documentation/staticmaps/) API.
+
+#Background on API
+
+1. [What is API?](http://en.wikipedia.org/wiki/Application_programming_interface)
+2. [Web API](http://en.wikipedia.org/wiki/Web_API)
+3. [json](https://developer.mozilla.org/en/docs/JSON) by MDN
+
+
+#Things to learn with API
+
+###1. read data in the command line
+
+- for a github api: `curl -i "https://api.github.com/repos/mojombo/jekyll/issues?state=closed"`
+
+###2. read data in javascript
+
+- use jquery library
+- read the data:
+
+    ```
+    var url = "https://api.github.com/repos/mojombo/jekyll/issues?state=closed";
+    $.getJSON(url, function(json) {
+        console.log(json);
+    });
+    ```
+
+
+#More Resources on API
+
+1. [Creating an API centric web application](http://net.tutsplus.com/tutorials/php/creating-an-api-centric-web-application/)
+2. [A Beginner’s Guide To jQuery-Based JSON API Clients](http://coding.smashingmagazine.com/2012/02/09/beginners-guide-jquery-based-json-api-clients/)
+3. [designing better javascript apis](http://coding.smashingmagazine.com/2012/10/09/designing-javascript-apis-usability/)
+4. [web scraping or api?](http://news.ycombinator.com/item?id=4893922)
+3. [web scraping for fun](http://blog.hartleybrody.com/web-scraping/)
+4. [getting started with javascript object notation](http://iviewsource.com/codingtutorials/getting-started-with-javascript-object-notation-json-for-absolute-beginners/)
+
+
+#More Resources on the episode project 
+
+other tools:
+
+1. [install python simple http server](http://docs.python.org/2/library/simplehttpserver.html)  and `python -m SimpleHTTPServer 8000` in the command line to start the web server from the same folder
+2. [chrome browser's json extension](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en)
+
+public api used:
+
+1. [Google static map image API](https://developers.google.com/maps/documentation/staticmaps/) and [an example](https://developers.google.com/maps/documentation/imageapis/)
+2. [Facebook Open Graph](https://developers.facebook.com/docs/concepts/opengraph/) and [graph API](https://developers.facebook.com/docs/reference/api/)
+3. [Twitter Developers](https://dev.twitter.com/) and [tweets from a user](https://dev.twitter.com/docs/api/1/get/statuses/user_timeline)
+4. if there's a `XMLHttpRequest cannot load` error, add `&callback=?` to the end of the query url. why? [callback](http://api.jquery.com/jQuery.getJSON/)
+5. [Foursquare API](https://developer.foursquare.com/) and [checkin history](https://developer.foursquare.com/docs/users/checkins)
+6. [Github API](http://developer.github.com/v3/) and [list user repos](http://developer.github.com/v3/repos/#list-user-repositories)
+7. [Flickr API](http://www.flickr.com/services/api/) and [get public photos](http://www.flickr.com/services/api/flickr.people.getPublicPhotos.html)
+
+
+#Build Link of this Episode
+
+[Crockford - The Early Years](http://www.youtube.com/watch?v=JxAXlJEmNMg): A talk on the history of computing by [Douglas Crockford](http://www.crockford.com/)
