@@ -11,7 +11,7 @@ Why a show on **tools** you might ask? Because humans are essentially **tools bu
 Most importantly, [Build Podcast](http://build-podcast.com) is a direct reflection of my personal journey through the vibrant world of technology. Each week, I discipline myself to go in depth into just one tool and in the process, share it with the entire world. If you found it useful, [i would be so happy to hear it](http://twitter.com/sayanee_) and get your ideas on improvements!
 
 
-##Equipment and tools used for the screencasts:
+##Equipment and tools used for capturing and editing:
 
 Big thanks to the open source community and free softwares!
 
@@ -22,22 +22,9 @@ Big thanks to the open source community and free softwares!
 7. [keycastr](http://download.cnet.com/KeyCastr/3000-2075_4-125977.html) to display your keystrokes while recording screencasts
 3. [iMovie](http://www.apple.com/ilife/imovie/) to edit the screencasts and export `*.mov` video file
 4. [ffmpeg](http://ffmpeg.org/) for video and normalised audio exports
-
-    ```
-    # change format from mov to mp4 for web video
-    ffmpeg -i 026-modernizr.mov -c copy 026-modernizr.mp4
-    
-    # extract just the audio
-    ffmpeg -i 026-modernizr.mp4 audio.wav 
-    
-    # normalize the audio
-    sox $1 audio.wav compand 1,2 -80,-80,-55,-15,-10,-10,0,0 -7 -30 1 &&
-    sox audio.wav leveled-output.wav --norm
-    
-    # recombine with video
-    ffmpeg -i 026-modernizr.mp4 -i leveled-output.wav -vcodec copy -acodec aac -strict experimental -ac 2 -ab 114k -map 0:0 -map 1:0 026-modernizr.normalize.mp4
-    ```
-5. [Levelator](http://www.conversationsnetwork.org/levelator) for audio normalisation (if sox is not used)
+5. [Sox](http://sox.sourceforge.net/) for normalising audio
+6. [Levelator](http://www.conversationsnetwork.org/levelator) for audio normalisation (if sox is not used)
+7. Use the shell script `norm` with the command `norm screencast.mov` to extract audio, normalise it and recombine it to the video.
 
 
 ##License
