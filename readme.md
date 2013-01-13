@@ -30,10 +30,14 @@ Big thanks to the open source community and free softwares!
     # extract just the audio
     ffmpeg -i 026-modernizr.mp4 audio.wav 
     
-    # normalise audio and recombine with video
-    ffmpeg -i 026-modernizr.mp4 -i audio.wav -vcodec copy -acodec aac -strict experimental -ac 2 -ab 114k -map 0:0 -map 1:0 026-modernizr.normalize.mp4
+    # normalize the audio
+    sox $1 audio.wav compand 1,2 -80,-80,-55,-15,-10,-10,0,0 -7 -30 1 &&
+    sox audio.wav leveled-output.wav --norm
+    
+    # recombine with video
+    ffmpeg -i 026-modernizr.mp4 -i leveled-output.wav -vcodec copy -acodec aac -strict experimental -ac 2 -ab 114k -map 0:0 -map 1:0 026-modernizr.normalize.mp4
     ```
-5. [Levelator](http://www.conversationsnetwork.org/levelator) for audio normalisation (if ffmpeg is not used)
+5. [Levelator](http://www.conversationsnetwork.org/levelator) for audio normalisation (if sox is not used)
 
 
 ##License
