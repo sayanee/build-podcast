@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Colors!</title>
+  <style>
+    *{ margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif;}
+    body { background-color: #d9d9d9; }
+    .wrapper { width: 30%; margin: 5% auto; display: block; }
+    input[type=text] { text-align: center;background-color: rgba(255, 255, 255, 0.5);border: 0; display: block; font-size: 3em; outline: none; padding: 0.4em; width: 100%; }
+    input[type=range] { width: 100%; }
+    span{font-size: 1em; background-color: transparent; text-align: center; display:block; margin:0 auto; }
+    .color-change{display:none;padding: 1em 0;}
+    .visible{display:block;}
+    @media only screen and (max-width: 700px) { .wrapper { width: 90%; } input { font-size: 2em; }}
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <input type="text" id="color" placeholder="css color"/>
+    <div class="color-change" >
+      <input class="color-slider" type="range" min="0" max="200" value="100"/>
+      <span></span>
+    </div>
+  </div>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="script.min.js"></script>
+
+</body>
+</html>
