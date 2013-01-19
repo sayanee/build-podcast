@@ -1,5 +1,5 @@
 #Build Podcast Ep 30 - Closure
-[Screencast link](http://build-podcast.com/compiler/)
+[Screencast link](http://build-podcast.com/closure/)
 
 [Closure](https://developers.google.com/closure/) is a set of tools developed by Google and the [Closure Compiler](https://developers.google.com/closure/compiler/) is part of it for JavaScript optimisation and minification. In this episode, we will take a simple JavaScript project about CSS colors and run it through the various features of Closure! We will also use the [Closure Lint](https://developers.google.com/closure/utilities/) and check our code.
 
