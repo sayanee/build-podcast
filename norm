@@ -37,7 +37,7 @@ echo "RECOMBINE AUDIO in mp4"
 echo "======================================"
 
 # remove temporary files created
-rm temp.mp4 audio.wav leveled-output.wav temp.wav
+rm temp.mp4 audio.wav leveled-output.wav
 echo "======================================"
 echo "REMOVE ALL TEMP FILES"
 echo "======================================"
