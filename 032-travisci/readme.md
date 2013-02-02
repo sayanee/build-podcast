@@ -17,7 +17,7 @@
 
     ```
     require 'sinatra'
-    
+
     get '/' do
       "Hello World in Ruby, Sinatra!"
     end
@@ -40,7 +40,7 @@
     end
     ```
 4. create a `Gemfile.ci` that the travis will use
-   
+
    ```
    source 'http://rubygems.org'
    gem 'sinatra'
@@ -60,12 +60,12 @@
     ```
     from flask import Flask
     app = Flask(__name__)
-    
-    
+
+
     @app.route("/")
     def hello():
         return "Hello in Flask, Python!"
-    
+
     if __name__ == "__main__":
         app.run()
 
@@ -80,11 +80,11 @@
     script:
       - python setup.py test
     ```
-2. create a `steup.py` 
+2. create a `setup.py`
 
     ```
     from setuptools import setup, find_packages
-    
+
     setup(
         name='Hello',
         version='1.0',
@@ -96,7 +96,7 @@
     )
     ```
 3. create a `requirements.txt` that the travis will use
-   
+
    ```
    Flask==0.9
    ```
@@ -108,42 +108,40 @@
 
     ```
     var http = require('http');
-    
+
     http.createServer(function (req, res) {
       res.writeHead(200, {'Content-Type': 'text/plain'});
       res.end('Hello World in Node!\n');
     }).listen(1337, '127.0.0.1');
-    
+
     console.log('Server running at http://127.0.0.1:1337/');
     ```
 1. include a new file `.travis.yml`
 
     ```
-    language: python
-    python:
-      - "2.7"
-    install: "pip install -r requirements.txt --use-mirrors"
-    script:
-      - python setup.py test
+    language: node_js
+    node_js:
+      - 0.8
+
     ```
-2. create a `grunt.js` 
+2. create a `grunt.js` with just one task for linting
 
     ```
     module.exports = function(grunt) {
-    
+
       grunt.initConfig({
         lint: {
           files: ['hello.js']
         }
       });
-    
+
       grunt.registerTask('default', 'lint');
       grunt.registerTask('travis', 'lint');
-    
+
     };
     ```
 3. create a `package.json` that the travis will use
-   
+
    ```
    {
       "name": "hello-node",
@@ -160,7 +158,7 @@
    ```
 4. Same as Step 5 to Step 10 for Sinatra(Ruby)
 
-   
+
 #More Resources on Travis CI
 
 
