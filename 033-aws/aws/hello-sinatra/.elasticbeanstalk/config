@@ -1,0 +1,10 @@
+[global]
+ApplicationName=hello-sinatra
+DevToolsEndpoint=git.elasticbeanstalk.ap-southeast-1.amazonaws.com
+EnvironmentName=hello-sinatra-env
+OptionSettingFile=/Users/sayanee/Dropbox/Public/aws/hello-sinatra/.elasticbeanstalk/optionsettings.hello-sinatra-env
+RdsEnabled=No
+Region=ap-southeast-1
+ServiceEndpoint=https://elasticbeanstalk.ap-southeast-1.amazonaws.com
+SolutionStack=64bit Amazon Linux running Ruby 1.9.3
+

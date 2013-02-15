@@ -1,0 +1,213 @@
+#Build Podcast Ep 33 - AWS
+[Screencast link](http://build-podcast.com/aws/)
+
+[Amazon Web Services](http://aws.amazon.com/products/) or AWS is a set of web based services by Amazon. We will use [Elastic Cloud Compute](http://aws.amazon.com/ec2/) to launch a simple html page as well as a hello world in [nodejs](http://nodejs.org/). Next, we will use [Elastic Beanstalk](http://aws.amazon.com/elasticbeanstalk/) to deploy a [sinatra](http://www.sinatrarb.com/) hello world with [git](http://git-scm.com/).
+
+#Background on AWS
+
+1. [Amazon Web Services](http://aws.amazon.com/) and its [products](http://aws.amazon.com/products/) & [docs](http://aws.amazon.com/documentation/)
+2. [Developer Tools](http://aws.amazon.com/developertools)
+3. [Cloud Formation](http://aws.amazon.com/cloudformation/)
+
+
+#Things to learn with AWS
+
+###1. Elastic Cloud Compute (EC2) for a simple index.html
+
+1. Go to the [Amazon Management Console for EC2](https://console.aws.amazon.com/ec2/v2/home)
+2. Click Launch Instance
+3. Create a New Instance > Classic Wizard
+    - Choose an AMI > Amazon Linus AMI 2012.09 Free tier or any other Free Tier
+    - Create Key Pair > Download *.pem and change its permission level on our local machine
+    
+    ```
+    cd ~/Desktop
+    chmod 600 mykey.pem
+    ```
+    - Configure Firewall > Create a new Security Group > Add SSH, HTTP, HTTPS
+4. Instance status should be running
+5. Copy the public DNS which should have the format of `xxxxxxxxxxx.amazonaws.com`
+6. login to the EC2 instance through ssh
+    ```
+    ssh -i mykey.pem ec2-user@[public-dns]
+    ```
+6. connect as root user and install httpd
+    
+    ```
+    sudo su -
+    yum install httpd
+    ```
+5. copy the simple html page to the folder `var/www/html`
+
+    ```
+    cd ../../var/www/html 
+    wget [dropbox index.html-public-url]
+    
+    ```
+6. connect as root user
+    
+    ```
+    service httpd start
+    service httpd status
+    ```
+7. visit the public DNS address to view the `index.html`
+8. Terminate or stop the EC2 instance as you wish
+   
+###2. Elastic Cloud Compute (EC2) for node.js
+1. Setup another Free Tier Micro EC2 Instance
+2. connect to the instance with ssh:
+    
+    ```
+    ssh -i mykey.pem ec2-user@[public-dns]
+    ```
+3. Update EC2 Linux. Install Git, Node
+
+    ```
+    sudo yum update
+    sudo yum install gcc-c++ make
+    sudo yum install git
+    git clone git://github.com/joyent/node.git
+    cd node
+    git checkout v0.8.19
+    ./configure
+    make
+    sudo make install
+    ```
+4. Add the path to file `/etc/sudoers`
+    
+    ```
+    sudo su
+    vi /etc/sudoers
+
+    ```
+    - Press `i` to go into Insert Mode
+    - find line `Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin` and add `:/usr/local/bin` to it
+    - Press `ESC` and then `:wq!` to save and exit    2. 
+5. Install `npm`
+
+    ```
+    git clone https://github.com/isaacs/npm.git
+    cd npm
+    sudo make install
+    ```
+6. Check all are installed
+    
+    ```
+    git --version
+    node --version
+    npm --version
+    ```
+7. Create a simple hello world in node and put it in the public folder of dropbox:
+
+    ```
+    var sys = require( "sys" );
+    var http = require( "http" );
+    
+    var server = http.createServer(
+      function( request, response ){
+        response.writeHead( 200, {"content-type": "text/plain"} );
+        response.write( "Hellow world from AWS!\n" );
+        response.end();
+      });
+    
+    server.listen( 8080 );
+
+    ```
+8. Make a new folder
+
+    ```
+    cd ~/var
+    sudo mkdir site
+    cd site
+    sudo wget https://[dropbox-public-url]/server.js
+    ```
+9. Add port forwarding
+
+    ```
+    sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to 8080
+    ```
+10. Install [Forever](https://github.com/nodejitsu/forever)
+
+    ```
+    sudo npm install forever -g
+    ```
+11. Start the node server and visit the public dns
+
+    ```
+    node server.js
+    ```
+13. To keep our Node.js application running even after we logout of our EC2 instance, start the forever server instead:
+
+    ```
+    forever start server.js
+    ```    
+
+###3. Start an EC2 with Sinatra and Beanstalk
+
+1. download aws elastic beanstalk [command line tools](http://aws.amazon.com/code/6752709412171743)
+    
+    ```
+    unzip AWS-ElasticBeanstalk-CLI-2.3.zip
+    ```
+2. copy the directory `AWS-ElasticBeanstalk-CLI-2.3/eb` to `/usr/local` or any other folder that you wish.
+3. add export path to your bash profile or zsh profile file
+
+    ```
+    export PATH=$PATH:/usr/local/eb/macosx/python2.7:$PATH
+
+    ```
+4. restart command line or source bash profile or zsh profile
+5. `eb --version` in the command line to see that it has installed
+6. create a new folder for a hello world sinatra application
+    - `config.ru`
+    
+    ```
+    require './hello'
+    run Sinatra::Application
+    ```
+    - `hello.rb`
+    
+    ```
+    require 'sinatra'
+    get '/' do
+      "Hello World!"
+    end
+    ```
+    - `Gemfile`
+    
+    ```
+    source 'http://rubygems.org'
+    gem 'sinatra'
+    ```
+    
+1. Initiate a git repository
+
+    ```
+    git init
+    git add .
+    git commit -m "initial commit"
+    ```
+1. initiate elastic beastalk with command line code `eb init`
+2. commit the newly create `.gitignore`
+3. start the elastic beanstalk with `eb start` and `git aws.push`
+4. `eb stop` to stop the application and `eb delete` to delete the application
+
+#More Resources on AWS
+
+1. Videos: [AWS as an overview](http://www.youtube.com/watch?v=DERzYnthq1s), [launching a website](http://www.youtube.com/watch?v=E78VKAPwmDM), [overview of EC2](http://www.youtube.com/watch?v=cw2r16Q1X-g)
+2. [Developer Tools](http://aws.amazon.com/developertools/)
+2. [Starting with EC2](http://www.robertsosinski.com/2008/01/26/starting-amazon-ec2-with-mac-os-x/), [installing command line tools](http://andredieb.com/2012/12/07/installing-and-automating-aws-ec2-command-line-tools/)
+3. [nodejs with EC2 complete guide](http://iconof.com/blog/how-to-install-setup-node-js-on-amazon-aws-ec2-complete-guide/) and another [blog post](http://www.bennadel.com/blog/2321-How-I-Got-Node-js-Running-On-A-Linux-Micro-Instance-Using-Amazon-EC2.htm)
+4. [nodejs aws sdk](https://s3.amazonaws.com/awsdocs/sdk-nodejs/latest/aws-sdk-nodejs-dg.pdf)
+5. [Wordpress with ec2, rds, beastalk](http://www.slideshare.net/mrjain/installing-wordpress-on-aws)
+6. [Deploy Sinatra with Elastic Beanstalk](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Ruby_sinatra.html)
+7. [aws cli](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html)
+
+#Related past episodes of Build Podcast
+
+1. [SSH](http://build-podcast.com/ssh)
+
+
+#Build Link of this Episode
+
+[A Practical Guide to HTML & CSS](http://learn.shayhowe.com/) beginner's html and css
