@@ -126,23 +126,24 @@
     ```
     sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to 8080
     ```
-10. Install [Forever](https://github.com/nodejitsu/forever)
-
-    ```
-    sudo npm install forever -g
-    ```
 11. Start the node server and visit the public dns
 
     ```
     node server.js
     ```
-13. To keep our Node.js application running even after we logout of our EC2 instance, start the forever server instead:
+10. Install [Forever](https://github.com/nodejitsu/forever) to keep our Node.js application running even after we logout of our EC2 instance
+
+    ```
+    sudo npm install forever -g
+    ```
+
+13. Start the forever server and log out of EC2 and the server will still run!
 
     ```
     forever start server.js
     ```    
 
-###3. Start an EC2 with Sinatra and Beanstalk
+###3. Deploy Sinatra with Beanstalk
 
 1. download aws elastic beanstalk [command line tools](http://aws.amazon.com/code/6752709412171743)
     
