@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jupiter's Moons</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <h1>The Moons of Jupiter!</h1>
+  <ul class="moon-pics"></ul>
+
+  <h2>Galilean Moons</h2>
+  <ul class="galilean-moons"></ul>
+
+  <h2>Inner Moons</h2>
+  <ul class="inner-moons"></ul>
+
+  <h2>Orbital Period (days)</h2>
+  <ul class="orbital-period"></ul>
+
+  <h2>All Moons</h2>
+  <div id="moons">
+
+  <!-- Option A: with ERB syntax of <% %>   -->
+  <!--
+  <script id='template-moons' type='text/template'>
+    <ul>
+      <% for (var i = 0; i < moons.length; i++) { %>
+        <% var moon = moons[i]; %>
+        <li>
+          <em><%= moon.moon %></em> orbit is <%= moon.orbit %> days
+        </li>
+      <% } %>
+    </ul>
+  </script>
+  -->
+
+  <!-- OPTION B: with Handlebars syntax of {{ }} -->
+
+  <script id='template-moons' type='text/template'>
+    <ul>
+      {% for (var i = 0; i < moons.length; i++) { %}
+        {% var moon = moons[i]; %}
+        <li>
+          <em>{{ moon.moon }}</em>has an orbit of {{ moon.orbit }} days
+        </li>
+      {% } %}
+    </ul>
+  </script>
+
+
+  </div>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/1.0.1/lodash.min.js"></script>-->
+  <script src="lodash.custom.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
