@@ -1,7 +1,7 @@
 #Build Podcast Ep 35 - Capistrano
 [Screencast link](http://build-podcast.com/capistrano/)
 
-[Capistrano](http://capistranorb.com/) is remote multi-server automation tool that is often used for deployment.
+[Capistrano](http://capistranorb.com/) is remote multi-server automation tool that is often used for deployment. In this episode, we will first learn how to execute command line tasks in several servers, then we will deploy a [github](https://github.com/) repo on a newly fired up [EC2](http://aws.amazon.com/ec2/) instance.
 
 #Background on Capistrano
 
