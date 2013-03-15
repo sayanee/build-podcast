@@ -16,6 +16,7 @@ Most importantly, [Build Podcast](http://build-podcast.com) is a direct reflecti
 Big thanks to the open source community and free softwares!
 
 1. [C01U USB Studio Condensor Microphone](http://www.samsontech.com/samson/products/microphones/usb-microphones/c01u/) generously gifted by [Preetam Rai](https://twitter.com/preetamrai)
+2. [SwitchResX 4](http://www.madrau.com/download/latest/latest.html) to switch my screen resolution to `1280 x 720` and keep my notes in a dual monitor to refer while recording
 2. [Audacity](http://audacity.sourceforge.net/) and [Audio MIDI Setup](http://en.wikipedia.org/wiki/Audio_MIDI_Setup) to check sound quality before recording and export video format `*.mov`
 2. [Quicktime](http://www.apple.com/quicktime/download/) to record the screencasts
 3. [mouse locator](http://mouse-locator.en.softonic.com/mac) to highlight portions during screencast

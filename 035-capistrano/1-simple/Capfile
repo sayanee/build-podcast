@@ -1,0 +1,17 @@
+role :info, "10.0.1.22", "10.0.1.20", "example.com"
+role :analytics, "10.0.1.22"
+
+desc "The Current Username"
+task :whois_user, :roles => :info do
+  run "echo $USER"
+end
+
+desc "List Files in the home Directory"
+task :list_files, :roles => :info do
+  run "ls"
+end
+
+desc "Show Free Spaces"
+task :show_free_space, :roles => :analytics do
+  run "df -h /"
+end
