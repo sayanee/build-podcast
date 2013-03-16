@@ -18,13 +18,13 @@
     ```
     gem -v
     2.0.0
-    ```     
+    ```
 2. install [capistrano gem](http://rubygems.org/gems/capistrano)
 
     ```
     gem install capistrano
     gem list capistrano
-    
+
     *** LOCAL GEMS ***
     capistrano (2.14.2)
     ```
@@ -48,7 +48,7 @@
     task :whois_user, :hosts => "10.0.1.22" do
       run "echo $USER"
     end
-    
+
     task :list_files, :hosts => "10.0.1.22" do
       run "ls"
     end
@@ -57,11 +57,11 @@
 
     ```
     role :libs, "10.0.1.22"
-    
+
     task :whois_user do
       run "echo $USER"
     end
-    
+
     task :list_files do
       run "ls"
     end
@@ -71,31 +71,31 @@
 
     ```
     role :libs, "10.0.1.22", "www.example.com"
-    
+
     task :whois_user do
       run "echo $USER"
     end
-    
+
     task :list_files do
       run "ls"
     end
 
     ```
- 
+
 7. We can also specify different groups of hosts e.g. `analytics` and `information`:
 
     ```
     role :info, "10.0.1.22", "10.0.1.20"
     role :analytics, "10.0.1.22"
-    
+
     task :whois_user, :roles => :info do
       run "echo $USER"
     end
-    
+
     task :list_files, :roles => :info do
       run "ls"
     end
-    
+
     task :show_free_space, :roles => :analytics do
       run "df -h /"
     end
@@ -107,17 +107,17 @@
     ```
     role :info, "10.0.1.22", "10.0.1.20"
     role :analytics, "10.0.1.22"
-    
+
     desc "The Current Username"
     task :whois_user, :roles => :info do
       run "echo $USER"
     end
-    
+
     desc "List Files in the home Directory"
     task :list_files, :roles => :info do
       run "ls"
     end
-    
+
     desc "Show Free Spaces"
     task :show_free_space, :roles => :analytics do
       run "df -h /"
@@ -141,7 +141,7 @@
 ###2. Prepare a local project with git
 
 1. Go to an empty folder for the project
-2. Create a simple `index.html` 
+2. Create a simple `index.html`
 1. Initiate a git repository and push to github
 
     ```
@@ -168,11 +168,11 @@
     ```
     set :application, "cap-github-ec2"
     set :deploy_to, "/var/www/html"
-    
+
     set :scm, :git
     set :repository, "git@github.com:chinee/hello-cap.git"
     set :scm_username, "sayanee"
-    
+
     set :location, "ec2-54-234-17-185.compute-1.amazonaws.com"
     role :app, location
     role :web, location
@@ -180,7 +180,7 @@
     set :user, "ec2-user"
     ssh_options[:keys] = ["/Users/sayanee/.ssh/ec2.pem"]
     default_run_options[:pty] = true
-    
+
     set :branch, 'master'
     set :scm_verbose, true
     ```
@@ -199,7 +199,7 @@
 
     ```
     sudo yum install git
-    ``` 
+    ```
 2. Install Apache Server
 
     ```
@@ -225,14 +225,14 @@
     cd ~/.ssh
     ssh-keygen -t rsa -f [name] -C "[email]"
     ```
-1. Create the SSH Config file 
+1. Create the SSH Config file
 
     ```
     touch ~/.ssh/config
     ```
 2. Edit the `~/.ssh/config` using an editor such as `sudo nano ~/.ssh/config` file with the following contents:
 
-   ``` 
+   ```
    Hostname github.com
    IdentityFile ~/.ssh/[name]
    ```
@@ -253,13 +253,13 @@
 
     ```
     ssh -T git@github.com
-    ```    
+    ```
 2. The project will be deployed to `/var/www/html` so ensure the permission is set to the current user
 
     ```
     cd /var/www/html
     sudo chown -R ec2-user:ec2-user .
-    ``` 
+    ```
 3. By default capistrano will release the latest project into the folder `/var/www/[project-name]/current/public`, so we will need to tell the Apache server to point to it. Open the config file
 
      ```
@@ -279,14 +279,14 @@
     sudo service httpd stop
     sudo service httpd start
     ```
-    
+
 ###4. Deploy using Capistrano and Github
 
 4. Come back to the Local machine in the folder where the capistrano task is defined. Check everything is working!
 
     ```
     cap deploy:setup
-    ``` 
+    ```
 1. Deploy from Github to EC2
 
     ```
@@ -310,4 +310,4 @@
 
 #Build Link of this Episode
 
-Access in Chrome browser: chrome://credits/ 
+Access in Chrome browser: chrome://credits/
