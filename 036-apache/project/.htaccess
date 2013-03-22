@@ -1,0 +1,16 @@
+# simple rewrite
+RewriteEngine On
+RewriteRule ^about$ about.html
+
+# Custom 404 Error Page
+ErrorDocument 404 /404.html
+
+# Expires headers (for better cache control)
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresDefault                          "access plus 1 month"
+  ExpiresByType image/gif                 "access plus 1 month"
+</IfModule>
+
+# Recruit via Your HTTP Headers
+Header set Hiring-Now "Looking for a job? Email us!"
