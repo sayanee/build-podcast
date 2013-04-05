@@ -1,0 +1,703 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Blog</title>
+  <link href="http://chinee.github.com/"/>
+  <link type="application/atom+xml" rel="self" href="http://chinee.github.com/feed.xml"/>
+  <updated>2013-04-05T13:26:13+08:00</updated>
+  <id>http://chinee.github.com/</id>
+  <author>
+    <name>Your Name</name>
+    <email>you@chinee.github.com</email>
+  </author>
+
+  
+  <entry>
+    <id>http://chinee.github.com/welcome-to-jekyll</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/welcome-to-jekyll"/>
+    <title>Welcome to Jekyll!</title>
+    <published>2013-04-05T20:34:31+08:00</published>
+    <updated>2013-04-05T20:34:31+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;p&gt;You'll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
+To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;Jekyll's GitHub repo&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/hello</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/hello"/>
+    <title>Hello</title>
+    <published>2013-04-05T20:34:31+08:00</published>
+    <updated>2013-04-05T20:34:31+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;hello!!&lt;/h1&gt;
+
+&lt;h2&gt;having fun with jekyll&lt;/h2&gt;
+
+&lt;p&gt;it's easy!&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/apache</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/apache/"/>
+    <title>036 Apache</title>
+    <published>2013-03-22T00:00:00+08:00</published>
+    <updated>2013-03-22T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://httpd.apache.org/&quot;&gt;Apache&lt;/a&gt; is a popular open source http server that runs on many operating systems. We will go through some of the common config files and their settings on both Mac OSX and AWS EC2. Lastly, we will also go through what is the .htaccess file and some of its configurations.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/036-apache&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/036-apache.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/capistrano</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/capistrano/"/>
+    <title>035 Capistrano</title>
+    <published>2013-03-15T00:00:00+08:00</published>
+    <updated>2013-03-15T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://capistranorb.com/&quot;&gt;Capistrano&lt;/a&gt; is remote multi-server automation tool that is often used for deployment. In this episode, we will first learn how to execute command line tasks in several servers, then we will deploy a &lt;a href=&quot;https://github.com/&quot;&gt;github&lt;/a&gt; repo on a newly fired up &lt;a href=&quot;http://aws.amazon.com/ec2/&quot;&gt;EC2&lt;/a&gt; instance.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/035-capistrano&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/035-capistrano.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/lodash</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/lodash/"/>
+    <title>034 Lodash</title>
+    <published>2013-02-22T00:00:00+08:00</published>
+    <updated>2013-02-22T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://lodash.com/&quot;&gt;Lodash&lt;/a&gt; is a utlity belt javascript library. It is also a hard dependancy for &lt;a href=&quot;http://backbonejs.org/&quot;&gt;Backbonejs&lt;/a&gt;, as a drop-in replacement for &lt;a href=&quot;http://underscorejs.org/&quot;&gt;underscorejs&lt;/a&gt; with performance enhancement. In this episode we will create a simple project using some functions of lodash along with its micro templating features. We will also explore the custom build functions and source maps.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/034-lodash&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/034-lodash.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/aws</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/aws/"/>
+    <title>033 AWS</title>
+    <published>2013-02-16T00:00:00+08:00</published>
+    <updated>2013-02-16T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://aws.amazon.com/products/&quot;&gt;Amazon Web Services&lt;/a&gt; or AWS is a set of web based services by Amazon. We will use &lt;a href=&quot;http://aws.amazon.com/ec2/&quot;&gt;Elastic Cloud Compute&lt;/a&gt; to launch a simple html page as well as a hello world in &lt;a href=&quot;http://nodejs.org/&quot;&gt;nodejs&lt;/a&gt;. Next, we will use &lt;a href=&quot;http://aws.amazon.com/elasticbeanstalk/&quot;&gt;Elastic Beanstalk&lt;/a&gt; to deploy a &lt;a href=&quot;http://www.sinatrarb.com/&quot;&gt;sinatra&lt;/a&gt; hello world with &lt;a href=&quot;http://git-scm.com/&quot;&gt;git&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/033-aws&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/033-aws.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/travisci</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/travisci/"/>
+    <title>032 Travis CI</title>
+    <published>2013-02-01T00:00:00+08:00</published>
+    <updated>2013-02-01T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/&quot;&gt;Travis CI&lt;/a&gt; is a hosted continuous integration platform fre for open source. In this episode, we will create 3 hello world projects on &lt;a href=&quot;http://www.sinatrarb.com/&quot;&gt;Sinatra&lt;/a&gt; (&lt;a href=&quot;http://www.ruby-lang.org/en/&quot;&gt;Ruby&lt;/a&gt;), &lt;a href=&quot;http://flask.pocoo.org/&quot;&gt;Flask&lt;/a&gt; (&lt;a href=&quot;http://www.python.org/&quot;&gt;Python&lt;/a&gt;) and &lt;a href=&quot;http://nodejs.org/&quot;&gt;Node&lt;/a&gt; (JavaScript) and see how we can use Github and Travis CI for easy continuous integration.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/032-travisci&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/032-travisci.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/inuitcss</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/inuitcss/"/>
+    <title>031 InuitCSS</title>
+    <published>2013-01-26T00:00:00+08:00</published>
+    <updated>2013-01-26T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://inuitcss.com/&quot;&gt;Inuit.css&lt;/a&gt; is a powerful, scalable, &lt;a href=&quot;http://sass-lang.com/&quot;&gt;Sass-based&lt;/a&gt;, &lt;a href=&quot;http://bem.info/&quot;&gt;BEM&lt;/a&gt;, &lt;a href=&quot;http://oocss.org/&quot;&gt;OOCSS&lt;/a&gt; framework. In this episode, we will create a simple page on modern communication protocol used for Internet using the Inuit.css framework!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/031-inuitcss&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/031-Inuitcss.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/closure</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/closure/"/>
+    <title>030 Closure</title>
+    <published>2013-01-19T00:00:00+08:00</published>
+    <updated>2013-01-19T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developers.google.com/closure/&quot;&gt;Closure&lt;/a&gt; is a set of tools developed by Google and the &lt;a href=&quot;https://developers.google.com/closure/compiler/&quot;&gt;Closure Compiler&lt;/a&gt; is part of it for JavaScript optimisation and minification. In this episode, we will take a simple JavaScript project about CSS colors and run it through the various features of Closure! We will also use the &lt;a href=&quot;https://developers.google.com/closure/utilities/&quot;&gt;Closure Lint&lt;/a&gt; and check our code.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/030-closure&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/030-closure.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/oh-my-zsh</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/oh-my-zsh/"/>
+    <title>029 Oh My ZSH</title>
+    <published>2013-01-10T00:00:00+08:00</published>
+    <updated>2013-01-10T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot;&gt;Oh My ZSH&lt;/a&gt; is a community driven project for managing zsh configuration. We will explore some functions of &lt;a href=&quot;http://en.wikipedia.org/wiki/Z_shell&quot;&gt;z-shell&lt;/a&gt; (zsh), &lt;a href=&quot;http://www.iterm2.com/#/section/home&quot;&gt;iTerm&lt;/a&gt; and Oh My ZSH so that we can get to be a little more productive in our daily coding hours!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/029-oh-my-zsh&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/029-oh-my-zsh.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/api</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/api/"/>
+    <title>028 API</title>
+    <published>2013-01-04T00:00:00+08:00</published>
+    <updated>2013-01-04T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Application_programming_interface&quot;&gt;API or application programming interface&lt;/a&gt; is a protocol to communicate with other software components. In the world of web API, content created in one place can be displayed or updated from another location in the web. In this episode, we will create a little fun memory page for 2012 using &lt;a href=&quot;https://developers.facebook.com/&quot;&gt;Facebook&lt;/a&gt;, &lt;a href=&quot;https://dev.twitter.com/&quot;&gt;Twitter&lt;/a&gt;, &lt;a href=&quot;https://developer.foursquare.com/&quot;&gt;Foursquare&lt;/a&gt;, &lt;a href=&quot;http://developer.github.com/v3/&quot;&gt;Github&lt;/a&gt;, &lt;a href=&quot;http://www.flickr.com/services/api/&quot;&gt;Flickr&lt;/a&gt; and &lt;a href=&quot;https://developers.google.com/maps/documentation/staticmaps/&quot;&gt;Google Maps&lt;/a&gt; API.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/028-api&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/028-api.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/yeoman</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/yeoman/"/>
+    <title>027 Yeoman</title>
+    <published>2012-12-28T00:00:00+08:00</published>
+    <updated>2012-12-28T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://yeoman.io/&quot;&gt;Yeoman&lt;/a&gt; serves to help us create a modern workflow for building modern applications. In this episode, we will create a little project on terminologies related to &lt;a href=&quot;http://en.wikipedia.org/wiki/Object-oriented_programming&quot;&gt;object-oriented programming (oop)&lt;/a&gt; that will help us explore the main features of Yeoman such as scaffolding, compiling into css and js, linting, starting a local web server, image optimisation and so much more!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/027-yeoman&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/027-yeoman.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/modernizr</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/modernizr/"/>
+    <title>026 Modernizr</title>
+    <published>2012-12-21T00:00:00+08:00</published>
+    <updated>2012-12-21T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://modernizr.com/&quot;&gt;Modernizr&lt;/a&gt; is a library for detecting whether the user’s browsers have certain features and based on the availability, we developers will trigger certain functions or styles. In this episode, we will take a simple slideshow and use both javascript and css3 to make the transitions based on features available with libraries such as &lt;a href=&quot;http://yepnopejs.com/&quot;&gt;yepnope&lt;/a&gt; and &lt;a href=&quot;https://github.com/aFarkas/html5shiv&quot;&gt;html5shiv&lt;/a&gt;. Most importantly, we will scratch the surface of what is &lt;a href=&quot;http://en.wikipedia.org/wiki/Graceful_degradation&quot;&gt;graceful degradation&lt;/a&gt; and &lt;a href=&quot;http://en.wikipedia.org/wiki/Progressive_enhancement&quot;&gt;progressive enhancement&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/026-modernizr&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/026-modernizr.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/virtualbox</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/virtualbox/"/>
+    <title>025 VirtualBox</title>
+    <published>2012-12-14T00:00:00+08:00</published>
+    <updated>2012-12-14T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.virtualbox.org/&quot;&gt;VirtualBox&lt;/a&gt; is an amazing tool where we can run different operating systems in our MAC OSX machines! In this episode, we will learn how to run a Windows 8, Arch and Ubuntu operating systems and run them in the same machine all in the spirit of exploring different philosophies and technologies of operating systems!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/025-virtualbox&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/025-virtualbox.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/heroku</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/heroku/"/>
+    <title>024 Heroku</title>
+    <published>2012-12-08T00:00:00+08:00</published>
+    <updated>2012-12-08T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.heroku.com/&quot;&gt;Heroku&lt;/a&gt; is an online platform where we can easilu deploy and scale our applications. Whether we are looking to build an experimental app, or our app that we intend to scale up one day, Heroku is a great platform to get start with. In this episode, we will deploy our previous &lt;a href=&quot;http://build-podcast.com/rails/&quot;&gt;Rails application&lt;/a&gt; and explore some features!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/024-heroku&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/024-heroku.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/rails</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/rails/"/>
+    <title>023 Rails</title>
+    <published>2012-11-24T00:00:00+08:00</published>
+    <updated>2012-11-24T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://rubyonrails.org/&quot;&gt;Ruby on Rails&lt;/a&gt; is an open source web application development framework that allows us to rapidly build web apps. In this episode, we will create a very simple todo application and go through some concepts such as query, db migration, associations, routes, views and more!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/023-rails&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/023-rails.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/ssh</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/ssh/"/>
+    <title>022 SSH</title>
+    <published>2012-11-17T00:00:00+08:00</published>
+    <updated>2012-11-17T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.openssh.com/&quot;&gt;Secure Shell (SSH)&lt;/a&gt; is a program to securely log in to another computer over a network and execute commands in that machine. In this episode, we will look into how to generate keys, ssh configurations, secure copy, known hosts and even &lt;a href=&quot;http://aws.amazon.com/&quot;&gt;aws&lt;/a&gt; login.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/022-ssh&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/022-ssh.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/gruntjs</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/gruntjs/"/>
+    <title>021 Gruntjs</title>
+    <published>2012-11-09T00:00:00+08:00</published>
+    <updated>2012-11-09T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://gruntjs.com/&quot;&gt;Grunt.js&lt;/a&gt; is tool task-based command line &lt;a href=&quot;http://en.wikipedia.org/wiki/Build_automation&quot;&gt;build tool&lt;/a&gt; for JavaScript projects. Automate your build tasks like concatenation, minification, linting, testing and many others with some simple configuration or even with some nifty grunt.js plugins!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/021-gruntjs&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/021-gruntjs.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/nanoc</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/nanoc/"/>
+    <title>020 Nanoc</title>
+    <published>2012-11-02T00:00:00+08:00</published>
+    <updated>2012-11-02T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://nanoc.stoneship.org/&quot;&gt;Nanoc&lt;/a&gt; is tool for building static web sites. Using a static site generator like Nanoc has some advantages such as speed, security and local development. In this episode, we will explore how to build a blog with Nanoc!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/020-nanoc&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/020-nanoc.mp4&quot;&gt;download vide&lt;/a&gt;o]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/bash</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/bash/"/>
+    <title>019 Bash</title>
+    <published>2012-10-26T00:00:00+08:00</published>
+    <updated>2012-10-26T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Bash_(Unix_shell&quot;&gt;Bash&lt;/a&gt; is a Unix shell and it is available by default in Linux and MAC. It is very useful as a developer to know shell scripting and we will explore how to automate tasks (shell scripting), set profile configurations (bash profile) and schedule tasks (cron job) – all in the name of efficiency!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/019-bash&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/019-bash.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/fireworks</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/fireworks/"/>
+    <title>018 Fireworks</title>
+    <published>2012-10-19T00:00:00+08:00</published>
+    <updated>2012-10-19T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;If you are creating a hi-fidelity mockup for your web application, then &lt;a href=&quot;http://www.adobe.com/products/fireworks.html&quot;&gt;Adobe Fireworks&lt;/a&gt; is a great software! We will build a little project to learn how to view CSS properties, build hover effects, insert html, rounded ractangles, styles and more. At the same time we will get to review some of the common design principles and legends such as Dieter Rams.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/018-fireworks&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/018-fireworks.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/jade</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/jade/"/>
+    <title>017 Jade</title>
+    <published>2012-10-12T00:00:00+08:00</published>
+    <updated>2012-10-12T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jade-lang.com/&quot;&gt;Jade&lt;/a&gt; is a templating language to output html. As a newbie, this is a great way to create static html pages by including basic logic, partial views and many more. For advanced uses, jade can also be used with &lt;a href=&quot;http://nodejs.org/&quot;&gt;node.js&lt;/a&gt; and &lt;a href=&quot;http://expressjs.com/&quot;&gt;express.js&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/017-jade&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/017-jade.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/yslow</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/yslow/"/>
+    <title>016 YSlow</title>
+    <published>2012-10-05T00:00:00+08:00</published>
+    <updated>2012-10-05T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://yslow.org/&quot;&gt;Yslow&lt;/a&gt; is a great guideline on how to make your websites load faster. We will explore many of the 23 guidelines from Yslow and implement them in a little project and have fun getting to know the history of processors!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/016-yslow&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/016-yslow.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/github</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/github/"/>
+    <title>015 Github</title>
+    <published>2012-09-29T00:00:00+08:00</published>
+    <updated>2012-09-29T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://github.com/&quot;&gt;Github&lt;/a&gt; is an awesome website to find many open source projects, look at the code, contribute and discuss them. In this episode, we will see how we can create a project, push our project code to github, raise an issue, fix an issue, pull request and eventually merge a pull request.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/015-github&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/015-github.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/local-web-servers</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/local-web-servers/"/>
+    <title>014 Local Web Servers</title>
+    <published>2012-09-21T00:00:00+08:00</published>
+    <updated>2012-09-21T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;We often want to test and develop our applications locally. Here we will learn how to setup local web servers with some simple configurations in 3 ways: (1) built-in MAC &lt;a href=&quot;http://httpd.apache.org/&quot;&gt;Apache&lt;/a&gt; (2) &lt;a href=&quot;http://www.mamp.info/en/index.html&quot;&gt;MAMP&lt;/a&gt; with &lt;a href=&quot;http://wordpress.org/&quot;&gt;WordPress&lt;/a&gt; installation (3) Nginx.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/014-local-web-servers&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/014-local-web-servers.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/requirejs</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/requirejs/"/>
+    <title>013 RequireJS</title>
+    <published>2012-08-31T00:00:00+08:00</published>
+    <updated>2012-08-31T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://requirejs.org/&quot;&gt;Require.js&lt;/a&gt; is a JavaScript file and module loader. A modular approach can improve the maintainability and quality of our code. In this episode, we will see how we can convert a project containing many script tags to just a single script tag, with greater suport for dependancies and modules.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/013-requirejs&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/013-requirejs.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/zen-coding</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/zen-coding/"/>
+    <title>012 Zen Coding</title>
+    <published>2012-08-24T00:00:00+08:00</published>
+    <updated>2012-08-24T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://code.google.com/p/zen-coding/&quot;&gt;Zen Coding&lt;/a&gt; is available as an editor plugin for high-speed coding and editing especially in html. You can type in some shortcuts which will expand into html. It’s excellent for productive coding.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/12-zen-coding&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/012-zen-coding.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/responsive-design-and-javascript</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/responsive-design-and-javascript/"/>
+    <title>011 Responsive Design and Javascript</title>
+    <published>2012-08-17T00:00:00+08:00</published>
+    <updated>2012-08-17T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://vimeo.com/47700397&quot;&gt;011 Responsive Design and Javascript&lt;/a&gt; from &lt;a href=&quot;http://vimeo.com/sayanee&quot;&gt;Sayanee&lt;/a&gt; on &lt;a href=&quot;http://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Using 3 javascript libraries, we will create a completely responsive, fluid one pager on Space Exploration! We will use &lt;a href=&quot;http://fittextjs.com/&quot;&gt;Fittext.js&lt;/a&gt; for adaptable text, &lt;a href=&quot;http://fitvidsjs.com/&quot;&gt;Fitvid.js&lt;/a&gt; for adaptable video and &lt;a href=&quot;http://responsive-slides.viljamis.com/p&quot;&gt;Responsive Slides&lt;/a&gt; for apatable slideshow.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/011-responsive-design-and-javascript&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/011-responsive-design-and-javascript.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/sass</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/sass/"/>
+    <title>010 SASS</title>
+    <published>2012-08-10T00:00:00+08:00</published>
+    <updated>2012-08-10T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://sass-lang.com/&quot;&gt;SASS&lt;/a&gt; is a CSS pre-processor that makes authoring styles for our project very modular, readable, fast to change styles and tonnes of fun! While creating our SASS project, we will also learn about &lt;a href=&quot;http://en.wikipedia.org/wiki/Big_O_notation&quot;&gt;O-Notation&lt;/a&gt; – a fast way to measure efficiency in algorithms.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/010-sass&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/010-sass.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/package-managers</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/package-managers/"/>
+    <title>009 Package Managers</title>
+    <published>2012-08-03T00:00:00+08:00</published>
+    <updated>2012-08-03T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;Package manager is a collection of tools for installing, upgrading, configuring and removing software packages in a computer. We will explore some commonly used ones such as &lt;a href=&quot;http://rubygems.org/&quot;&gt;rubygems&lt;/a&gt; for ruby, &lt;a href=&quot;http://pypi.python.org/pypi/pip/&quot;&gt;pip&lt;/a&gt; for python, &lt;a href=&quot;http://getcomposer.org/&quot;&gt;composer&lt;/a&gt; for php and &lt;a href=&quot;http://npmjs.org/&quot;&gt;npm&lt;/a&gt; for node.js.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/009-package-managers&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/009-package-managers.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/sublime-text</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/sublime-text/"/>
+    <title>008 Sublime Text</title>
+    <published>2012-07-27T00:00:00+08:00</published>
+    <updated>2012-07-27T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime Text&lt;/a&gt; is a powerful text editor for coding. We will explore it’s features like plugins, multiple selections and accessing projects, files and folders.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/008-sublime-text&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/008-sublime-text.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/web-fonts</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/web-fonts/"/>
+    <title>007 Web Fonts</title>
+    <published>2012-07-20T00:00:00+08:00</published>
+    <updated>2012-07-20T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;We will explore 3 common ways of embedding cool non-standard fonts in a webpage using &lt;a href=&quot;https://typekit.com/&quot;&gt;Typekit&lt;/a&gt;, &lt;a href=&quot;http://www.w3schools.com/cssref/css3_pr_font-face_rule.asp&quot;&gt;CSS3 Font Face&lt;/a&gt; and &lt;a href=&quot;http://www.google.com/webfonts/&quot;&gt;Google Web Fonts&lt;/a&gt;. At the same time we will learn what are some of the common wifi standards and how to know which one we are using!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/007-web-fonts&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/007-web-fonts.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/wordpress</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/wordpress/"/>
+    <title>006 WordPress</title>
+    <published>2012-07-13T00:00:00+08:00</published>
+    <updated>2012-07-13T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://wordpress.org/&quot;&gt;WordPress&lt;/a&gt; is an open source blogging engine that can be downloaded and installed for your own use and customisation. Here we will install WordPress, create a sub-domain and have a blog website running in no time. We will also explore some common features, plugins and themes for WordPress.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/006-wordpress&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/006-wordpress.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/markdown</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/markdown/"/>
+    <title>005 Markdown</title>
+    <published>2012-07-06T00:00:00+08:00</published>
+    <updated>2012-07-06T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;Markdown converts plain text to html and it has pretty neat application for documentation or creating inline html for websites.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/005-markdown&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/005-markdown.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/git</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/git/"/>
+    <title>004 Git</title>
+    <published>2012-06-22T00:00:00+08:00</published>
+    <updated>2012-06-22T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/004-git&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/004-git.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/html5-boilerplate</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/html5-boilerplate/"/>
+    <title>003 HTML5 Boilerplate</title>
+    <published>2012-06-15T00:00:00+08:00</published>
+    <updated>2012-06-15T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/003-html5boilerplate&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/003-html5-boilerplate.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/terminal</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/terminal/"/>
+    <title>002 Terminal</title>
+    <published>2012-06-08T00:00:00+08:00</published>
+    <updated>2012-06-08T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/002-terminal&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/002-terminal.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <id>http://chinee.github.com/web-dev-tools</id>
+    <link type="text/html" rel="alternate" href="http://chinee.github.com/web-dev-tools/"/>
+    <title>001 Web Dev Tools</title>
+    <published>2012-06-01T00:00:00+08:00</published>
+    <updated>2012-06-01T00:00:00+08:00</updated>
+    <author>
+      <name>Your Name</name>
+      <uri>http://chinee.github.com/</uri>
+    </author>
+    <content type="html">&lt;h1&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/sayanee/Build-Podcast/tree/master/001-webdevtools&quot;&gt;Show Notes&lt;/a&gt; [&lt;a href=&quot;http://build-podcast.com/videos/001-web-dev-tools.mp4&quot;&gt;download video&lt;/a&gt;]&lt;/p&gt;
+</content>
+  </entry>
+  
+
+</feed>

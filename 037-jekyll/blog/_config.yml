@@ -1,0 +1,5 @@
+markdown: rdiscount
+pygments: true
+permalink: /:title
+destination: ./_publish
+paginate: 10
