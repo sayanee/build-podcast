@@ -36,7 +36,3 @@ Big thanks to the open source community and free softwares!
 
 [Build Podcast](http://build-podcast.com/) by [Sayanee](http://sayan.ee/) is licensed under a [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/deed.en_US).
 
-
-
-
-

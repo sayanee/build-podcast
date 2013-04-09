@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# This script takes a movie *.mov file and outputs with its normalized audio
+# USAGE in the command line:
+# norm movie.mov
+
 # declare usage response string
 USAGE="Usage: `basename $0` [screencast-file]"
 
@@ -25,7 +29,8 @@ echo "EXTRACT AUDIO to audio.wav"
 echo "======================================"
 
 # normalize the audio
-sox audio.wav leveled-output.wav highpass 80 lowpass 8000 compand 0.01,1 -80,-80,-55,-20,-20,-15,0,0 0 -40 0.1 norm -0.5
+sox audio.wav temp.wav compand 1,2 -80,-80,-55,-15,-10,-10,0,0 -7 -30 1 &&
+sox temp.wav leveled-output.wav --norm
 echo "======================================"
 echo "NORMALISE AUDIO to leveled-output.wav"
 echo "======================================"
@@ -37,7 +42,7 @@ echo "RECOMBINE AUDIO in mp4"
 echo "======================================"
 
 # remove temporary files created
-rm temp.mp4 audio.wav leveled-output.wav
+rm temp.mp4 audio.wav leveled-output.wav temp.wav
 echo "======================================"
 echo "REMOVE ALL TEMP FILES"
 echo "======================================"
