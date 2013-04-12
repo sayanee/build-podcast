@@ -8,7 +8,7 @@ Why a show on **tools** you might ask? Because humans are essentially **tools bu
 
 > Computers are like a bicycle for our minds. ~ Steve Jobs
 
-Most importantly, [Build Podcast](http://build-podcast.com) is a direct reflection of my personal journey into the vibrant world of technology throughout the [layers of abstraction in modern computing](https://twitter.com/sayanee_/status/277641534441136128). Each week, I discipline myself to go in depth into just one tool and in the process, share it with the entire world. 
+Most importantly, [Build Podcast](http://build-podcast.com) is a direct reflection of my personal journey into the vibrant world of technology throughout the [layers of abstraction in modern computing](https://twitter.com/sayanee_/status/277641534441136128). Each week, I discipline myself to go in depth into just one tool and in the process, share it with the entire world.
 
 If you found Build Podcast useful, [i would be so happy to hear it](http://twitter.com/sayanee_) and get your ideas on what technology tool I should next pick up!
 
@@ -27,7 +27,7 @@ Big thanks to the open source community and free softwares!
 4. [ffmpeg](http://ffmpeg.org/) for video and normalised audio exports
 5. [Sox](http://sox.sourceforge.net/) for normalising audio
 6. [Levelator](http://www.conversationsnetwork.org/levelator) for audio normalisation (if sox is not used)
-7. Use the shell script `norm` with the command `norm screencast.mov` to extract audio, normalise it and recombine it to the video.
+7. Use the [shell script norm](/scripts/norm) with the command `norm screencast.mov` to extract audio, normalise it and recombine it to the video.
 
 
 ##License
