@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Description</th>
+    <th>Task</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +12,7 @@
 <% @notes.each do |note| %>
   <tr>
     <td><%= note.description %></td>
+    <td><%= note.task.description %></td>
     <td><%= link_to 'Show', note %></td>
     <td><%= link_to 'Edit', edit_note_path(note) %></td>
     <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
