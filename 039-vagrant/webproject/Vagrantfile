@@ -1,0 +1,12 @@
+$script = <<SCRIPT
+apt-get update
+apt-get install -y apache2
+rm -rf /var/www
+ln -fs /vagrant /var/www
+SCRIPT
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "base"
+  config.vm.provision :shell, :inline => $script
+  config.vm.network :forwarded_port, host: 4567, guest: 80
+end
