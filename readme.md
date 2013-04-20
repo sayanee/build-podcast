@@ -42,11 +42,25 @@ Big thanks to the open source community and free softwares!
 6. [Levelator](http://www.conversationsnetwork.org/levelator) for audio normalisation (if sox is not used)
 7. Automation with scripts:
 
-    - Start a new episode with a new folder and a readme file with [shell script start-build](/scripts/start-build):
+    a. Start a new episode with a new folder and a readme file with [shell script start-build](/scripts/start-build):
     
         ```
         $ start-build <episode number> <lowercase topic> <uppercase topic>
         ```
+    
+    a. After exporting the edited video, normalise audio with the [shell script norm](/scripts/norm):
+    
+        ```
+        $ norm screencast.mov
+        screencast.mp4
+        ```
+    
+    a. Upload `screencast.mp4` via ftp using the [shell script fit-build](/scripts/ftp-build) that will upload the latest file (screencast.mp4) on the Desktop
+           
+        ```
+        $ ftp-build <server> <username> <password>
+        ```
+
 
 
 ##License
