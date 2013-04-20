@@ -1,7 +1,7 @@
 #Build Podcast ep 039 - Vagrant
 [Screencast link](http://build-podcast.com/vagrant/)
 
-[Vagrant](http://www.vagrantup.com/)
+[Vagrant](http://www.vagrantup.com/) creates reproducible, portable development environments that can be packaed and passed on to other developers to create an exact copy. In this episode, we will learn how to installed virtual machines with packages as well as view them in the host machine. We will run Vagrant wuth a simple html page and a [node.js](http://nodejs.org/) "hello world" project.
 
 version: 1.2.1
 
