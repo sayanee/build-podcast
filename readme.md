@@ -44,6 +44,7 @@ Big thanks to the open source community and free softwares!
 
     - Start a new episode with a new folder and a readme file with [shell script start-build](/scripts/start-build):
     
+    
     ```
     $ start-build <episode number> <lowercase topic> <uppercase topic>
     ```
@@ -54,8 +55,9 @@ Big thanks to the open source community and free softwares!
     $ norm screencast.mov
     screencast.mp4
     ```
-    - Upload `screencast.mp4` via ftp using the [shell script fit-build](/scripts/ftp-build) that will upload the latest file (screencast.mp4) on the Desktop
     
+    - Upload `screencast.mp4` via ftp using the [shell script fit-build](/scripts/ftp-build) that will upload the latest file (screencast.mp4) on the Desktop
+       
     ```
     $ ftp-build <server> <username> <password>
     ```
