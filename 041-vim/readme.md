@@ -1,7 +1,7 @@
 #Build Podcast ep 041 - Vim
 [Screencast link](http://build-podcast.com/vim/)
 
-[Vim](http://www.vim.org/) is an extension of Vi editor, a powerful text editor used with much configurations and customisations among developers. With many keystrokes and shortcuts, we can achieve enchanced productivity given the high learning curve. In this episode we will review the basics of Vim with a simple outline of software design patterns.
+[Vim](http://www.vim.org/) is an extension of Vi editor, a powerful text editor used with much configurations and customisations among developers. With many keystrokes and shortcuts, we can achieve enchanced productivity given the high learning curve. In this episode we will review the basics of Vim with a simple outline of [software design patterns](http://en.wikipedia.org/wiki/Design_Patterns).
 
 version: 7.3
 
