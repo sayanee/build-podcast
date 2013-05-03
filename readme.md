@@ -31,29 +31,32 @@ If you found Build Podcast useful, [i would be so happy to hear it](http://twitt
 Big thanks to the open source community and free softwares!
 
 1. [C01U USB Studio Condensor Microphone](http://www.samsontech.com/samson/products/microphones/usb-microphones/c01u/) generously gifted by [Preetam Rai](https://twitter.com/preetamrai)
-2. [SwitchResX 4](http://www.madrau.com/download/latest/latest.html) to switch my screen resolution to `1280 x 720` and keep my notes in a dual monitor to refer while recording
-2. [Audacity](http://audacity.sourceforge.net/) and [Audio MIDI Setup](http://en.wikipedia.org/wiki/Audio_MIDI_Setup) to check sound quality before recording and export video format `*.mov`
-2. [Quicktime](http://www.apple.com/quicktime/download/) to record the screencasts
-3. [mouse locator](http://mouse-locator.en.softonic.com/mac) to highlight portions during screencast
-7. [keycastr](http://download.cnet.com/KeyCastr/3000-2075_4-125977.html) to display your keystrokes while recording screencasts
-3. [iMovie](http://www.apple.com/ilife/imovie/) to edit the screencasts and export `*.mov` video file
-4. [ffmpeg](http://ffmpeg.org/) for video and normalised audio exports
-5. [Sox](http://sox.sourceforge.net/) for normalising audio
-6. [Levelator](http://www.conversationsnetwork.org/levelator) for audio normalisation (if sox is not used)
-7. Automation with scripts:
+1. [SwitchResX 4](http://www.madrau.com/download/latest/latest.html) to switch my screen resolution to `1280 x 720` and keep my notes in a dual monitor to refer while speaking and recording
+1. [Audacity](http://audacity.sourceforge.net/) and [Audio MIDI Setup](http://en.wikipedia.org/wiki/Audio_MIDI_Setup) to check sound quality 
+1. [Quicktime](http://www.apple.com/quicktime/download/) to record the screencasts
+1. [mouse locator](http://mouse-locator.en.softonic.com/mac) to highlight portions during screencast
+1. [keycastr](http://download.cnet.com/KeyCastr/3000-2075_4-125977.html) to display your keystrokes while recording screencasts
+1. [iMovie](http://www.apple.com/ilife/imovie/) to edit the screencasts and export `*.mov` video file
+1. [ffmpeg](http://ffmpeg.org/) for video and normalised audio exports
+1. [Sox](http://sox.sourceforge.net/) for normalising audio
+1. [Levelator](http://www.conversationsnetwork.org/levelator) for audio normalisation (if sox is not used)
+1. Automation with [scripts](/scripts):
 
     a. Start a new episode with a new folder and a readme file with [shell script start-build](/scripts/start-build):
+    
         ```
         $ start-build <episode number> <lowercase topic> <uppercase topic>
         ```
     
     b. After exporting the edited video, normalise audio with the [shell script norm](/scripts/norm):
+    
         ```
         $ norm screencast.mov
         screencast.mp4
         ```
     
     c. Upload `screencast.mp4` via ftp using the [shell script fit-build](/scripts/ftp-build) that will upload the latest file (screencast.mp4) on the Desktop           
+    
         ```
         $ ftp-build <server> <username> <password>
         ```
@@ -66,7 +69,7 @@ Big thanks to the open source community and free softwares!
 
 [Build Podcast](http://build-podcast.com/) by [Sayanee](http://sayan.ee/) is licensed under a [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/deed.en_US).
 
-##Contact
 
-[Tweet](http://twitter.com/sayanee_) me
+##Donate
 
+<a href='http://www.pledgie.com/campaigns/19089'><img alt='Click here to lend your support to: Build Podcast and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/19089.png?skin_name=chrome' border='0' /></a>
