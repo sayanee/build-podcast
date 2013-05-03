@@ -1,17 +1,19 @@
 #Build Podcast ep 041 - Vim
 [Screencast link](http://build-podcast.com/vim/)
 
-[Vim](http://www.vim.org/) is an extension of Vi editor. 
+[Vim](http://www.vim.org/) is an extension of Vi editor, a powerful text editor used with much configurations and customisations among developers. With many keystrokes and shortcuts, we can achieve enchanced productivity given the high learning curve. In this episode we will review the basics of Vim with a simple outline of software design patterns.
 
-version: 
+version: 7.3
 
 #Background on Vim 
 
-1. [Main website]()
+1. [Main website](http://www.vim.org/)
+2. [Wikipedia](http://en.wikipedia.org/wiki/Vim_(text_editor\))
+3. [MacVim](https://code.google.com/p/macvim/)
 1. [Git commit after merge opens VIM](http://stackoverflow.com/questions/9199222/git-commit-after-merge-opens-vim)
 
 
-#Things to learn with Vim 
+#Things to learn with Vim
 
 ##1 download and open vim
 1. [download](http://www.vim.org/download.php) or on a MAC OSX, just open the command line and type `vim`
@@ -130,17 +132,7 @@ version:
     - go to next tab `gt`
     - close tab `:q`
     
- 
-
-  
-##4. macros
-
-1. start recording: `qa`, where `a` is the name of the macro
-2. stop recording: `q`
-3. view the registered commands: `:reg`
-4. start the macro: `@a` or repeat it `200@a`, where `a` is the name of the macros
-
-##5. vim config
+##4. vim config
 
 1. the file resides in `~/.vimrc`
 1. some common settings include:
@@ -167,6 +159,13 @@ version:
     set foldenable
 
     ```
+  
+##5. macros
+
+1. start recording: `qa`, where `a` is the name of the macro
+2. stop recording: `q`
+3. view the registered commands: `:reg`
+4. start the macro: `@a` or repeat it `200@a`, where `a` is the name of the macros
 
 ##6. color scheme
 
@@ -177,12 +176,18 @@ version:
 
 #More Resources on Vim 
 
-1. [nano](), [pico]() and other command line [text editors](http://en.wikipedia.org/wiki/List_of_text_editors)
+1. nano, pico and other command line [text editors](http://en.wikipedia.org/wiki/List_of_text_editors)
 2. [Mac Vim](https://code.google.com/p/macvim/)
 1. [Just use Sublime Text](http://delvarworld.github.io/blog/2013/03/16/just-use-sublime-text/)
 1. [How to set environment variables on MAC OSX Lion](http://stackoverflow.com/questions/7501678/set-environment-variables-on-mac-os-x-lion)
 2. [Vimcast](http://vimcasts.org/)
 3. [Tutsplus Vim course](https://tutsplus.com/course/venture-into-vim/)
+
+#More resources on the project - design patterns
+
+1. [Design Patterns by the gang of 4](http://en.wikipedia.org/wiki/Design_Patterns)
+2. [Design patterns book](http://www.amazon.com/Design-Patterns-Object-Oriented-Professional-Computing/dp/0201634988)
+
 
 #Related Build Podcast episodes
 1. [Siblime Text](http://build-podcast.com/sublime-text/)
