@@ -3,7 +3,7 @@
 
 [Jekyll](http://jekyllrb.com/) is a blog-aware, static site generator in Ruby. In this episode, we will install jekyll, setup a new blog and do some configurations as well as importing posts from a previous [Wordpress](http://wordpress.org) and even hosting it on Github Pages.
 
-version: `jekyll 1.0.0.beta2`
+Version: jekyll 1.0.0.beta2
 
 #Background on Jekyll
 
@@ -16,7 +16,7 @@ version: `jekyll 1.0.0.beta2`
 
 #Things to learn with Jekyll
 
-##1. install 
+##1. install
 
 1. check pre-requisites:
 
@@ -71,7 +71,7 @@ version: `jekyll 1.0.0.beta2`
 ##3. config
 
 1. checkout some [configurations](https://github.com/mojombo/jekyll/wiki/Configuration) and edit file `_config.yml` accordingly
-1. permalinks with pretty urls that can be configured 
+1. permalinks with pretty urls that can be configured
 
     ```
     permalink: /:title
@@ -81,13 +81,13 @@ version: `jekyll 1.0.0.beta2`
     ```
     limit_posts: 1
     ```
-    
+
 1. change destination folder name
 
     ```
     destination: ./_publish
     ```
-    
+
 ##4. new post
 
 1. create a new markdown file inside folder `_posts` with the name `yyyy-mm-dd-title.md`
@@ -116,7 +116,7 @@ version: `jekyll 1.0.0.beta2`
     paginate: 10
     ```
 3. edit file `index.html` according to [pagination](https://github.com/mojombo/jekyll/wiki/Pagination#indexhtml)
-4. solve the `/page1` error with another [code reference](https://github.com/mojombo/jekyll/wiki/Pagination#a-note-about-page1) 
+4. solve the `/page1` error with another [code reference](https://github.com/mojombo/jekyll/wiki/Pagination#a-note-about-page1)
 
 ##6. plugins - sitemap generator
 
@@ -142,7 +142,7 @@ version: `jekyll 1.0.0.beta2`
 
 1.  [jekyll bootstrap](http://jekyllbootstrap.com/)
 2.  [octopress](http://octopress.org/)
- 
+
 
 #Related Build Podcast episodes
 

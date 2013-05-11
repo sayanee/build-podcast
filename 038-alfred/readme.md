@@ -3,55 +3,55 @@
 
 [Alfred](http://www.alfredapp.com/) is a productivity tool on the Mac OSX system that allows us to search for many things or perform various actions with just hot keys at hand. In this episode we will look at features such as find, search, calculator, contacts. As developers, we will also learn how to run shell scripts and even create/edit themes and workflows! Alfred certainly adds a tonne of fun in our daily workflow.
 
-version: v2.0.2 (178)
+Version: v2.0.2 (178)
 
-#Background on Alfred 
+#Background on Alfred
 1. [Main website](http://www.alfredapp.com/)
 2. [Brief features](http://www.alfredapp.com/#features) and [detailed features](http://support.alfredapp.com/start)
 3. [blog](http://blog.alfredapp.com/)
 
-#Things to learn with Alfred 
+#Things to learn with Alfred
 
 ##1. install
 
 1. [download](http://www.alfredapp.com/#download) the free version or buy the powerpack
 2. check out the preferences
     - General
-    
+
 ##2. search & open
 
-1. [Open](http://support.alfredapp.com/features:default-results): 
+1. [Open](http://support.alfredapp.com/features:default-results):
     - File
     - Folder
     - Website
     - App
-2. [Search](http://support.alfredapp.com/features:file-search) inside file: `open`, `find`, `in` 
+2. [Search](http://support.alfredapp.com/features:file-search) inside file: `open`, `find`, `in`
 3. Select multiple with `⌥` key using [buffer](http://support.alfredapp.com/features:file-search#file-buffer)
 4. [Web search](http://support.alfredapp.com/features:web-search): Google, image, map, translate, wiki, amazon, custom search (adding [stackoverflow](http://stackoverflow.com/) and [github](https://github.com/))
 
 ##3. productivity
 
-1. [Calculator](http://support.alfredapp.com/features:calculator):         
+1. [Calculator](http://support.alfredapp.com/features:calculator):
      - Simple with `4*5 + 8`
      - Advanced with `=ceil(9.04)` or `=floor(10.98)`
 2. [Dictionary](http://support.alfredapp.com/features:dictionary)
 3. [Contact search](http://support.alfredapp.com/features:contacts): [ensure correct privacy setting](http://www.alfredforum.com/topic/1802-contacts-not-showing/)
     - search
-    - send new email 
+    - send new email
 1. Using the [terminal](http://support.alfredapp.com/features:terminal)
-1. Using themes 
+1. Using themes
     - installing [new themes](http://www.alfredforum.com/forum/4-v2-themes/)
     - creating new themes
- 
 
-   
+
+
 ##4. workflow v2 (the new extensions from v1)
 
 1. some noted [workflows](http://blog.alfredapp.com/2013/04/03/alfred-v2-workflows-a-few-of-our-favourites-so-far/)
 2. edit workflows - example shown with the [currency converter workflow](http://florianpellet.com/alfred/)
 3. make new workflows - a simple shoutout on the screen
 
-#More Resources on Alfred 
+#More Resources on Alfred
 1. [extras gallery](http://extras.alfredapp.com/)
 2. [Alfred workflows](http://www.cultofmac.com/220283/great-workflows-to-help-you-get-more-done-with-alfred-2-0-feature/)
 3. Alfred themes and workflow developers: [David Fergusan](http://dferg.us/) or [Florian](http://florianpellet.com/alfred/)
