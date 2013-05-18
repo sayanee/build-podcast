@@ -1,11 +1,11 @@
 #Build Podcast ep 043 - SQL
 [Screencast link](http://build-podcast.com/sql/)
 
-[SQL](#) is a structured query language for databases. In this episode we will create a simple database on our Solar System planets and their moons. Then we will display the data create using php and sinatra, ruby with MySQL.
+[SQL](http://en.wikipedia.org/wiki/SQL) is a structured query language for databases. In this episode we will create a simple database on our Solar System planets and their moons. We will explore both a GUI [Sequel Pro](http://www.sequelpro.com/) for viewing SQL as well as [SQLfiddle](http://sqlfiddle.com/), a web based version to run SQL statements. Then we will display the data create using [php](http://www.php.net/manual/en/mysql.examples-basic.php) and [sinatra](http://recipes.sinatrarb.com/p/models/active_record) (ruby).
 
 Version: MySQL 5.5.25
 
-Similar episodes: [014 Local web server](http://build-podcast.com/local-web-servers/), [040 Sinatra](http://build-podcast.com/sinatra/)
+Similar episodes: [009 Package Managers](http://build-podcast.com/package-managers/), [014 Local web server](http://build-podcast.com/local-web-servers/), [040 Sinatra](http://build-podcast.com/sinatra/)
 
 #Background on SQL
 
