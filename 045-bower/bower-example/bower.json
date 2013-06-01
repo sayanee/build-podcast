@@ -1,0 +1,19 @@
+{
+  "name": "example-bower",
+  "version": "0.0.1",
+  "main": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "jquery": "2.0.1",
+    "moment": "2.0.0",
+    "prism": "latest",
+    "agility": "~0.1.3"
+  },
+  "devDependencies": {
+    "hugrid": "git://github.com/simanek/Heads-Up-Grid.git"
+  }
+}
