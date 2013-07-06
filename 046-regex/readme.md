@@ -2,9 +2,9 @@
 
 [Screencast link](http://build-podcast.com/regex/)
 
-Regular expressions or regex is a symbolic language to describe a pattern of characters so that we can match it with a required set. We can use regex pattern amtching across various programming languages to detect and match patterns as required.
+[Regular expressions](http://en.wikipedia.org/wiki/Regular_expression) or regex is a symbolic language to describe a pattern of characters so that we can match it with a required set. We can use regex pattern amtching across various programming languages to detect and match patterns as required.
 
-Similar episodes: [Sublime Text]()
+Similar episodes: [008 Sublime Text](http://build-podcast.com/sublime-text/)
 
 #Background on Regex 
 
@@ -199,4 +199,4 @@ Similar episodes: [Sublime Text]()
 
 #Build Link of this episode
 
-[Bret Victor](http://worrydream.com/#!/Bio)'s [video channel on Vimeo](https://vimeo.com/worrydream/videos/all/sort:date)
+[Bret Victor's](http://worrydream.com/#!/Bio) video channel on  [Vimeo](https://vimeo.com/worrydream/videos/all/sort:date)
