@@ -1,0 +1,38 @@
+.button {
+  background-color: #bbb;
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: red;
+}
+
+.button:active {
+  background-color: black;
+}
+
+.button.info {
+  background-color: lightblue;
+}
+
+.button.curved {
+  border-radius: 10px;
+}
+
+.button.rounded {
+  border-radius: 50%;
+}
+
+p {
+  color: #444;
+}
+
+p.warning {
+  background-color: yellow;
+}
+
+p.error {
+  background-color: red;
+}

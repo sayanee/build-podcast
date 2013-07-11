@@ -1,0 +1,79 @@
+/*
+  #Buttons
+  Identifies the primary action in a set of buttons.
+
+    <button class="button">Button Element</button>
+
+*/
+
+.button {
+  background-color: #bbb;
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+.button:hover {
+  background-color: red;
+}
+
+.button:active {
+  background-color: black;
+}
+
+/*
+  Button with info
+
+    <button class="button info">Button Element</button>
+
+*/
+.button.info {
+  background-color: lightblue;
+}
+
+/*
+  Button with curved.
+
+    <button class="button curved">Button curved</button>
+*/
+.button.curved {
+  border-radius: 10px;
+}
+
+/*
+  Button with rounded.
+
+    <button class="button rounded">Button rounded</button>
+*/
+.button.rounded {
+  border-radius: 50%;
+}
+
+/*
+  #Paragraphs
+  Some explanations
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, tempora!</p>
+*/
+p {
+  color: #444;
+}
+
+/*
+  Explanation with warning.
+
+    <p class="warning">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, tempora!</p>
+*/
+p.warning {
+  background-color: yellow;
+}
+
+/*
+  Explanation with error.
+
+    <p class="error">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, tempora!</p>
+*/
+p.error {
+  background-color: red;
+}

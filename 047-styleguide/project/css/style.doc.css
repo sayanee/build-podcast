@@ -1,0 +1,76 @@
+/*
+Button
+
+Buttons are action items.
+
+Markup:
+<a href="#" class="button {$modifiers}">Link Button</a>
+<button class="button {$modifiers}">Button Element</button>
+<input type="button" class="button {$modifiers}" value="Input Element"/>
+
+:hover                - Highlight the button
+:active               - "Press" the button down when clicked.
+.info                 - Indicate information
+
+Styleguide 1
+*/
+.button {
+  background-color: #bbb;
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: red;
+}
+.button:active {
+  background-color: black;
+}
+.button.info {
+  background-color: lightblue;
+}
+
+/*
+Button corners
+
+Buttons can be as rounded as desired.
+
+Markup:
+<a href="#" class="button {$modifiers}">Link Button</a>
+<button class="button {$modifiers}">Button Element</button>
+<input type="button" class="button {$modifiers}" value="Input Element"/>
+
+.curved                - Indicate slightly rounded buttons
+.rounded               - Indicated circular buttons
+
+Styleguide 1.1
+*/
+.button.curved {
+  border-radius: 10px;
+}
+.button.rounded {
+  border-radius: 50%;
+}
+
+/*
+Paragraph
+
+Main typography across the pages
+
+Markup:
+<p class="{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+
+.warning               - Displays warning
+.error                 - Display error
+
+Styleguide 2
+*/
+p {
+  color: #444;
+}
+p.warning {
+  background-color: yellow;
+}
+p.error {
+  background-color: red;
+}

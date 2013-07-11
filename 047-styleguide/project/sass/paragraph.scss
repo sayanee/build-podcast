@@ -1,0 +1,22 @@
+/*
+Paragraph
+
+Main typography across the pages
+
+Markup:
+<p class="{$modifiers}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, consectetur.</p>
+
+.warning               - Displays warning
+.error                 - Display error
+
+Styleguide 2
+*/
+p {
+  color: #444;
+  &.warning {
+    background-color: yellow;
+  }
+  &.error {
+    background-color: red;
+  }
+}
