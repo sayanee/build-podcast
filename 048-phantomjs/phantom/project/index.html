@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Hello PhantomJS!</title>
+</head>
+<body>
+
+<h1>I'm exploring PhantomJS!</h1>
+<img src="phantomjs-logo.png" alt="PhantomJS Logo">
+
+<button id="color">change color</button>
+
+<script>
+  document.getElementById('color').addEventListener('click', function(event) {
+    document.body.style.backgroundColor = 'lightblue';
+  }, false);
+</script>
+
+</body>
+</html>
