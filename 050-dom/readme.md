@@ -3,7 +3,7 @@
 
 [DOM](http://en.wikipedia.org/wiki/Document_Object_Model) or Document Object Model is a cross-platform and language-independent convention for representing and interacting with objects found in HTML. In this episode, we will explore traversing the DOM tree, adding/removing attributes/elements/style and also what is document fragments.
 
-Version: DOM Level 3
+Version: [DOM Level 3](http://www.w3.org/TR/DOM-Level-3-Core/)
 
 Similar episodes: [014 Local web servers](http://build-podcast.com/local-web-servers/)
 
@@ -137,7 +137,10 @@ Similar episodes: [014 Local web servers](http://build-podcast.com/local-web-ser
     ```
     var header = document.querySelector('h1')
     header.style
+    ```
+1. get computed styles    
     
+    ```
     window.getComputedStyle(header).color
     ```
 
@@ -148,10 +151,10 @@ Similar episodes: [014 Local web servers](http://build-podcast.com/local-web-ser
 
     ```
     var frag = document.createDocumentFragment();
-    var ul = document.createElement('ul')
-    frag.appendChild(ul)
+    var ul = document.createElement('ul');
+    frag.appendChild(ul);
     
-    ["blue", "green", "red", "blue", "pink"].forEach(function(e) {        var li = document.createElement("li");        li.textContent = e;        ul.appendChild(li);    });    document.body.appendChild(frag)
+    ["blue", "green", "red", "blue", "pink"].forEach(function(e) {        var li = document.createElement("li");        li.textContent = e;        ul.appendChild(li);    });    document.body.appendChild(frag);
     ```
 
 
