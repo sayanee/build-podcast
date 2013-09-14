@@ -1,3 +1,3 @@
 #038 Alfred
 
-[Screencast link](http://build-podcast.com/alfred/)
+For explanatory notes, video file, tool version and other info, please refer to the [screencast link](http://build-podcast.com/alfred/)

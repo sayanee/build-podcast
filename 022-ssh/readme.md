@@ -1,3 +1,3 @@
 #022 SSH
 
-[Screencast link](http://build-podcast.com/ssh/)
+For explanatory notes, video file, tool version and other info, please refer to the [screencast link](http://build-podcast.com/ssh/)

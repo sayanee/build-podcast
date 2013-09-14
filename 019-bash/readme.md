@@ -1,3 +1,3 @@
 #019 Bash
 
-[Screencast link](http://build-podcast.com/bash/)
+For explanatory notes, video file, tool version and other info, please refer to the [screencast link](http://build-podcast.com/bash/)

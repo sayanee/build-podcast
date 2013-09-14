@@ -1,3 +1,3 @@
 #012 Zen Coding
 
-[Screencast link](http://build-podcast.com/zen-coding/)
+For explanatory notes, video file, tool version and other info, please refer to the [screencast link](http://build-podcast.com/zen-coding/)

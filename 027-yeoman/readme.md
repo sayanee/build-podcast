@@ -1,3 +1,3 @@
 #027 Yeoman
 
-[Screencast link](http://build-podcast.com/yeoman/)
+For explanatory notes, video file, tool version and other info, please refer to the [screencast link](http://build-podcast.com/yeoman/)

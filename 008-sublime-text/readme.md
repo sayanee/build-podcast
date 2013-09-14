@@ -1,3 +1,3 @@
 #008 Sublime Text
 
-[Screencast link](http://build-podcast.com/sublime-text/)
+For explanatory notes, video file, tool version and other info, please refer to the [screencast link](http://build-podcast.com/sublime-text/)

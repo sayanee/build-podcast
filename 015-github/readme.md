@@ -1,4 +1,4 @@
 #015 GitHub
 
-[Screencast link](http://build-podcast.com/github/)
+For explanatory notes, video file, tool version and other info, please refer to the [screencast link](http://build-podcast.com/github/)
 
