@@ -1,3 +1,3 @@
-#020 Closure
+#030 Closure
 
 [Screencast link](http://build-podcast.com/closure/)
