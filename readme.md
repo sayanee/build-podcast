@@ -3,25 +3,24 @@
 Related links:
 
 - [Main website](http://build-podcast.com)
+- [Github pages](http://sayanee.github.io/build-podcast)
 - [RSS Feed](http://feeds.feedburner.com/BuildPodcastVideos)
-- [Youtube channel](http://www.youtube.com/playlist?list=PLA83DE2909F468A14)
+- [Youtube channel](http://www.youtube.com/playlist?list=PL9wSRifxQqRrLalGxTs-8FmfftbueLk5u)
 - [Vimeo channel](https://vimeo.com/channels/441355)
-- [iTunes subscription](https://itunes.apple.com/us/podcast/build-podcast-screencast/id538677863)
+- [iTunes subscriptionn](https://itunes.apple.com/us/podcast/build-podcast-screencast/id538677863)
 - [Twitter](http://twitter.com/buildpodcast)
 - [Github](https://github.com/sayanee/build-podcast) and [open issues](https://github.com/sayanee/build-podcast/issues?page=1&state=open)
 
 ##Development
 
-Each episode's show notes and source code are added to this repository
+**Sample code**: [git branch `master`](https://github.com/sayanee/build-podcast)
 
-- git branch `master` has source code for each episode
-
-- git branch `gh-pages` has the [main website]((http://build-podcast.com)) contents with [Jekyll](http://jekyllrb.com/). 
+**Show notes**: [git branch `gh-pages`](https://github.com/sayanee/build-podcast/tree/gh-pages) with contents in [Jekyll](http://jekyllrb.com/)
 
 When preparing the show notes in local machine, execute the following in the command line:
 
-   - `jekyll serve --watch --config _dev_config.yml` to start the [Jekyll](http://jekyllrb.com/) server with development configurations
-   - `grunt` to start the [GruntJS](http://gruntjs.com/) continuous compilation for CSS and JavaScript
+   - **to add new posts**: `jekyll serve --watch --config _dev_config.yml` to start the [Jekyll](http://jekyllrb.com/) server with development configurations
+   - **to edit css and javascript**: `grunt` to start the [GruntJS](http://gruntjs.com/) continuous compilation for CSS and JavaScript
 
 ##License
 
