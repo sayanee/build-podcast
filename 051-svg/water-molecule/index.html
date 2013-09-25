@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>SVG</title>
+  <style>
+    body{margin: 1em auto; width: 610px;}
+    section {display:inline-block; vertical-align: top; margin:2em 0; }
+    h1 {font-family: Helvetica Neue, sans-serif; font-size: 4em; display: inline-block; vertical-align: top; margin: 0; }
+    .small {margin: 0 0 0 20px; height: 70px; }
+    .large {height: 400px;}
+  </style>
+</head>
+<body>
+
+<h1>Water Molecule</h1>
+<img src="lab.svg" class="small">
+
+<section><img src="covalent.svg"></section>
+<section class="large">
+  <object type="image/svg+xml" data="3d.svg" id="water"></object>
+</section>
+
+<script>
+var svg = document.getElementById('water');
+
+svg.addEventListener('load', function() {
+  var svgDoc = svg.contentDocument;
+  var oxygen = svgDoc.getElementsByTagName('circle')[2];
+  // console.log(oxygen);
+
+  oxygen.addEventListener('click', function() {
+    // console.log('clicked');
+    if(oxygen.getAttribute('r') ==  100) {
+      oxygen.setAttribute('r', 95);
+    }
+    else {
+      oxygen.setAttribute('r', 100);
+    }
+  })
+});
+</script>
+
+</body>
+</html>

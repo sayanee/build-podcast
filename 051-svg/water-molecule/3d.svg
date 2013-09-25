@@ -1,0 +1,28 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="350">
+
+  <defs>
+    <style type="text/css"><![CDATA[
+      svg {background-color: beige;}
+      circle {fill: none; stroke: black; stroke-width: 3; }
+      ]]>
+    </style>
+  </defs>
+
+  <defs>
+    <radialGradient id="hydrogen" fx="25%" fy="25%">
+      <stop offset="10%" stop-color="tan" />
+      <stop offset="95%" stop-color="red" />
+    </radialGradient>
+  </defs>
+  <circle cx="35%" cy="25%" r="50" style="fill:url(#hydrogen)"/>
+  <circle cx="35%" cy="75%" r="50" style="fill:url(#hydrogen)"/>
+
+  <defs>
+    <radialGradient id="oxygen" fx = "75%" fy = "25%">
+      <stop offset="10%" stop-color="black"/>
+      <stop offset="95%" stop-color="blue"/>
+    </radialGradient>
+  </defs>
+  <circle cx="60%" cy="50%" r="100" style="fill:url(#oxygen);"/>
+
+</svg>

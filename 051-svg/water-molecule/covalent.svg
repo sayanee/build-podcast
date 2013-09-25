@@ -1,0 +1,39 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="350">
+
+  <defs>
+    <style type="text/css"><![CDATA[
+      svg {background-color: beige; margin: 2em 0; }
+      text {font-family: Helvetica Neue; }
+      circle {fill: none; stroke: black; stroke-width: 3; }
+      #electrons circle {fill: red; stroke: none;}
+      #pairing-electron circle {fill: green; stroke: none; }
+    ]]>
+    </style>
+  </defs>
+
+  <circle cx="50%" cy="140" r="120"/>
+  <circle cx="50%" cy="140" r="80"/>
+  <circle cx="25%" cy="260" r="50"/>
+  <circle cx="75%" cy="260" r="50"/>
+
+  <g id="electrons">
+    <circle cx="28%" cy="42" r="8"/>
+    <circle cx="72%" cy="42" r="8"/>
+    <circle cx="22%" cy="55" r="8"/>
+    <circle cx="78%" cy="55" r="8"/>
+    <circle cx="50%" cy="58" r="8"/>
+    <circle cx="50%" cy="218" r="8"/>
+    <circle cx="28%" cy="225" r="8"/>
+    <circle cx="72%" cy="225" r="8"/>
+  </g>
+
+  <g id="pairing-electron">
+    <circle cx="34%" cy="235" r="8"/>
+    <circle cx="66%" cy="235" r="8"/>
+  </g>
+
+  <text x="50%" y="155" font-size="40" fill="red" transform="translate(-20)">O</text>
+  <text x="78%" y="290" font-size="40" fill="green" transform="translate(-20)">H</text>
+  <text x="26%" y="290" font-size="40" fill="green" transform="translate(-20)">H</text>
+
+</svg>
