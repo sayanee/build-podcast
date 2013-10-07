@@ -8,8 +8,9 @@ var clc = require('cli-color');
 // options and arguments
 program
   .version('0.0.1')
-  .option('-d, --demo <type>', 'Name of the demo folder')
-  .option('-v, --video <type>', 'Name of the unnormalised video file')
+  .option('-f, --folder <type>', 'Add demo folder name')
+  .option('-n, --num <type>', 'Add episode number NNN')
+  .option('-e, --episode_lowercase <type>', 'Add episode name in lowercase E.g. virtualbox')
   .parse(process.argv);
 
 // project specific variables
@@ -17,20 +18,31 @@ var config = {
 
 }
 
-// ------------ Video formatting  ------------ //
-console.log('\nYou have started a new Build Podcast episode:');
-console.log('%s %s to be published on %s', program.num, program.episode, program.date + '\n');
+if (program.folder && program.num && program.episode_lowercase) {
 
-// ------------ Stop Apache server -----------//
-sh.run('sudo apachectl stop');
+  console.log('\nYou have started to publish new Build Podcast episode:');
+
+  // ------------ Stop Apache server -----------//
+  console.log('Stopping apache server');
+  sh.run('sudo apachectl stop');
+
+  // ------------ Video normalisation -----------//
+  sh.run('norm ' + program.num + '-' + program.episode_lowercase + '.mp4');
+  console.log('\nNormalised video');
+
+  // ------------ Copy demo files -----------//
+
+  // ------------ Video upload to FTP  ------------ //
 
 
-// ------------ Video upload to FTP  ------------ //
+
+  // ------------ Video upload to YouTube  ------------ //
 
 
 
-// ------------ Video upload to YouTube  ------------ //
+  // ------------ Video upload to Vimeo  ------------ //
 
-
-
-// ------------ Video upload to Vimeo  ------------ //
+} else {
+  console.log('Missing arguments :(');
+  program.help();
+}
