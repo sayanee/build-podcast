@@ -44,10 +44,10 @@ When preparing the show notes in local machine, execute the following in the com
     
 If there's and error for invalid byte sequence in US-ASCII, try to reset the locale settings
 
-```
-LC_CTYPE="en_US.UTF-8"
-LANG="en_US.UTF-8"
-```
+    ```
+    LC_CTYPE="en_US.UTF-8"
+    LANG="en_US.UTF-8"
+    ```
 
 ##Automation
 
@@ -55,11 +55,13 @@ Automation with [scripts](/scripts):
 
 a. After exporting the edited video, normalise audio with the [shell script norm](/scripts/norm) which will output an mp4 video file:
 
+    
     ```
     $ norm screencast.mov
     ```
 
 a. Upload `screencast.mp4` via ftp using the [shell script fit-build](/scripts/ftp-build) that will upload the latest file (screencast.mp4) on the Desktop:
+
 
     ```
     $ ftp-build [server] [username] [password]
@@ -72,6 +74,6 @@ All content belongs to YOU under [CC0 1.0 Public Domain Dedication](http://creat
 
 ##Donate
 
-I buy eBooks, electronics and good chocolates with the donated money :)
+I buy eBooks, electronics and good chocolates for myself with the donated money :)
 
 <a href='http://www.pledgie.com/campaigns/19089'><img alt='Click here to lend your support to: Build Podcast and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/19089.png?skin_name=chrome' border='0' /></a>
