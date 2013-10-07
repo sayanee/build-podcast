@@ -1,0 +1,35 @@
+@media only screen and (max-width: 960px)
+  .header, .post, .search
+    width: 95%
+  .social li
+    margin: 0 4%
+
+@media only screen and (max-width: 800px)
+  .logo
+    margin: 0
+    display: inline-block
+  .social
+    width: 50%
+    li
+      margin: 0 7%
+    &:nth-of-type(1)
+      right: 0
+      top: 10%
+      left: auto
+    &:nth-of-type(2)
+      right: 0
+      top: 55%
+      left: auto
+
+@media only screen and (max-width: 600px)
+  .logo
+    width: 150px
+  .searchable
+    font-size: 1em
+    margin: .3em .1em
+  .search
+    font-size: 1.5em
+  .social
+    font-size: .8em
+    li
+      margin: 0 2%

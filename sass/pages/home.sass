@@ -1,0 +1,68 @@
+.search
+  width: 50%
+  margin: 0 auto 50px auto
+  display: block
+  font-size: 2em
+  text-align: center
+  outline: none
+  border: 2px solid $grey
+  padding: .2em
+  color: $black
+  border-radius: .2em
+  &:focus
+    background-color: lighten($grey, 15%)
+
+::-webkit-input-placeholder
+  color: $grey
+
+.list
+  list-style-type: none
+  font-family: $serif
+  margin: 0 auto
+  display: block
+  width: 95%
+  padding: 0
+
+.searchable
+  display: inline-block
+  vertical-align: top
+  text-align: center
+  font-size: 1.3em
+  cursor: pointer
+  text-transform: uppercase
+  position: relative
+  margin: .5em
+  a
+    padding: .5em
+    width: 100%
+    height: 100%
+    border-radius: 5px
+    text-decoration: none
+  &:nth-child(4n+1) a
+    color: $black
+  &:nth-child(3n+2) a
+    color: $turquoise
+  &:nth-child(4n+3) a
+    color: $turquoise
+  &:nth-child(4n) a
+    color: $grey
+  &:nth-child(13n) a
+    color: $orange
+  &:first-child a
+    background-color: $orange
+    color: white
+  &:hover
+    a
+      background-color: $turquoise
+      color: white
+    .latest
+      color: $turquoise
+
+.latest
+  position: absolute
+  top: -2.3em
+  left: 0
+  color: $orange
+  text-align: left
+  text-transform: lowercase
+  font-size: .5em

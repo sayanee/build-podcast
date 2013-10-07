@@ -1,0 +1,9 @@
+{
+  "name": "build-podcast-scripts",
+  "version": "0.0.1",
+  "dependencies": {
+    "commander": "latest",
+    "execSync": "latest",
+    "cli-color": "latest"
+  }
+}

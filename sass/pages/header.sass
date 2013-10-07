@@ -1,0 +1,35 @@
+.header
+  width: $width-fixed
+  margin: 0 auto 1em auto
+  overflow: hidden
+  position: relative
+
+.logo
+  display: block
+  margin: 0 auto
+  width: 18%
+  &:hover
+    background-color: lighten($grey, 15%)
+
+.social
+  list-style: none
+  display: block
+  margin: 0
+  padding: 0
+  position: absolute
+  top: 25%
+  width: 30%
+  li
+    float: left
+    margin: 0 7%
+    a
+      font-family: 'Social'
+      text-decoration: none
+      font-size: 4em
+      color: $social
+      &:hover, &:active
+        color: $turquoise
+  &:nth-of-type(1)
+    left: 0
+  &:nth-of-type(2)
+    right: 0

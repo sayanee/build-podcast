@@ -1,0 +1,10 @@
+---
+layout: default
+title: Screencasts on tech tools
+---
+
+<input class="search" id="search" placeholder="search episodes"/>
+
+<ul class="list">{% for post in site.posts %}
+  <li class="searchable" data-index="{{ post.title_lowercase }}"><a href="{{ site.url }}{{ post.url }}"><span class="name">{{ post.title }}</span></a>{% if post.next == nil %}<span class="latest">&rarr; latest: {{ post.date | date:"%b %d %Y" }}</span>{% endif %}</li>{% endfor %}
+</ul>

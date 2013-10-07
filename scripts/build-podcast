@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+// modules
+var program = require('commander');
+var sh = require("execSync");
+var clc = require('cli-color');
+
+// options and arguments
+program
+  .version('0.0.1')
+  .parse(process.argv);
+
+// project specific variables
+var config = {
+  directory: '/Users/sayanee/Sites/build-podcast/',
+  shownotesDir: 'shownotes/',
+  postsDir: '_posts/',
+  app: {
+    tower: '/Applications/Tower.app',
+    dash: '/Applications/Dash.app'
+  }
+}
+
+sh.run('open ' + config.directory + config.shownotesDir + config.postsDir);
+var lastAlphabeticalFile = sh.exec('cd ' + config.directory + config.shownotesDir + config.postsDir + '; ls | tail -n 1');
+sh.run('open ' + config.directory + config.shownotesDir + config.postsDir + lastAlphabeticalFile.stdout);
+sh.run('open ' + config.app.tower + ' ' + config.app.dash);
+console.log(clc.red('On-going episode is now opened!'));

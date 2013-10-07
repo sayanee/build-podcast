@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+// modules
+var program = require('commander');
+var sh = require("execSync");
+var clc = require('cli-color');
+
+// options and arguments
+program
+  .version('0.0.1')
+  .option('-d, --demo <type>', 'Name of the demo folder')
+  .option('-v, --video <type>', 'Name of the unnormalised video file')
+  .parse(process.argv);
+
+// project specific variables
+var config = {
+
+}
+
+// ------------ Video formatting  ------------ //
+console.log('\nYou have started a new Build Podcast episode:');
+console.log('%s %s to be published on %s', program.num, program.episode, program.date + '\n');
+
+// ------------ Video upload to FTP  ------------ //
+
+
+
+// ------------ Video upload to YouTube  ------------ //
+
+
+
+// ------------ Video upload to Vimeo  ------------ //

@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+// modules
+var program = require('commander');
+var sh = require("execSync");
+var clc = require('cli-color');
+
+// options and arguments
+program
+  .version('0.0.1')
+  .parse(process.argv);
+
+// project specific variables
+var config = {
+  directory: '/Users/sayanee/Sites/build-podcast/',
+  shownotesDir: 'shownotes/',
+  postsDir: '_posts/',
+  app: {
+    tower: '/Applications/Tower.app'
+  }
+}
+
+var shownotes = config.directory + config.shownotesDir;
+
+sh.run('cd ' + shownotes + '; git checkout gh-pages');
+console.log('Changed to git branch gh-pages');
+
+sh.run('open ' + shownotes);
+console.log('Opened project folder');
+
+sh.run('subl ' + shownotes);
+console.log('Opened project in the text editor');
+
+sh.run('open ' + config.app.tower);
+console.log('Opened Tower');
+
+sh.run('tmuxinator build-podcast');
+
+console.log(clc.red('Ready to edit the website!'));

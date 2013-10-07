@@ -1,0 +1,78 @@
+---
+layout: nil
+date: 2013-09-15 13:00:00
+---
+
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule"
+  xmlns:media="http://search.yahoo.com/mrss/"
+  xmlns:atom="http://www.w3.org/2005/Atom">
+
+  <channel>
+    <title>Build Podcast</title>
+    <link>{{ site.url }}</link>
+    <description>Build Podcast is a show about technology tools for design and development. Each episode, Sayanee will be creating a screencast that will take you through step-by-step in using one tool to build a little project, all in the fun spirit of hacking, creating and building stuff!</description>
+    <language>en-us</language>
+
+    <itunes:explicit>no</itunes:explicit>
+
+    <itunes:summary>Build Podcast is a show about technology tools for design and development. Each episode, Sayanee will be creating a screencast that will take you through step-by-step in using one tool to build a little project, all in the fun spirit of hacking, creating and building stuff!</itunes:summary>
+    <itunes:subtitle>Build Podcast is a show about technology tools for design and development. Each episode, Sayanee will be creating a screencast that will take you through step-by-step in using one tool to build a little project, all in the fun spirit of hacking, creating and building stuff!</itunes:subtitle>
+
+    <itunes:author>Sayanee</itunes:author>
+    <itunes:owner>
+      <itunes:email>sayanee@gmail.com</itunes:email>
+      <itunes:name>Sayanee</itunes:name>
+    </itunes:owner>
+
+    <itunes:image href="{{ site.url }}/logo-1400.jpg" />
+    <image>
+      <title>Build Podcast</title>
+      <width>100</width>
+      <height>100</height>
+      <link>{{ site.url }}</link>
+      <url>{{ site.url }}/logo-100.jpg</url>
+    </image>
+    <atom:link rel="self" type="application/rss+xml" title="Build Podcast" href="{{ site.url }}/feed.xml" />
+
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml" href="http://feeds.feedburner.com/BuildPodcastVideos" />
+    <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" />
+
+    <itunes:owner>
+      <itunes:email>sayanee@gmail.com</itunes:email>
+      <itunes:name>Sayanee</itunes:name>
+    </itunes:owner>
+
+    <itunes:keywords>software, hardware, how-to, build, programming, plugin, tools, apps, tutorial, screencast, development, hacking, coding</itunes:keywords>
+    <itunes:category text="Technology">
+      <itunes:category text="Software How-To" />
+    </itunes:category>
+
+    <creativeCommons:license>http://creativecommons.org/publicdomain/zero/1.0/</creativeCommons:license>
+
+    {% for post in site.posts %}
+    <item>
+      <title>{{ post.title }}</title>
+      <itunes:author>Sayanee</itunes:author>
+
+      <itunes:subtitle>{{ post.description }}</itunes:subtitle>
+      <itunes:summary>{{ post.description }}</itunes:summary>
+
+      <guid isPermaLink="false">{{ post.enclosure }}</guid>
+      <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+      <author>Sayanee</author>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:keywords>{{ post.tags }}</itunes:keywords>
+
+      <enclosure url="{{ post.enclosure }}" length="{{ post.length }}" type="video/mp4" />
+      <content:encoded>{{ post.description }}</content:encoded>
+      <itunes:image href="{{ site.url }}/logo-1400.jpg" />
+    </item>
+    {% endfor %}
+
+  </channel>
+</rss>
+
+

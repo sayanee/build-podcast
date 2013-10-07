@@ -1,0 +1,28 @@
+{
+  "name": "build-podcast",
+  "version": "1.0.0",
+  "author": "Sayanee <sayanee@gmail.com>",
+  "description": "screencasts for tech tools",
+  "contributors": [
+    {
+      "name": "Chinmay",
+      "email": "notthetup@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sayanee/build-podcast.git"
+  },
+  "keywords": [
+    "screencast",
+    "tools"
+  ],
+  "devDependencies": {
+    "grunt": "0.4.1",
+    "grunt-cli": "0.1.9",
+    "grunt-contrib-clean": "0.5.0",
+    "grunt-contrib-compass": "0.5.0",
+    "grunt-contrib-uglify": "0.2.4",
+    "grunt-contrib-watch": "0.5.3"
+  }
+}

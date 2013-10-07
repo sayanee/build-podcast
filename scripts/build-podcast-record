@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+// modules
+var program = require('commander');
+var sh = require('execSync');
+var clc = require('cli-color');
+
+// options and arguments
+program
+  .version('0.0.1')
+  .parse(process.argv);
+
+// project specific variables
+var config = {
+  directory: '/Users/sayanee/Sites/build-podcast/',
+  shownotesDir: 'shownotes/',
+  processDir: 'process/',
+  postsDir: '_posts/'
+}
+
+sh.run('sudo apachectl start; open http://dev.build-podcast.com');
+sh.run('subl ' + config.directory + config.processDir + '; open ' + config.directory + config.processDir + 'img/');
+console.log('Start screen is opened');
+
+var lastAlphabeticalFile = sh.exec('cd ' + config.directory + config.shownotesDir + config.postsDir + '; ls | tail -n 1');
+sh.run('open ' + config.directory + config.shownotesDir + config.postsDir + lastAlphabeticalFile.stdout);
+console.log(lastAlphabeticalFile.stdout);
+
+sh.run('open "/Applications/QuickTime Player.app"');
+console.log('QuickTime opened');
+
+sh.run('open "/Applications/Utilities/Audio MIDI Setup.app"');
+console.log('Audio Midi opened');
+
+sh.run('osascript -e \'tell app "System Preferences" to set current pane to pane "fr.madrau.switchresx.prefpane"\'');
+console.log('System Preferences opened');
+
+console.log(clc.red('Ready to record the show!'));

@@ -1,0 +1,6 @@
+name: Build Podcast
+destination: ./_publish
+permalink: /:title
+exclude: ['sass', 'node_modules', 'Gruntfile.js', 'package.json', 'readme.md', 'js', 'scripts', 'build-podcas.yml']
+markdown: redcarpet
+url: http://localhost:4000

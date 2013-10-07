@@ -1,4 +1,4 @@
-####[Build Podcast](http://build-podcast.com) is a show about technology tools for design and development. Each week, [Sayanee](http://sayan.ee) will be creating a screencast that will take you through step-by-step in using one tool to build a little project, all in the fun spirit of hacking, creating and building stuff!
+####[Build Podcast](http://build-podcast.com) is a show about technology tools for design and development. Each episode, [Sayanee](http://sayan.ee) will be creating a screencast that will take you through step-by-step in using one tool to build a little project, all in the fun spirit of hacking, creating and building stuff!
 
 Related links:
 
@@ -19,12 +19,52 @@ Related links:
 
 When preparing the show notes in local machine, execute the following in the command line:
 
-   - **to add new posts**: `jekyll serve --watch --config _dev_config.yml` to start the [Jekyll](http://jekyllrb.com/) server with development configurations
-   - **to edit css and javascript**: `grunt` to start the [GruntJS](http://gruntjs.com/) continuous compilation for CSS and JavaScript
+   - **to build**: 
+   
+       ```
+       LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll build
+       ```
+
+   - **to add new posts**:  to start the [Jekyll](http://jekyllrb.com/) server with development configurations
+       
+       ```
+       LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll serve --watch --config _dev_config.yml
+       ```
+   - **to edit css and javascript**: to start the [GruntJS](http://gruntjs.com/) continuous compilation for CSS and JavaScript
+   
+       ```
+       grunt
+       ``` 
+
+If there's and error for invalid byte sequence in US-ASCII, try to reset the locale settings
+
+```
+LC_CTYPE="en_US.UTF-8"
+LANG="en_US.UTF-8"
+```
+
+##Automation
+
+Automation with [scripts](/scripts):
+
+a. Start a new episode with a new folder and a readme file with [shell script start-build](/scripts/start-build):
+    ```
+    $ start-build [episode number] [lowercase topic] [uppercase topic]
+    ```
+
+b. After exporting the edited video, normalise audio with the [shell script norm](/scripts/norm) which will output an mp4 video file:
+    ```
+    $ norm screencast.mov
+    ```
+
+c. Upload `screencast.mp4` via ftp using the [shell script fit-build](/scripts/ftp-build) that will upload the latest file (screencast.mp4) on the Desktop:
+    ```
+    $ ftp-build [server] [username] [password]
+    ```
 
 ##License
 
-[Build Podcast](http://build-podcast.com/) by [Sayanee](http://sayan.ee/) is licensed under a [CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](http://creativecommons.org/publicdomain/zero/1.0/). You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
+All content belongs to YOU under [CC0 1.0 Public Domain Dedication](http://creativecommons.org/publicdomain/zero/1.0/). You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
 
 
 ##Donate

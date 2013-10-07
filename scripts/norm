@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# This script takes a movie *.mov file and outputs with its normalized audio
+# USAGE in the command line:
+# norm movie.mov
+
+# declare usage response string
+USAGE="Usage: `basename $0` [screencast-file]"
+
+# check number of input arguments
+if [ $# -ne 1 ]; then
+  echo $USAGE;
+  exit -1;
+fi
+
+# extract filename without the extension
+FILENAME=${1%%.*}
+
+# change format from mov to mp4 for web video
+ffmpeg -i $1 -c copy temp.mp4
+echo "======================================"
+echo "CREATED mp4"
+echo "======================================"
+
+# extract just the audio from the video file
+ffmpeg -i temp.mp4 audio.wav
+echo "======================================"
+echo "EXTRACT AUDIO to audio.wav"
+echo "======================================"
+
+# normalize the audio
+sox audio.wav temp.wav compand 1,2 -80,-80,-55,-15,-10,-10,0,0 -7 -30 1 &&
+sox temp.wav leveled-output.wav --norm
+echo "======================================"
+echo "NORMALISE AUDIO to leveled-output.wav"
+echo "======================================"
+
+# recombine with the normalised audio with the video
+ffmpeg -i temp.mp4 -i leveled-output.wav -vcodec copy -acodec aac -strict experimental -ac 2 -ab 114k -map 0:0 -map 1:0 $FILENAME.mp4
+echo "======================================"
+echo "RECOMBINE AUDIO in mp4"
+echo "======================================"
+
+# remove temporary files created
+rm temp.mp4 audio.wav leveled-output.wav temp.wav
+echo "======================================"
+echo "REMOVE ALL TEMP FILES"
+echo "======================================"
+
+
+echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+echo "Hurray!! New mp4 video with "
+echo "normalised audio has been created :-)"
+echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
