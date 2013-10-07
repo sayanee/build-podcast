@@ -14,12 +14,12 @@ program
 var config = {
   directory: '/Users/sayanee/Sites/build-podcast/',
   shownotesDir: 'shownotes/',
-  processDir: 'process/',
   postsDir: '_posts/'
 }
 
+sh.run('open ' + config.directory + config.shownotesDir + 'start');
+sh.run('subl ' + config.directory + config.shownotesDir + 'start/index.html');
 sh.run('sudo apachectl start; open http://dev.build-podcast.com');
-sh.run('subl ' + config.directory + config.processDir + '; open ' + config.directory + config.processDir + 'img/');
 console.log('Start screen is opened');
 
 var lastAlphabeticalFile = sh.exec('cd ' + config.directory + config.shownotesDir + config.postsDir + '; ls | tail -n 1');
