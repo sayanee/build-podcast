@@ -24,15 +24,15 @@ console.log('Start screen is opened');
 
 var lastAlphabeticalFile = sh.exec('cd ' + config.directory + config.shownotesDir + config.postsDir + '; ls | tail -n 1');
 sh.run('open ' + config.directory + config.shownotesDir + config.postsDir + lastAlphabeticalFile.stdout);
-console.log(lastAlphabeticalFile.stdout);
+console.log(lastAlphabeticalFile.stdout + ' opened for reference');
 
 sh.run('open "/Applications/QuickTime Player.app"');
-console.log('QuickTime opened');
+console.log('QuickTime opened for recording');
 
 sh.run('open "/Applications/Utilities/Audio MIDI Setup.app"');
-console.log('Audio Midi opened');
+console.log('Audio Midi opened for mic adjustment');
 
 sh.run('osascript -e \'tell app "System Preferences" to set current pane to pane "fr.madrau.switchresx.prefpane"\'');
-console.log('System Preferences opened');
+console.log('System Preferences opened for screen resolution adjustment');
 
 console.log(clc.red('Ready to record the show!'));
