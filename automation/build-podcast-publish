@@ -21,6 +21,10 @@ var config = {
 console.log('\nYou have started a new Build Podcast episode:');
 console.log('%s %s to be published on %s', program.num, program.episode, program.date + '\n');
 
+// ------------ Stop Apache server -----------//
+sh.run('sudo apachectl stop');
+
+
 // ------------ Video upload to FTP  ------------ //
 
 
