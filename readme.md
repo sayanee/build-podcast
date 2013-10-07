@@ -13,11 +13,9 @@ Related links:
 
 ##Development
 
-**Sample code**: [git branch `master`](https://github.com/sayanee/build-podcast)
+This Github repository consists of sample code for each episode and the entire website for [Build Podcast](http://build-podcast.com).
 
-**Show notes**: [git branch `gh-pages`](https://github.com/sayanee/build-podcast/tree/gh-pages) with contents in [Jekyll](http://jekyllrb.com/)
-
-When preparing the show notes in local machine, execute the following in the command line:
+When preparing the show notes in local machine, execute the following in the command line in git branch `master`:
 
    - **to build**: 
    
@@ -35,7 +33,15 @@ When preparing the show notes in local machine, execute the following in the com
        ```
        grunt
        ``` 
-
+   - **to sync to the github pages** change to git branch `gh-pages` and do a git rebase
+    
+       ```
+       git checkout gh-pages 
+       git rebase master 
+       git push origin gh-pages 
+       git checkout master 
+       ```
+    
 If there's and error for invalid byte sequence in US-ASCII, try to reset the locale settings
 
 ```
@@ -47,17 +53,14 @@ LANG="en_US.UTF-8"
 
 Automation with [scripts](/scripts):
 
-a. Start a new episode with a new folder and a readme file with [shell script start-build](/scripts/start-build):
-    ```
-    $ start-build [episode number] [lowercase topic] [uppercase topic]
-    ```
+a. After exporting the edited video, normalise audio with the [shell script norm](/scripts/norm) which will output an mp4 video file:
 
-b. After exporting the edited video, normalise audio with the [shell script norm](/scripts/norm) which will output an mp4 video file:
     ```
     $ norm screencast.mov
     ```
 
-c. Upload `screencast.mp4` via ftp using the [shell script fit-build](/scripts/ftp-build) that will upload the latest file (screencast.mp4) on the Desktop:
+a. Upload `screencast.mp4` via ftp using the [shell script fit-build](/scripts/ftp-build) that will upload the latest file (screencast.mp4) on the Desktop:
+
     ```
     $ ftp-build [server] [username] [password]
     ```
@@ -68,5 +71,7 @@ All content belongs to YOU under [CC0 1.0 Public Domain Dedication](http://creat
 
 
 ##Donate
+
+I buy eBooks, electronics and good chocolates with the donated money :)
 
 <a href='http://www.pledgie.com/campaigns/19089'><img alt='Click here to lend your support to: Build Podcast and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/19089.png?skin_name=chrome' border='0' /></a>
