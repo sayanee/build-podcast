@@ -8,6 +8,7 @@ var spawn = require('child_process').spawn;
 var clc = require('cli-color');
 var Client = require('ftp');
 var fs = require('fs');
+var ncp = require('ncp').ncp;
 
 // options and arguments
 program
@@ -22,6 +23,11 @@ if (program.config) {
   var data = fs.readFileSync(configFile);
   data = JSON.parse(data);
   console.log(clc.red('Data from the config file:'));
+  data.folder = data.num + '-' + data.episodeLowercase;
+  data.video = data.folder + '.mp4';
+  data.path = 'public_html/build/videos/' + data.video;
+  data.title = 'Build Podcast ' + data.num + ' ' + data.episode;
+  data.description = 'Show notes: http://build-podcast.com/' + data.episodeLowercase;
   console.log(data);
 
   // Stop Apache server
@@ -61,7 +67,7 @@ if (program.config) {
         'youtube-upload --email=' + data.youtubeEmail + ' --password=' + data.youtubePassword + ' --add-to-playlist=' + data.youtubePlaylist + ' ' + stdout,
         function(err, stdout, stderr) {
           if (err) throw err;
-          console.log(clc.red('Youtube video added to playlist: ' + data.youtubePlaylist));
+          console.log(clc.red('Youtube video added to playlist: ' + data.youtubePlaylistURL));
           spawn('open', [ data.youtubePlaylistURL ]);
       });
 
@@ -70,6 +76,14 @@ if (program.config) {
   // Upload video to Vimeo
 
   // Copy demo source code to repo
+  var source = data.desktopPath + data.episodeLowercase;
+  var destination = data.repoPath + data.num + '-' + data.episodeLowercase;
+  ncp(source, destination, function (err) {
+   if (err) {
+     return console.error(err);
+   }
+   console.log('Demo source code files are transferred.');
+  });
 
   // Commit and push to github pages
 

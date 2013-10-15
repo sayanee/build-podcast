@@ -5,6 +5,7 @@
     "commander": "latest",
     "execSync": "latest",
     "cli-color": "latest",
-    "ftp": "latest"
+    "ftp": "latest",
+    "ncp": "latest"
   }
 }
