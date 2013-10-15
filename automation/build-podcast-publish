@@ -2,45 +2,76 @@
 
 // modules
 var program = require('commander');
-var sh = require("execSync");
+var sh = require('execSync');
+var exec = require('child_process').exec;
+var spawn = require('child_process').spawn;
 var clc = require('cli-color');
+var Client = require('ftp');
+var fs = require('fs');
 
 // options and arguments
 program
   .version('0.0.1')
-  .option('-f, --folder <type>', 'Add demo folder name')
-  .option('-n, --num <type>', 'Add episode number NNN')
-  .option('-e, --episode_lowercase <type>', 'Add episode name in lowercase E.g. virtualbox')
+  .option('-c, --config <type>', 'Config file in JSON E.g. publish.json')
   .parse(process.argv);
 
-// project specific variables
-var config = {
+if (program.config) {
 
-}
+  // Read config file
+  var configFile = program.config;
+  var data = fs.readFileSync(configFile);
+  data = JSON.parse(data);
+  console.log(clc.red('Data from the config file:'));
+  console.log(data);
 
-if (program.folder && program.num && program.episode_lowercase) {
-
-  console.log('\nYou have started to publish new Build Podcast episode:');
-
-  // ------------ Stop Apache server -----------//
-  console.log('Stopping apache server');
+  // Stop Apache server
+  console.log(clc.blue('Stopping Apache server. Please put your password'));
   sh.run('sudo apachectl stop');
+  console.log(clc.red('Stopped apache server'));
 
-  // ------------ Video normalisation -----------//
-  sh.run('norm ' + program.num + '-' + program.episode_lowercase + '.mp4');
-  console.log('\nNormalised video');
+  // Normalise video
+  console.log(clc.blue('Normalising the audio in the screencast video file'));
+  sh.run('norm ' + data.video);
+  console.log(clc.red('Normalised video: ' + data.video));
 
-  // ------------ Copy demo files -----------//
+  // Upload video via FTP
+  console.log(clc.blue('Uploading video with FTP'));
+  var c = new Client();
+  c.on('ready', function() {
+    c.put(data.video, data.path , function(err) {
+      if (err) throw err;
+      c.end();
+      console.log(clc.red('Video file uploaded: http://video.build-podcast.com/' + data.video));
+      spawn('open', [ 'http://video.build-podcast.com/'.concat(data.video) ]);
+    });
+  });
+  c.connect(data);
 
-  // ------------ Video upload to FTP  ------------ //
+  // Upload video to YouTube and add to playlist
+  console.log(clc.blue('Uploading video to Youtube'));
+  exec(
+    'youtube-upload --email=' + data.youtubeEmail + ' --password=' + data.youtubePassword + ' --title="' + data.title + '" --description="' + data.description + '" --category="Tech" --keywords="' + data.tags + '" ' + data.video,
+    function(err, stdout, stderr) {
 
+      if (err) throw err;
+      console.log(clc.red('Youtube video url: ' + stdout));
+      spawn('open', [ stdout ]);
 
+      exec(
+        'youtube-upload --email=' + data.youtubeEmail + ' --password=' + data.youtubePassword + ' --add-to-playlist=' + data.youtubePlaylist + ' ' + stdout,
+        function(err, stdout, stderr) {
+          if (err) throw err;
+          console.log(clc.red('Youtube video added to playlist: ' + data.youtubePlaylist));
+          spawn('open', [ data.youtubePlaylistURL ]);
+      });
 
-  // ------------ Video upload to YouTube  ------------ //
+  });
 
+  // Upload video to Vimeo
 
+  // Copy demo source code to repo
 
-  // ------------ Video upload to Vimeo  ------------ //
+  // Commit and push to github pages
 
 } else {
   console.log('Missing arguments :(');

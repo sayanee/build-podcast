@@ -4,6 +4,7 @@
   "dependencies": {
     "commander": "latest",
     "execSync": "latest",
-    "cli-color": "latest"
+    "cli-color": "latest",
+    "ftp": "latest"
   }
 }
