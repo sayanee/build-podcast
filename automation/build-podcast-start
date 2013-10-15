@@ -35,9 +35,7 @@ if (program.date && program.num && program.episode_lowercase && program.episode)
   console.log('%s %s to be published on %s', program.num, program.episode, program.date + '\n');
 
   // create demo folder and readme.md inside it
-  sh.run('cd ' + config.directory + config.shownotesDir + '&& git checkout master;');
-  sh.run('mkdir ' + program.num + '-' + program.episode_lowercase);
-  sh.run('cd ' + program.num + '-' + program.episode_lowercase);
+  sh.run('mkdir ' + config.directory + config.shownotesDir + program.num + '-' + program.episode_lowercase);
   console.log('Demo directory created');
 
   var newReadme = config.directory + config.shownotesDir + program.num + '-' + program.episode_lowercase + '/' + config.readme;
@@ -59,12 +57,12 @@ if (program.date && program.num && program.episode_lowercase && program.episode)
 
   });
 
-  // ------------ Copy template and replace placeholders ------------ //
+  // Copy post template and replace placeholders
   var template = config.directory + config.templateDir + config.templatePost;
   var newFileName = program.date + '-' + program.episode_lowercase + '.md';
   sh.run('cp ' + template + ' ' + newFileName);
 
-  // ------------ Copy to final destination and delete temp file ------------ //
+  // Copy to final destination and delete temp file
   fs.readFile(newFileName, 'utf8', function(err, data) {
 
     if (err) {return console.log(err); }
@@ -84,6 +82,7 @@ if (program.date && program.num && program.episode_lowercase && program.episode)
 
   });
 
+  // open various files and folders made
   sh.run('open ' + config.directory + config.shownotesDir + config.readme);
   sh.run('open ' + config.directory + config.shownotesDir + config.postsDir);
   sh.run('open ' + config.app.tower);
