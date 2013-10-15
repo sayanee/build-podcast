@@ -21,6 +21,7 @@ if (program.config) {
   // Read config file
   var configFile = program.config;
   var data = fs.readFileSync(configFile);
+
   data = JSON.parse(data);
   console.log(clc.red('Data from the config file:'));
   data.folder = data.num + '-' + data.episodeLowercase;
@@ -28,7 +29,14 @@ if (program.config) {
   data.path = 'public_html/build/videos/' + data.video;
   data.title = 'Build Podcast ' + data.num + ' ' + data.episode;
   data.description = 'Show notes: http://build-podcast.com/' + data.episodeLowercase;
+  data.postFile = data.repoPath + '_posts/' + data.postDate + '-' + data.episodeLowercase + '.md';
   console.log(data);
+
+  var c = new Client();
+  var source = data.desktopPath + data.episodeLowercase;
+  var destination = data.repoPath + data.num + '-' + data.episodeLowercase;
+  var isUploadedToYoutube = false;
+  var isVideoNormalised = false;
 
   // Stop Apache server
   console.log(clc.blue('Stopping Apache server. Please put your password'));
@@ -42,13 +50,14 @@ if (program.config) {
 
   // Upload video via FTP
   console.log(clc.blue('Uploading video with FTP'));
-  var c = new Client();
   c.on('ready', function() {
     c.put(data.video, data.path , function(err) {
       if (err) throw err;
       c.end();
       console.log(clc.red('Video file uploaded: http://video.build-podcast.com/' + data.video));
       spawn('open', [ 'http://video.build-podcast.com/'.concat(data.video) ]);
+      isVideoNormalised = true;
+      updatePost();
     });
   });
   c.connect(data);
@@ -70,20 +79,37 @@ if (program.config) {
           console.log(clc.red('Youtube video added to playlist: ' + data.youtubePlaylistURL));
           spawn('open', [ data.youtubePlaylistURL ]);
       });
-
   });
 
   // Upload video to Vimeo
 
   // Copy demo source code to repo
-  var source = data.desktopPath + data.episodeLowercase;
-  var destination = data.repoPath + data.num + '-' + data.episodeLowercase;
   ncp(source, destination, function (err) {
-   if (err) {
-     return console.error(err);
-   }
-   console.log('Demo source code files are transferred.');
+    if (err) {
+      return console.error(err);
+    }
+    console.log('Demo source code files are transferred.');
   });
+
+  // Update post with tag and length information
+  function updatePost() {
+    fs.stat(data.video , function (err, stats) {
+      var videoSize = stats.size;
+
+      fs.readFile(data.postFile, 'utf8', function(err, fileContents) {
+
+        if (err) {return console.log(err); }
+        fileContents = fileContents.replace(/{{LENGTH}}/g, videoSize);
+        fileContents = fileContents.replace(/{{TAGS}}/g, data.tags);
+
+        fs.writeFile(data.postFile, fileContents, 'utf8', function(err) {
+          if (err) throw err;
+          console.log(clc.red('Meta data length and tags are added to the Post.'));
+        });
+
+      });
+    });
+  }
 
   // Commit and push to github pages
 
