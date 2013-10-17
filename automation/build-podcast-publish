@@ -37,6 +37,7 @@ if (program.config) {
   var destination = data.repoPath + data.num + '-' + data.episodeLowercase;
   var isUploadedToYoutube = false;
   var isVideoNormalised = false;
+  var isPostUpdated = false;
 
   // Stop Apache server
   console.log(clc.blue('Stopping Apache server. Please put your password'));
@@ -78,6 +79,7 @@ if (program.config) {
           if (err) throw err;
           console.log(clc.red('Youtube video added to playlist: ' + data.youtubePlaylistURL));
           spawn('open', [ data.youtubePlaylistURL ]);
+          isUploadedToYoutube = true;
       });
   });
 
@@ -98,20 +100,27 @@ if (program.config) {
 
       fs.readFile(data.postFile, 'utf8', function(err, fileContents) {
 
-        if (err) {return console.log(err); }
+        if (err) { return console.log(err); }
         fileContents = fileContents.replace(/{{LENGTH}}/g, videoSize);
         fileContents = fileContents.replace(/{{TAGS}}/g, data.tags);
 
         fs.writeFile(data.postFile, fileContents, 'utf8', function(err) {
           if (err) throw err;
           console.log(clc.red('Meta data length and tags are added to the Post.'));
+          isPostUpdated = true;
+          pushToGithub();
         });
 
       });
     });
   }
 
-  // Commit and push to github pages
+  // Gush to github pages and Jekyll gh-pages branch
+  function pushToGithub() {
+    if (isPostUpdated == true) {
+      sh.run('cd ' + config.repoPath + ' git push origin master && git status &&  git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master');
+    }
+  }
 
 } else {
   console.log('Missing arguments :(');
