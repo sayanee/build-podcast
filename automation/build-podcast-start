@@ -17,6 +17,7 @@ program
 
 // project specific variables
 var config = {
+  desktop: '/Users/sayanee/Desktop/',
   directory: '/Users/sayanee/Sites/build-podcast/',
   shownotesDir: 'shownotes/',
   templateDir: 'templates/',
@@ -36,7 +37,8 @@ if (program.date && program.num && program.episode_lowercase && program.episode)
 
   // create demo folder and readme.md inside it
   sh.run('mkdir ' + config.directory + config.shownotesDir + program.num + '-' + program.episode_lowercase);
-  console.log('Demo directory created');
+  sh.run('mkdir ' + config.desktop + program.episode_lowercase + ' && subl ' + config.desktop + program.episode_lowercase + '/ && open ' + config.desktop + program.episode_lowercase);
+  console.log('Demo directory created in repo and desktop');
 
   var newReadme = config.directory + config.shownotesDir + program.num + '-' + program.episode_lowercase + '/' + config.readme;
   sh.run('cp ' + config.directory + config.templateDir + config.readme + ' ' + newReadme);
