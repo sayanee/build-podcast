@@ -118,7 +118,8 @@ if (program.config) {
   // Gush to github pages and Jekyll gh-pages branch
   function pushToGithub() {
     if (isPostUpdated == true) {
-      sh.run('cd ' + config.repoPath + ' git push origin master && git status &&  git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master');
+      console.log('Ready to push to the github repo?');
+      consle.log('cd ' + config.repoPath + ' git push origin master && git status &&  git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master');
     }
   }
 
