@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require "thor"
+
+class App < Thor
+
+  desc "start NAME", "start a project with a NAME"
+  option :author
+  option :multiuser, :type => :boolean
+  def start(name, deadline)
+    puts "Started #{name}!"
+    puts "authored by #{options[:author]}" if options[:author]
+    puts "to be completed by #{deadline}"
+    puts "It will be multiuser!" if options[:multiuser]
+  end
+
+end
+
+App.start ARGV

@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var exec = require('child_process').exec;
+var fs = require('fs');
+var clc = require('cli-color');
+
+program
+  .version('0.0.1')
+  .option('-t, --html [file]', 'Add HTML file', 'index.html')
+  .option('-c, --css [file]', 'Add CSS file');
+
+program
+  .command('serve')
+  .description('Open the project in the browser')
+  .action(function() {
+    exec('python -m SimpleHTTPServer 8000');
+    exec('open http://localhost:8000');
+    console.log('SimpleHTTPServer is running');
+    console.log(clc.red('View the project at http://localhost:8000'));
+  });
+
+program.parse(process.argv);
+
+if (process.argv.length < 3) program.help();
+
+var templatePath = '~/Desktop/command-line-apps/commander/template/';
+
+if (program.css) {
+  exec('cp ' + templatePath + '_css ' + program.css + ' && cp ' + templatePath + '_html ' + program.html, function(error, stdout, stderr) {
+    if (error) { return console.log('Error: ' + error); }
+    console.log('Created html and css files!');
+
+    fs.readFile(program.html, 'utf8', function(error, data) {
+      if (error) { return console.log('Read file error: ' + error); }
+      data = data.replace(/{{STYLESHEET}}/g, program.css);
+      console.log('Stylesheet is linked!');
+
+      fs.writeFile(program.html, data, 'utf8', function(error) {
+        if (error) { return console.log('Write file error: ' + error); }
+        console.log(clc.blue('New files with linked style are created!'));
+      })
+    })
+  })
+}
+
