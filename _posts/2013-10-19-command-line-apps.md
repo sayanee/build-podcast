@@ -3,7 +3,7 @@ title: 053 Command line apps
 title_lowercase: 053 command-line-apps
 layout: post
 tags: tutorial, screencast, technology, development, cli, command line, terminal, thor, commander, ruby, node, shebang, options, arguments
-description: Command line apps
+description: Command line apps provide automation, one time batch processing or even execute an app in the command line. In this episode we will see how we can create such apps in cli using a programming language of our choice such as NodeJS and Ruby. We will then move on to create a full-fledged apps using Commander (with NodeJS) and Thor (with Ruby) to create a skeleton for a started web project.
 permalink: /command-line-apps/
 enclosure: http://video.build-podcast.com/053-command-line-apps.mp4
 length: 143078113
@@ -11,7 +11,7 @@ length: 143078113
 
 <div id="video"><iframe src="//player.vimeo.com/video/77273976" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 
-[Command line apps](#)
+Command line apps provide automation, one time batch processing or even execute an app in the command line. In this episode we will see how we can create such apps in cli using a programming language of our choice such as [NodeJS](http://nodejs.org/) and [Ruby](https://www.ruby-lang.org/en/). We will then move on to create a full-fledged apps using [Commander](http://visionmedia.github.io/commander.js/) (with NodeJS) and [Thor](http://whatisthor.com/) (with Ruby) to create a skeleton for a started web project.
 
 **Download video**: [mp4](http://video.build-podcast.com/053-command-line-apps.mp4)
 
@@ -33,7 +33,7 @@ length: 143078113
     - repeated tasks
     - loads of other packages/libraries
     - pipelining
-    
+
 1. Some terms:
 
     - **command**: E.g. `git` or `ssh` or `npm`
@@ -43,13 +43,13 @@ length: 143078113
     1. create a file with Shebang and shell commands
     1. change permission
     1. symlink the file to the user path (check bash profile)
-    
+
 1. create a file called `myinfo`
 
     ```
     #!/bin/bash
-     
-    echo $USER    
+
+    echo $USER
     ls -al
     ```
 1. check permissions - current user cannot execute it
@@ -74,7 +74,7 @@ length: 143078113
     drwxr-xr-x  3 sayanee  staff  102 Oct 18 07:49 .
     drwxr-xr-x+ 5 sayanee  staff  170 Oct 18 07:21 ..
     -rwxr--r--  1 sayanee  staff   31 Oct 18 07:44 myinfo
-    
+
     $ cd ~
     $ myinfo
     zsh: command not found: myinfo
@@ -106,26 +106,26 @@ length: 143078113
     #!/usr/bin/env ruby
 
     require "thor"
-    
+
     class App < Thor
-    
+
       desc "start", "start a project"
       def start
         puts "Started !"
       end
     end
-    
+
     App.start ARGV
     ```
     remember to change permission and symlink to the path in your profile
-    
+
     ```
     $ chmod u+x app
     $ ln -s /path/to/script/app /path/to/all/scripts/app
     ```
-    
+
     execute the following in the command line:
-    
+
     ```
     $ app
     $ app help
@@ -142,7 +142,7 @@ length: 143078113
     ...
     ```
     execute the following in the command line:
-    
+
     ```
     $ app start travel
     $ app start todolist
@@ -177,7 +177,7 @@ length: 143078113
     end
     ```
     execute it in the command line
-    
+
     ```
     app start todolist october --author "sayanee"
     ```
@@ -195,7 +195,7 @@ length: 143078113
     end
     ```
     execute it in the command line
-    
+
     ```
     $ app start todolist october --author "sayanee" --multiuser false
     $ app start todolist october --author "sayanee" --multiuser true
@@ -234,53 +234,53 @@ length: 143078113
     $ start
     Hello World in Command line ;-)
     ```
-1. add module dependencies - if `npm install -g` and `NODE_PATH` is [set in the path](http://stackoverflow.com/questions/12594541/npm-global-install-cannot-find-module)    
+1. add module dependencies - if `npm install -g` and `NODE_PATH` is [set in the path](http://stackoverflow.com/questions/12594541/npm-global-install-cannot-find-module)
 1. adding version and help - file contents of `start` now:
 
     ```
     #!/usr/bin/env node
 
     var program = require('commander');
-    
+
     program
       .version('0.0.1')
       .parse(process.argv);
-    
+
     console.log('Hello World in Command line ;-)');
     ```
 1. passing in options
 
     ```
     ...
-    
+
     program
       ...
       .option('-t, --html <file>', 'Add HTML file')
       .option('-c, --css <file>', 'Add CSS file')
       ...
-        
+
     console.log('Created html file: ' + program.html);
     console.log('Created css file: ' + program.css);
     ```
-    
+
     execute in the command line
-    
+
     ```
-    $ start --html index.html --css style.css 
+    $ start --html index.html --css style.css
     ```
 1. checking options
 
     ```
     if (process.argv.length < 3) program.help();
     ```
-    
+
     execute in the command line
-    
+
     ```
     $ start
     $ start --html index.html --css style.css
     ```
-    
+
 1. default options
 
     ```
@@ -294,20 +294,20 @@ length: 143078113
 
     ```
     ...
-    
+
     program
       .command('serve')
       .description('Open the project in the browser')
       .action(function(){
         console.log('opened!');
       });
-    
+
     program.parse(process.argv);
-    
+
     if (program.css) {
       console.log('Created html file: ' + program.html);
       console.log('Created css file: ' + program.css);
-    }    
+    }
     ```
 1. check for number of arguments/ options and display the default help
 
@@ -337,7 +337,7 @@ length: 143078113
         └── _html
     ```
     contents of `_html`:
-    
+
     ```
     <!doctype html>
     <html lang="en">
@@ -348,15 +348,15 @@ length: 143078113
       <title>My new webproject</title>
     </head>
     <body>
-    
+
     <h1>Hi there :-)</h1>
     <h2>A new web project is created!</h2>
-    
+
     </body>
     </html>
     ```
     contents of `_css`:
-    
+
     ```
     body {
       background-color: cornflowerblue;
@@ -377,29 +377,29 @@ length: 143078113
         console.log('View the new web project at http://localhost:8000');
       });
     ...
-    
+
     var templatePath = '~/Desktop/command-line-apps/template/';
 
     if (program.css) {
       exec('cp ' + templatePath + '_css ' + program.css + ' && cp ' + templatePath + '/_html ' + program.html,
         function(error, stdout, stderr) {
           if (error) { return console.log('Error: ' + error); }
-    
+
           fs.readFile(program.html, 'utf8', function(err, data) {
             if (err) { return console.log('Read file error: ' + err); }
-    
+
             var newData = '<link rel="stylesheet" href="' + program.css + '">';
             data = data.replace(/{{STYLESHEET}}/g, newData);
-    
+
             fs.writeFile(program.html, data, 'utf8', function(error) {
               if (error) { return console.log('Write file error: ' + err); }
               console.log('Created html file: ' + program.html);
               console.log('Created css file: ' + program.css);
             });
-    
+
           });
       });
-    
+
     }
     ```
 1. adding colors to the command line. ensure you already did a global install with `npm install -g cli-color`
@@ -421,7 +421,7 @@ length: 143078113
 1. in Ruby - [GLI](https://github.com/davetron5000/gli), [rainbow](https://github.com/sickill/rainbow), [gem-man](), [ronn](https://github.com/rtomayko/ronn)
 1. Node CLI app - [part 1](http://www.slalompoint.com/node-command-line-interface-p1/) and [part 2](http://www.slalompoint.com/node-command-line-interface-p2/)
 1. [Building your tools with Thor](http://blog.paracode.com/2012/05/17/building-your-tools-with-thor/)
-1. Examples of projects using Commander: [Jade](https://github.com/visionmedia/jade/blob/master/bin/jade.js), 
+1. Examples of projects using Commander: [Jade](https://github.com/visionmedia/jade/blob/master/bin/jade.js),
 
 ##Build Link of this episode
 [Web Tools Weekly](http://webtoolsweekly.com/)
