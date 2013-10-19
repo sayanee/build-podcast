@@ -18,10 +18,6 @@ program
 
 if (program.config) {
 
-  // Read config file
-  var configFile = program.config;
-  var data = fs.readFileSync(configFile);
-
   data = JSON.parse(data);
   console.log(clc.red('Data from the config file:'));
   data.folder = data.num + '-' + data.episodeLowercase;
@@ -29,7 +25,12 @@ if (program.config) {
   data.path = 'public_html/build/videos/' + data.video;
   data.title = 'Build Podcast ' + data.num + ' ' + data.episode;
   data.description = 'Show notes: http://build-podcast.com/' + data.episodeLowercase;
+  data.repoPath = data.bpPath + data.shownotesPath;
   data.postFile = data.repoPath + '_posts/' + data.postDate + '-' + data.episodeLowercase + '.md';
+
+  // Read config file
+  var configFile = data.repoPath + program.config;
+  var data = fs.readFileSync(configFile);
   console.log(data);
 
   var c = new Client();
@@ -46,7 +47,7 @@ if (program.config) {
 
   // Normalise video
   console.log(clc.blue('Normalising the audio in the screencast video file'));
-  sh.run('norm ' + data.video);
+  sh.run('norm ' + data.desktopPath + data.video);
   console.log(clc.red('Normalised video: ' + data.video));
 
   // Upload video via FTP
@@ -84,6 +85,7 @@ if (program.config) {
   });
 
   // Upload video to Vimeo
+    // replace post with video video url
 
   // Copy demo source code to repo
   ncp(source, destination, function (err) {
@@ -118,8 +120,13 @@ if (program.config) {
   // Gush to github pages and Jekyll gh-pages branch
   function pushToGithub() {
     if (isPostUpdated == true) {
+      // delete source code on desktop
+      // move video file from desktop to video folder
       console.log('Ready to push to the github repo?');
-      consle.log('cd ' + config.repoPath + ' git push origin master && git status &&  git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master');
+      console.log('cd ' + data.repoPath + ' git push origin master && git status &&  git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master');
+      // open up github page
+      // open up post.md file
+      // open up episode source code folder
     }
   }
 
