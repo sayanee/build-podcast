@@ -56,5 +56,6 @@ exclude: ['sass', 'node_modules', 'Gruntfile.js', 'package.json', 'readme.md', '
   '049-cloudflare',
   '050-dom',
   '051-svg',
-  '052-tmux'
+  '052-tmux',
+  '053-command-line-apps'
 ]
