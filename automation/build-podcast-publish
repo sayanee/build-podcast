@@ -18,6 +18,8 @@ program
 
 if (program.config) {
 
+  var data = fs.readFileSync(program.config);
+
   data = JSON.parse(data);
   console.log(clc.red('Data from the config file:'));
   data.folder = data.num + '-' + data.episodeLowercase;
@@ -29,8 +31,7 @@ if (program.config) {
   data.postFile = data.repoPath + '_posts/' + data.postDate + '-' + data.episodeLowercase + '.md';
 
   // Read config file
-  var configFile = data.repoPath + program.config;
-  var data = fs.readFileSync(configFile);
+
   console.log(data);
 
   var c = new Client();

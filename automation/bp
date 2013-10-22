@@ -1,0 +1,164 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var exec = require('child_process').exec;
+var sh = require('execSync');
+var clc = require('cli-color');
+var fs = require('fs');
+
+program.version('0.1.0');
+
+program
+  .command('new [configFile]')
+  .description('start a brand new episode with configuration data')
+  .action(function(configFile) {
+
+    var config, shellReturn, newReadme, templateReadme, newPost, templatePost;
+
+    if (!configFile) program.help();
+
+    config = extractConfig(configFile);
+
+    shellReturn = sh.exec('mkdir ' + config.repoDir + config.num + '-' + config.episodeLowercase);
+    if (shellReturn.code === 0) console.log('Created new sample code directory')
+    else console.log('Failed to create new sample code directory:\n' + shellReturn.stdout);
+
+    shellReturn = sh.exec('mkdir ' + config.desktopDir + config.episodeLowercase);
+    if (shellReturn.code === 0) console.log('Created new sample code directory in desktop')
+    else console.log('Failed to create new sample code directory in desktop:\n' + shellReturn.stdout);
+
+    shellReturn = sh.exec('open ' + config.desktopDir + config.episodeLowercase);
+    if (shellReturn.code === 0) console.log('Opened sample code directory in desktop')
+    else console.log('Failed to open new sample code directory in desktop:\n' + shellReturn.stdout);
+
+    shellReturn = sh.exec('subl ' + config.desktopDir + config.episodeLowercase);
+    if (shellReturn.code === 0) console.log('Opened sample code directory in desktop in text editor')
+    else console.log('Failed to open new sample code directory in desktop in text editor:\n' + shellReturn.stdout);
+
+    newReadme = config.repoDir + config.num + '-' + config.episodeLowercase + '/' + config.readme;
+    templateReadme = config.bpDir + config.templateDir + config.readme;
+
+    shellReturn = sh.exec('cp ' + templateReadme + ' ' + newReadme);
+    if (shellReturn.code === 0) console.log('Copied sample code readme from template')
+    else console.log('Failed to copy sample code readme from template:\n' + shellReturn.stdout);
+
+    fs.readFile(newReadme, 'utf8', function(error, data) {
+
+      if (error) { console.log(error); }
+      data = data.replace(/{{NUM}}/g, config.num);
+      data = data.replace(/{{EPISODE}}/g, config.episode);
+      data = data.replace(/{{EPISODE_LOWERCASE}}/g, config.episodeLowercase);
+
+      fs.writeFile(newReadme, data, 'utf8', function(error) {
+        if (error) { console.log(error); }
+        console.log('Sample code readme created with episode data');
+      });
+
+    });
+
+    templatePost = config.bpDir + config.templateDir + config.templatePost;
+    newPost = config.postDate + '-' + config.episodeLowercase + '.md';
+    console.log(templatePost);
+    console.log(newPost);
+
+    shellReturn = sh.exec('cp ' + templatePost + ' ' + newPost);
+    if (shellReturn.code === 0) console.log('Copied sample post from template')
+    else console.log('Failed to copy sample post from template:\n' + shellReturn.stdout);
+
+    fs.readFile(newPost, 'utf8', function(error, data) {
+
+      if (error) {return console.log(error); }
+
+      data = data.replace(/{{NUM}}/g, config.num);
+      data = data.replace(/{{EPISODE}}/g, config.episode);
+      data = data.replace(/{{EPISODE_LOWERCASE}}/g, config.episodeLowercase);
+
+      fs.writeFile(newPost, data, 'utf8', function(err) {
+        if (err) throw err;
+        sh.run('cp ' + newPost + ' ' + templatePost + ' && rm ' + newPost);
+        sh.run('open ' + config.bpDir + config.shownotesDir + newPost);
+
+        console.log(clc.red('Newly created post:\n'));
+      });
+
+    });
+
+  //   // open various files and folders made
+  //   sh.run('open ' + config.directory + config.shownotesDir + config.readme);
+  //   sh.run('open ' + config.directory + config.shownotesDir + config.postsDir);
+  });
+
+program
+  .command('serve [configFile]')
+  .description('run an on-going episode with configuration data')
+  .action(function(configFile) {
+
+    if (!configFile) program.help();
+
+    var config = extractConfig(configFile);
+    var shellReturn;
+
+    shellReturn = sh.exec('open ' + config.postDir);
+    if (shellReturn.code === 0) console.log('Opened post folder')
+    else console.log('Failed to open post folder: ' + shellReturn.stdout);
+
+    shellReturn = sh.exec('open ' + config.postFile);
+    if (shellReturn.code === 0) console.log('Opened episode shownotes')
+    else console.log('Failed to open episode shownotes: ' + shellReturn.stdout);
+
+    shellReturn = sh.exec('open ' + config.demoDir);
+    if (shellReturn.code === 0) console.log('Opened demo directory')
+    else console.log('Failed to open demo directory: ' + shellReturn.stdout);
+
+    shellReturn = sh.exec('subl ' + config.demoDir);
+    if (shellReturn.code === 0) console.log('Opened demo folder in text editor')
+    else console.log('Failed to open demo folder in text editor: ' + shellReturn.stdout);
+
+    console.log(clc.red('On-going episode ' + config.num + ' ' + config.episode +' opened!'));
+
+  });
+
+
+// program
+//   .command('record [configFile]')
+//   .description('start recording screencast for a new episode with configuration data')
+//   .action(function(configFile) {
+//     if (!configFile) program.help();
+//     var config = extractConfig(configFile);
+//     console.log(config);
+//   });
+
+// program
+//   .command('publish [configFile]')
+//   .description('publish a screencast for a new episode with configuration data')
+//   .action(function(configFile) {
+//     if (!configFile) program.help();
+//     var config = extractConfig(configFile);
+//     console.log(config);
+//   });
+
+program.parse(process.argv);
+
+if (process.argv.length < 3) program.help();
+
+function extractConfig(configFile) {
+
+  var config = fs.readFileSync(configFile);
+
+  config = JSON.parse(config);
+  config.folder = config.num + '-' + config.episodeLowercase;
+  config.video = config.folder + '.mp4';
+  config.path = 'public_html/build/videos/' + config.video;
+  config.title = 'Build Podcast ' + config.num + ' ' + config.episode;
+  config.description = 'Show notes: http://build-podcast.com/' + config.episodeLowercase;
+  config.repoDir = config.bpDir + config.shownotesDir;
+  config.postFile = config.repoDir + '_posts/' + config.postDate + '-' + config.episodeLowercase + '.md';
+  config.postDir = config.repoDir + '_posts/';
+  config.demoDir = config.desktopDir + config.episodeLowercase;
+
+  return config;
+}
+
+
+
+
