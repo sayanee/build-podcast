@@ -5,6 +5,7 @@ var exec = require('child_process').exec;
 var sh = require('execSync');
 var clc = require('cli-color');
 var fs = require('fs');
+var prompt = require('prompt');
 
 program.version('0.1.0');
 
@@ -114,15 +115,53 @@ program
 
   });
 
+program
+  .command('record [configFile]')
+  .description('start recording screencast for a new episode with configuration data')
+  .action(function(configFile) {
 
-// program
-//   .command('record [configFile]')
-//   .description('start recording screencast for a new episode with configuration data')
-//   .action(function(configFile) {
-//     if (!configFile) program.help();
-//     var config = extractConfig(configFile);
-//     console.log(config);
-//   });
+    if (!configFile) program.help();
+
+    var config = extractConfig(configFile);
+    var shellReturn;
+
+    prompt.start();
+
+    var property = {
+      name: 'yesno',
+      message: 'Have you connected the microphone? (y/n) ',
+      validator: /y[es]*|n[o]?/,
+      warning: 'Must respond yes or no'
+    };
+
+    prompt.get(property, function (err, result) {
+
+      if (result.yesno === 'y') {
+        sh.run('open ' + config.repoDir + 'start');
+        sh.run('subl ' + config.repoDir + 'start/index.html');
+        sh.run('sudo apachectl start && open http://dev.build-podcast.com');
+        console.log('Start screen is opened at dev.build-podcast.com');
+
+        sh.run('open ' + config.postFile);
+        console.log(config.postFile + ' opened for reference');
+
+        sh.run('open "/Applications/QuickTime Player.app"');
+        console.log('QuickTime opened for recording');
+
+        sh.run('open "/Applications/Utilities/Audio MIDI Setup.app"');
+        console.log('Audio Midi opened for mic adjustment');
+
+        sh.run('osascript -e \'tell app "System Preferences" to set current pane to pane "fr.madrau.switchresx.prefpane"\'');
+        console.log('System Preferences opened for screen resolution adjustment');
+
+        console.log(clc.red('Ready to record the show!'));
+      }
+      else {
+        console.log(clc.red('Connect your microphone first and then run: bp record [episode.conf]'));
+      }
+
+    });
+  });
 
 // program
 //   .command('publish [configFile]')
