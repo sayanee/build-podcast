@@ -163,14 +163,18 @@ program
     });
   });
 
-// program
-//   .command('publish [configFile]')
-//   .description('publish a screencast for a new episode with configuration data')
-//   .action(function(configFile) {
-//     if (!configFile) program.help();
-//     var config = extractConfig(configFile);
-//     console.log(config);
-//   });
+program
+  .command('pub [configFile]')
+  .description('publish a screencast for a new episode with configuration data')
+  .action(function(configFile) {
+
+    if (!configFile) program.help();
+
+    var config = extractConfig(configFile);
+
+    console.log(config);
+
+  });
 
 program.parse(process.argv);
 
