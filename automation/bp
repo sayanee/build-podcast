@@ -45,6 +45,7 @@ program
     fs.readFile(newReadme, 'utf8', function(error, data) {
 
       if (error) { console.log(error); }
+
       data = data.replace(/{{NUM}}/g, config.num);
       data = data.replace(/{{EPISODE}}/g, config.episode);
       data = data.replace(/{{EPISODE_LOWERCASE}}/g, config.episodeLowercase);
@@ -58,8 +59,6 @@ program
 
     templatePost = config.bpDir + config.templateDir + config.templatePost;
     newPost = config.postDate + '-' + config.episodeLowercase + '.md';
-    console.log(templatePost);
-    console.log(newPost);
 
     shellReturn = sh.exec('cp ' + templatePost + ' ' + newPost);
     if (shellReturn.code === 0) console.log('Copied sample post from template')
@@ -68,24 +67,21 @@ program
     fs.readFile(newPost, 'utf8', function(error, data) {
 
       if (error) {return console.log(error); }
-
       data = data.replace(/{{NUM}}/g, config.num);
       data = data.replace(/{{EPISODE}}/g, config.episode);
       data = data.replace(/{{EPISODE_LOWERCASE}}/g, config.episodeLowercase);
 
       fs.writeFile(newPost, data, 'utf8', function(err) {
         if (err) throw err;
-        sh.run('cp ' + newPost + ' ' + templatePost + ' && rm ' + newPost);
-        sh.run('open ' + config.bpDir + config.shownotesDir + newPost);
-
-        console.log(clc.red('Newly created post:\n'));
+        sh.run('cp ' + newPost + ' ' + config.postFile + ' && rm ' + newPost);
+        sh.run('open ' + config.postFile);
       });
 
     });
 
-  //   // open various files and folders made
-  //   sh.run('open ' + config.directory + config.shownotesDir + config.readme);
-  //   sh.run('open ' + config.directory + config.shownotesDir + config.postsDir);
+    shellReturn = sh.exec('open ' + config.app.tower);
+    if (shellReturn.code === 0) console.log('Opened Tower ')
+    else console.log('Failed to open tower:\n' + shellReturn.stdout);
   });
 
 program
