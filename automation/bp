@@ -42,6 +42,10 @@ program
     newReadme = config.repoDir + config.num + '-' + config.episodeLowercase + '/' + config.readme;
     templateReadme = config.bpDir + config.templateDir + config.readme;
 
+    shellReturn = sh.exec('open ' + config.repoDir + config.num + '-' + config.episodeLowercase);
+    if (shellReturn.code === 0) console.log('Opened sample code directory ')
+    else console.log('Failed to open sample code directory:\n' + shellReturn.stdout);
+
     shellReturn = sh.exec('cp ' + templateReadme + ' ' + newReadme);
     if (shellReturn.code === 0) console.log('Copied sample code readme from template')
     else console.log('Failed to copy sample code readme from template:\n' + shellReturn.stdout);
@@ -49,13 +53,12 @@ program
     fs.readFile(newReadme, 'utf8', function(error, data) {
 
       if (error) { console.log(error); }
-
-      data = config.replace(/{{NUM}}/g, config.num);
-      data = config.replace(/{{EPISODE}}/g, config.episode);
-      data = config.replace(/{{EPISODE_LOWERCASE}}/g, config.episodeLowercase);
+      data = data.replace(/{{NUM}}/g, config.num);
+      data = data.replace(/{{EPISODE}}/g, config.episode);
+      data = data.replace(/{{EPISODE_LOWERCASE}}/g, config.episodeLowercase);
 
       fs.writeFile(newReadme, data, 'utf8', function(error) {
-        if (error) { console.log(error); }
+        if (error) console.log('Write to new readme.md:  ' + error);
         console.log('Sample code readme created with episode data');
       });
 
@@ -71,12 +74,12 @@ program
     fs.readFile(newPost, 'utf8', function(error, data) {
 
       if (error) {return console.log(error); }
-      data = config.replace(/{{NUM}}/g, config.num);
-      data = config.replace(/{{EPISODE}}/g, config.episode);
-      data = config.replace(/{{EPISODE_LOWERCASE}}/g, config.episodeLowercase);
+      data = data.replace(/{{NUM}}/g, config.num);
+      data = data.replace(/{{EPISODE}}/g, config.episode);
+      data = data.replace(/{{EPISODE_LOWERCASE}}/g, config.episodeLowercase);
 
-      fs.writeFile(newPost, data, 'utf8', function(err) {
-        if (err) throw err;
+      fs.writeFile(newPost, data, 'utf8', function(error) {
+        if (error) console.log('Write a new post file: ' + error);
         sh.run('cp ' + newPost + ' ' + config.postFile + ' && rm ' + newPost);
         sh.run('open ' + config.postFile);
       });
@@ -84,8 +87,10 @@ program
     });
 
     shellReturn = sh.exec('open ' + config.app.tower);
-    if (shellReturn.code === 0) console.log('Opened Tower ')
+    if (shellReturn.code === 0) console.log('Opened Tower')
     else console.log('Failed to open tower:\n' + shellReturn.stdout);
+
+
   });
 
 program
