@@ -1,32 +1,42 @@
 #Scripts for automation
 
-1. **build-podcast-start**: Start a new episode
+1. **Start a new episode**
 
     ```
-    build-podcast-start --help
-    build-podcast-start -d [YYYY-MM-DD] -n [NNN] -e [episode-lowercase] -E "[Episode Uppercase]"
-    build-podcast-start -d 2013-12-24 -n 089 -e rasberrypi -E "RasberryPI"
+    bp new sample.conf
     ``` 
-1. **build-podcast**: Continue preparing for the current episode
+    - make new Jekyll post from template
+    - make new sample code folder in repo
+    - make new sample code folder on Desktop
+    
+1. **Continue an on-going episode**
 
     ```
-    build-podcast
+    bp serve sample.conf
     ``` 
+    - open post file to add on more notes
+    - open sample code folder
 
-1. **build-podcast-record** Start recording the screencast. It will open the following:
-    - YYYY-MM-DD-episode-lowercase.md
-    - QuickTime
-    - Audio Midi
-    - System Preferences
-    - Apache server
-    - Start screen
-
-     ```
-     build-podcast-record
-     ```  
-  
-3. **ftp-build**: Upload the normalised movie file `movie.mp4` to the server
+1. **Record an on-going episode** 
 
     ```
-    ftp-build <server> <username> <password>
+    bp record sample.conf
     ```
+ 
+    - Check if the microphone is connected
+    - Open various apps needed during recording
+    - Open start screen and start apache
+    - Open show notes for reference
+
+1. **Publish an episode**
+
+    ```
+    bp pub sample.conf
+    ```
+    
+    - Stop apache server
+    - Normalise video
+    - Upload video via FTP, YouTube and Vimeo
+    - Copy sample code from Desktop to repo
+    - Update post meta data
+    - Push to Github pages
