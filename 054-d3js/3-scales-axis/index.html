@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>D3JS</title>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.3.3/d3.min.js"></script>
+<style>
+.axis path,
+.axis line {fill: none; stroke: black; shape-rendering: crispEdges; }
+.axis text {font-family: sans-serif; font-size: 11px; }
+</style>
+</head>
+<body>
+
+<h1>World population!</h1>
+<script>
+
+var w = 1200;
+var h = 500;
+var padding = 50;
+
+ // http://en.wikipedia.org/wiki/World_population#Milestones_by_the_billions
+// var dataset = [
+//        [1927, 2],
+//        [1960, 3],
+//        [1974, 4],
+//        [1987, 5],
+//        [1999, 6],
+//        [2012, 7]
+//      ];
+
+// http://en.wikipedia.org/wiki/World_population#Population_growth_by_region
+ var dataset = [
+     [1500, 458],
+     [1600, 580],
+     [1700, 682],
+     [1750, 791],
+     [1800, 978],
+     [1850, 1262],
+     [1900, 1650],
+     [1950, 2521],
+     [1999, 5978],
+     [2008, 6707],
+     [2050, 8909],
+     [2150, 9746]
+ ];
+
+var svg = d3.select('body')
+  .append('svg')
+  .attr('width', w)
+  .attr('height', h);
+
+var xScale = d3.scale.linear()
+  .domain(
+    [
+    d3.min(dataset, function(d) {return d[0]}),
+    d3.max(dataset, function(d) {return d[0]})
+    ])
+  .range([padding, w-padding*2]);
+
+var yScale = d3.scale.linear()
+  .domain(
+    [
+    d3.min(dataset, function(d) {return d[1]}),
+    d3.max(dataset, function(d) {return d[1]})
+    ])
+  .range([h-padding, padding]);
+
+var rScale = d3.scale.linear()
+  .domain([0, d3.min(dataset, function(d) {return d[1];})])
+  .range([2,3]);
+
+var xAxis = d3.svg.axis()
+  .scale(xScale)
+  .orient('bottom')
+  .ticks(5);
+
+var yAxis = d3.svg.axis()
+  .scale(yScale)
+  .orient('left')
+  .ticks(5);
+
+var lineFunction = d3.svg.line()
+  .x(function(d) {return xScale(d[0]) })
+  .y(function(d) {return yScale(d[1]) })
+  .interpolate('basis');
+
+var lineGraph = svg.append('path')
+  .attr('d', lineFunction(dataset))
+  .attr('stroke', 'lightblue')
+  .attr('stroke-width', 5)
+  .attr('fill', 'none');
+
+// svg.selectAll('circle')
+//   .data(dataset)
+//   .enter()
+//   .append('circle')
+//   .attr('cx', function(d) {
+//     return xScale(d[0]);
+//   })
+//   .attr('cy', function(d) {
+//     return yScale(d[1]);
+//   })
+//   .attr('r', function(d) {
+//     return rScale(d[1]*2);
+//   })
+//   .attr('fill', 'lightblue')
+
+svg.selectAll('text')
+  .data(dataset)
+  .enter()
+  .append('text')
+  .text(function(d) {
+    return 'Y' + d[0] + ', ' + d[1] + 'b';
+  })
+  .attr('x', function(d) {
+    return xScale(d[0]);
+  })
+  .attr('y', function(d) {
+    return yScale(d[1]);
+  })
+  .attr("font-family", "sans-serif")
+  .attr("font-size", "14px")
+  .attr("fill", "grey");
+
+
+svg.append('g')
+  .attr('class', 'axis')
+  .attr('transform', 'translate(0,' + (h-padding) + ')')
+  .call(xAxis);
+
+svg.append('g')
+  .attr('class', 'axis')
+  .attr('transform', 'translate(' + padding + ',0)')
+  .call(yAxis);
+
+</script>
+
+</body>
+</html>
