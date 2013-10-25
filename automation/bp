@@ -285,6 +285,8 @@ program
         // open up post.md file
         // open up episode source code folder
         // open tower app
+      } else {
+        console.log('Not ready to push to Github!');
       }
     }
 
