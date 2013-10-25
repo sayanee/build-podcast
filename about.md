@@ -30,8 +30,7 @@ I wanna learn a tonne of things. Here are some stuff I wanna pick up, go in dept
 
 *Hint*: These are also an approximate indication of my future episodes :)
 
-1. [D3JS](http://d3js.org/)
-1. Command line apps (in [Node](https://github.com/visionmedia/commander.js/) & [Ruby](https://github.com/erikhuda/thor)\)
+1. [OAuth](http://oauth.net/)
 1. [Mocha](http://visionmedia.github.io/mocha/) with [Chai](http://chaijs.com/)
 1. [Puppet](http://puppetlabs.com/solutions/devops) with [Boxen](http://boxen.github.com/)
 1. [ECMAScript 6](http://www.ecmascript.org/)
