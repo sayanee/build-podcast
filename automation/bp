@@ -231,6 +231,7 @@ program
             console.log(clc.red('Youtube video added to playlist: ' + config.youtubePlaylistURL));
             spawn('open', [ config.youtubePlaylistURL ]);
             isUploadedToYoutube = true;
+            pushToGithub();
         });
     });
 
@@ -283,6 +284,7 @@ program
         // open up github page
         // open up post.md file
         // open up episode source code folder
+        // open tower app
       }
     }
 
