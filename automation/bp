@@ -198,7 +198,7 @@ program
 
     // Normalise video
     console.log(clc.blue('Normalising the audio in the screencast video file'));
-    sh.run('norm ' + config.desktopPath + config.video);
+    sh.run('norm ' + config.desktopDir + config.video);
     console.log(clc.red('Normalised video: ' + config.video));
 
     // Upload video via FTP
@@ -245,8 +245,6 @@ program
     });
 
     // Copy demo source code to repo
-    console.log(clc.yellow(source));
-    console.log(clc.yellow(destination));
     ncp(source, destination, function (error) {
       if (error) console.error('ERROR >>>>>>>> Copying demo source code to repo: ' + error);
       console.log('Demo source code files are transferred.');
