@@ -4,7 +4,7 @@ permalink: /:title
 markdown: redcarpet
 url: http://localhost:4000
 
-exclude: ['sass', 'node_modules', 'Gruntfile.js', 'package.json', 'readme.md', 'js', 'scripts', 'build-podcast.yml',
+exclude: ['sass', 'node_modules', 'Gruntfile.js', 'package.json', 'readme.md', 'js', 'scripts', 'build-podcast.yml', 'templates',
   '001-webdevtools',
   '002-terminal',
   '003-html5boilerplate',
