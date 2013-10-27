@@ -56,7 +56,7 @@ date: 2013-09-15 13:00:00
     <item>
       <title>{{ post.title }}</title>
       <itunes:author>Sayanee</itunes:author>
-      <link>{{ site.url }}/{{ post.title_lowercase }}</link>
+      <link>{{ site.url }}{{ post.permalink }}</link>
 
       <itunes:subtitle>{{ post.description }}</itunes:subtitle>
       <itunes:summary>{{ post.description }}</itunes:summary>
