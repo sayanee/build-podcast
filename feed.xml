@@ -60,13 +60,13 @@ date: 2013-09-15 13:00:00
       <itunes:subtitle>{{ post.description }}</itunes:subtitle>
       <itunes:summary>{{ post.description }}</itunes:summary>
 
-      <guid isPermaLink="false">{{ post.enclosure }}.mp4</guid>
+      <guid isPermaLink="false">{{ post.enclosure }}</guid>
       <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
       <author>Sayanee</author>
       <itunes:explicit>no</itunes:explicit>
       <itunes:keywords>{{ post.tags }}</itunes:keywords>
 
-      <enclosure url="{{ post.enclosure }}.mp4" length="{{ post.length }}" type="video/mp4" />
+      <enclosure url="{{ post.enclosure }}" length="{{ post.length }}" type="video/mp4" />
       <content:encoded>{{ post.description }}</content:encoded>
       <itunes:image href="{{ site.url }}/logo-1400.jpg" />
     </item>
