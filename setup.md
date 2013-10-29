@@ -21,9 +21,17 @@ Big thanks to the open source community and free softwares!
 1. [ffmpeg](http://ffmpeg.org/) for video and normalised audio exports
 1. [Sox](http://sox.sourceforge.net/) for normalising audio
 1. [Levelator](http://www.conversationsnetwork.org/levelator) for audio normalisation (if sox is not used)
+1. [Zooming on Mac](http://osxdaily.com/2012/01/02/enable-screen-zoom-in-mac-os-x-lion/)
 1. I have written [several command line scripts for automation](https://github.com/sayanee/build-podcast/tree/master/automation) for starting, continuing, recording and publishing each episode.
+
+Other paid software:
+
+1. [Mouseposè](https://itunes.apple.com/app/mousepose/id405904955)
+1. [PinPoint](https://itunes.apple.com/us/app/pinpoint/id408265505)
+
 
 ##Thanks
 
 - [Preetam Rai](https://twitter.com/preetamrai) for donating his [C01U USB Studio Condensor Microphone](http://www.samsontech.com/samson/products/microphones/usb-microphones/c01u/)
 - [Chinmay Pendharkar](https://twitter.com/ntt) for [audio normalization script](https://github.com/sayanee/build-podcast/blob/master/automation/norm)
+- [Matt Petrowsky](https://twitter.com/mattpetrowsky) on many tips for screencasting and software
