@@ -23,6 +23,39 @@ program
 
     config = extractConfig(configFile);
 
+    fs.readFile(config.configYMLFile, 'utf8', function(error, data) {
+
+      if (error) { console.log(error); }
+
+      var pastEpisode = '\'' + config.prevEpisodeNum + '-' + config.prevEpisode + '\'';
+      var re = new RegExp(pastEpisode,'g');
+
+      data = data.replace(re, pastEpisode + ',\n  \'' + config.num + '-' + config.episodeLowercase + '\'');
+
+      fs.writeFile(config.configYMLFile, data, 'utf8', function(error) {
+        if (error) console.log('Write to _config.yml:  ' + error);
+        console.log('_config.yml included the current episode directory to ignore.');
+      });
+
+    });
+
+    fs.readFile(config.devConfigYMLFile, 'utf8', function(error, data) {
+
+      if (error) { console.log(error); }
+
+      var pastEpisode = '\'' + config.prevEpisodeNum + '-' + config.prevEpisode + '\'';
+      var re = new RegExp(pastEpisode,'g');
+
+      data = data.replace(re, pastEpisode + ',\n  \'' + config.num + '-' + config.episodeLowercase + '\'');
+
+      fs.writeFile(config.devConfigYMLFile, data, 'utf8', function(error) {
+        if (error) console.log('Write to _dev_config.yml:  ' + error);
+        console.log('_dev_config.yml included the current episode directory to ignore.');
+      });
+
+    });
+
+
     shellReturn = sh.exec('mkdir ' + config.repoDir + config.num + '-' + config.episodeLowercase);
     if (shellReturn.code === 0) console.log('Created new sample code directory')
     else console.log('Failed to create new sample code directory:\n' + shellReturn.stdout);
@@ -89,7 +122,6 @@ program
     shellReturn = sh.exec('open ' + config.app.tower);
     if (shellReturn.code === 0) console.log('Opened Tower')
     else console.log('Failed to open tower:\n' + shellReturn.stdout);
-
 
   });
 
@@ -327,6 +359,8 @@ function extractConfig(configFile) {
   config.postFile = config.repoDir + '_posts/' + config.postDate + '-' + config.episodeLowercase + '.md';
   config.postDir = config.repoDir + '_posts/';
   config.demoDir = config.desktopDir + config.episodeLowercase;
+  config.configYMLFile = config.repoDir + '_config.yml';
+  config.devConfigYMLFile = config.repoDir + '_dev_config.yml';
 
   // console.log(config);
 
