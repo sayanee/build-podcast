@@ -326,16 +326,32 @@ program
     // Gush to github pages and Jekyll gh-pages branch
     function pushToGithub() {
       if (isPostUpdated == true && isUploadedToYoutube == true && isUploadedToVimeo == true) {
-        // delete source code on desktop
-        // move video file from desktop to video folder
-        console.log('Ready to push to the github repo!');
-        // console.log('cd ' + config.repoDir + ' git push origin master && git status &&  git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master');
-        // open up github page
-        // open up post.md file
-        // open up episode source code folder
-        // open tower app
+        sh.run('open ' + config.app.tower);
+
+        prompt.start();
+
+        var property = {
+          name: 'githubpages',
+          message: 'Are the videos ready online? Have you committed everything in master branch? (y/n) ',
+          validator: /y[es]*|n[o]?/,
+          warning: 'Must respond yes or no'
+        };
+
+        prompt.get(property, function (err, result) {
+
+          if (result.githubpages === 'y') {
+            sh.run('cd ' + config.repoDir + ' && git status && git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master');
+            sh.run('open http://github.com/sayanee/build-podcast');
+            sh.run('open ' + config.postFile);
+          } else {
+
+          }
+
       } else {
-        console.log('Not ready to push to Github!');
+        console.log(clc.yellow('Not ready to push to Github!'));
+        console.log('Post updated? ' + isPostUpdated);
+        console.log('YouTube uploaded? ' + isUploadedToYoutube);
+        console.log('Vimeo uploaded? ' + isUploadedToVimeo);
       }
     }
 
