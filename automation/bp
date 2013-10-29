@@ -94,7 +94,7 @@ program
   });
 
 program
-  .command('serve [configFile]')
+  .command('open [configFile]')
   .description('run an on-going episode with configuration data')
   .action(function(configFile) {
 
