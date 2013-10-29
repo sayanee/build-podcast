@@ -40,7 +40,7 @@ program
     else console.log('Failed to open new sample code directory in desktop in text editor:\n' + shellReturn.stdout);
 
     newReadme = config.repoDir + config.num + '-' + config.episodeLowercase + '/' + config.readme;
-    templateReadme = config.bpDir + config.templateDir + config.readme;
+    templateReadme = config.repoDir + config.templateDir + config.readme;
 
     shellReturn = sh.exec('open ' + config.repoDir + config.num + '-' + config.episodeLowercase);
     if (shellReturn.code === 0) console.log('Opened sample code directory ')
@@ -64,7 +64,7 @@ program
 
     });
 
-    templatePost = config.bpDir + config.templateDir + config.templatePost;
+    templatePost = config.repoDir + config.templateDir + config.templatePost;
     newPost = config.postDate + '-' + config.episodeLowercase + '.md';
 
     shellReturn = sh.exec('cp ' + templatePost + ' ' + newPost);
@@ -310,6 +310,8 @@ function extractConfig(configFile) {
   config.postFile = config.repoDir + '_posts/' + config.postDate + '-' + config.episodeLowercase + '.md';
   config.postDir = config.repoDir + '_posts/';
   config.demoDir = config.desktopDir + config.episodeLowercase;
+
+  // console.log(config);
 
   return config;
 }
