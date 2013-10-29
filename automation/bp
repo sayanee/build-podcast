@@ -131,6 +131,7 @@ program
     if (!configFile) program.help();
 
     var config = extractConfig(configFile);
+    var startFile = config.repoDir + 'start/index.html';
     var shellReturn;
 
     prompt.start();
@@ -145,6 +146,22 @@ program
     prompt.get(property, function (err, result) {
 
       if (result.yesno === 'y') {
+
+        fs.readFile(startFile, 'utf8', function(error, data) {
+
+          if (error) { console.log(error); }
+
+          data = data.replace(/<h1>(.*)<\/h1>/g, '<h1>' + config.num + ' ' + config.episode + '</h1>');
+          data = data.replace(/<h4>(.*)<\/h4>/g, '<h4>' + config.tagline + '</h4>');
+          data = data.replace(/<h6>(.*)<\/h6>/g, '<h6>Version: ' + config.version + '</h6>');
+
+          fs.writeFile(startFile, data, 'utf8', function(error) {
+            if (error) console.log('Write to start file index.html:  ' + error);
+            console.log('Start file index.html\'s data is filled in.');
+          });
+
+        });
+
         sh.run('open ' + config.repoDir + 'start');
         sh.run('subl ' + config.repoDir + 'start/index.html');
         sh.run('sudo apachectl start && open http://dev.build-podcast.com');
