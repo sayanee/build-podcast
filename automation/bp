@@ -325,7 +325,8 @@ program
 
     // Gush to github pages and Jekyll gh-pages branch
     function pushToGithub() {
-      if (isPostUpdated == true && isUploadedToYoutube == true && isUploadedToVimeo == true) {
+      if (isPostUpdated == true && isUploadedToYoutube == true && isUploadedToVimeo == true)
+      {
         sh.run('open ' + config.app.tower);
 
         prompt.start();
@@ -344,10 +345,11 @@ program
             sh.run('open http://github.com/sayanee/build-podcast');
             sh.run('open ' + config.postFile);
           } else {
-
+            console.log('Github pages is not commit');
           }
-
-      } else {
+        });
+      }
+      else {
         console.log(clc.yellow('Not ready to push to Github!'));
         console.log('Post updated? ' + isPostUpdated);
         console.log('YouTube uploaded? ' + isUploadedToYoutube);
