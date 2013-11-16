@@ -228,20 +228,17 @@ program
     if (!configFile) program.help();
 
     var config = extractConfig(configFile);
-    console.log(config);
 
     var c = new Client();
     var source = config.desktopDir + config.episodeLowercase;
     var destination = config.repoDir + config.num + '-' + config.episodeLowercase;
-    console.log(clc.blue(source));
-    console.log(clc.blue(destination));
     var isVideoNormalised = false;
     var isUploadedToYoutube = false;
     var isUploadedToVimeo = false;
     var isPostUpdated = false;
 
     // Stop Apache server
-    console.log(clc.blue('Stopping Apache server. Please put your password'));
+    console.log('Stopping Apache server. Please put your password');
     sh.run('sudo apachectl stop');
     console.log(clc.red('Stopped apache server'));
 
@@ -249,15 +246,15 @@ program
     console.log(clc.blue('Normalising the audio in the screencast video file'));
     sh.run('mv ' + config.video + ' ' + config.folder + '.mov');
     sh.run('norm ' + config.desktopDir + config.folder + '.mov');
-    console.log(clc.red('Normalised video: ' + config.video));
+    console.log(clc.blue('Normalised video: ' + config.video));
 
     // Upload video via FTP
-    console.log(clc.blue('Uploading video with FTP'));
+    console.log(clc.yellow('Uploading video with FTP'));
     c.on('ready', function() {
       c.put(config.video, config.path , function(error) {
         if (error) console.log('ERROR >>>>>>>> Uploading video via FTP:\n' + error);
         c.end();
-        console.log(clc.red('Video file uploaded: http://video.build-podcast.com/' + config.video));
+        console.log(clc.yellow('Video file uploaded to http://video.build-podcast.com/' + config.video));
         spawn('open', [ 'http://video.build-podcast.com/'.concat(config.video) ]);
         isVideoNormalised = true;
         updatePost();
@@ -266,19 +263,19 @@ program
     c.connect(config);
 
     // Upload video to YouTube and add to playlist
-    console.log(clc.blue('Uploading video to Youtube'));
+    console.log(clc.green('Uploading video to Youtube'));
     exec(
       'youtube-upload --email=' + config.youtubeEmail + ' --password=' + config.youtubePassword + ' --title="' + config.title + '" --description="' + config.videoDescription + '" --category="Tech" --keywords="' + config.tags + '" ' + config.video,
       function(error, stdout, stderr) {
         if (error) console.log('ERROR >>>>>>>> Uploading video to YouTube:  ' + error);
-        console.log(clc.red('Youtube video url: ' + stdout));
+        console.log(clc.green('Youtube video url: ' + stdout));
         spawn('open', [ stdout ]);
 
         exec(
           'youtube-upload --email=' + config.youtubeEmail + ' --password=' + config.youtubePassword + ' --add-to-playlist=' + config.youtubePlaylist + ' ' + stdout,
           function(error, stdout, stderr) {
             if (error) console.log('ERROR >>>>>>>> Adding YouTube video to playlist: ' + error);
-            console.log(clc.red('Youtube video added to playlist: ' + config.youtubePlaylistURL));
+            console.log(clc.green('Youtube video added to playlist: ' + config.youtubePlaylistURL));
             spawn('open', [ config.youtubePlaylistURL ]);
             isUploadedToYoutube = true;
             pushToGithub();
@@ -287,11 +284,14 @@ program
 
     // Upload video to Vimeo and add to channel
     exec('vimeo upload ' + configFile, function(error, stdout, stderr) {
-      if (error) console.log('ERROR >>>>>>>> Uploading video to Vimeo:  ' + error);
-      console.log(stdout);
-
-      isUploadedToVimeo = true;
-      pushToGithub();
+      if (error) {
+        console.log('ERROR >>>>>>>> Uploading video to Vimeo:  ' + error);
+      }
+      else {
+        console.log(stdout);
+        isUploadedToVimeo = true;
+        pushToGithub();
+      }
     });
 
     // Copy demo source code to repo
@@ -333,7 +333,7 @@ program
 
         var property = {
           name: 'githubpages',
-          message: 'Are the videos ready online in 3 platforms? Have you committed everything in master branch? (y/n) ',
+          message: 'Is the post complete? Have you committed everything? (y/n) ',
           validator: /y[es]*|n[o]?/,
           warning: 'Must respond yes or no'
         };
