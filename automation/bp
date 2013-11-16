@@ -247,7 +247,8 @@ program
 
     // Normalise video
     console.log(clc.blue('Normalising the audio in the screencast video file'));
-    sh.run('norm ' + config.desktopDir + config.video);
+    sh.run('mv ' + config.video + ' ' + config.folder + '.mov');
+    sh.run('norm ' + config.desktopDir + config.folder + '.mov');
     console.log(clc.red('Normalised video: ' + config.video));
 
     // Upload video via FTP
@@ -291,7 +292,6 @@ program
 
       isUploadedToVimeo = true;
       pushToGithub();
-
     });
 
     // Copy demo source code to repo
