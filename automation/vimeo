@@ -11,7 +11,7 @@ class App < Thor
   desc "upload FILE", "start uploading to vimeo with FILE"
   def upload configfile
     puts "Starting to upload video to Vimeo"
-    puts "Config filename: #{configfile}!"
+    # puts "Config filename: #{configfile}!"
     config_data = JSON.parse( IO.read(configfile) )
 
     upload = Vimeo::Advanced::Upload.new(config_data["vimeoConsumerKey"], config_data["vimeoConsumerSecret"], :token => config_data["vimeoUserToken"], :secret => config_data["vimeoUserSecret"])
@@ -19,7 +19,7 @@ class App < Thor
     video = Vimeo::Advanced::Video.new(config_data["vimeoConsumerKey"], config_data["vimeoConsumerSecret"], :token => config_data["vimeoUserToken"], :secret => config_data["vimeoUserSecret"])
 
     @stats = upload.get_quota["stat"]
-    puts "Vimeo upload status: #{@stats}"
+    # puts "Vimeo upload status: #{@stats}"
 
     @video_id = upload.upload(config_data["num"] + "-" + config_data["episodeLowercase"] + ".mp4")["ticket"]["video_id"]
     puts "New Vimeo video is uploaded at http://vimeo.com/#{@video_id}"
@@ -28,7 +28,7 @@ class App < Thor
     video.set_description(@video_id, "Show notes: http://build-podcast.com/" + config_data["episodeLowercase"])
     video.add_tags(@video_id, config_data["tags"])
     channel.add_video(config_data["vimeoChannel"], @video_id)
-    puts "Title, description, tags and channel are set."
+    # puts "Title, description, tags and channel are set."
     Launchy.open("http://vimeo.com/#{@video_id}")
 
     post_file = config_data["bpDir"] + config_data["shownotesDir"] + config_data["postsDir"] + config_data["postDate"] + "-" + config_data["episodeLowercase"] + ".md"
