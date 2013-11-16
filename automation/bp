@@ -333,7 +333,7 @@ program
 
         var property = {
           name: 'githubpages',
-          message: 'Are the videos ready online? Have you committed everything in master branch? (y/n) ',
+          message: 'Are the videos ready online in 3 platforms? Have you committed everything in master branch? (y/n) ',
           validator: /y[es]*|n[o]?/,
           warning: 'Must respond yes or no'
         };
@@ -345,7 +345,7 @@ program
             sh.run('open http://github.com/sayanee/build-podcast');
             sh.run('open ' + config.postFile);
           } else {
-            console.log('Github pages is not commit');
+            console.log('You have uncommitted changes');
           }
         });
       }
