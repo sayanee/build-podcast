@@ -60,6 +60,8 @@ date: 2013-09-15 13:00:00
 
       <itunes:subtitle>{{ post.description }}</itunes:subtitle>
       <itunes:summary>{{ post.description }}</itunes:summary>
+      <description>{{ post.description }}</description>
+      <content:encoded><![CDATA[{{ post.description }}]]></content:encoded>
 
       <guid isPermaLink="false">{{ post.enclosure }}</guid>
       <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
