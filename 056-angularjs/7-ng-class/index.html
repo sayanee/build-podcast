@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Book Club reading for 2014</title>
+  <style>
+  .selected{ background-color: wheat;}
+  </style>
+</head>
+<body ng-app="App">
+
+<div ng-controller="BooksCtrl">
+  <input type="text" ng-model="searchBooks" placeholder="search for books!">
+  <hr>
+  <table border=1 cellpadding=5>
+    <tr>
+      <th>#</th>
+      <th>Book details</th>
+      <th>Quantity</th>
+    </tr>
+    <tr ng-repeat='book in books | filter:searchBooks' ng-class="{selected: (book.quantity > 0)}">
+      <td>{{$index + 1}}</td>
+      <td>
+        <input type="checkbox" ng-model="selected">
+        <strong>{{book.name}}</strong> by {{book.author}}
+        <div ng-if="selected">
+          <p>{{book.summary}}</p>
+          <img src="{{book.cover}}" alt="{{book.name}}">
+        </div>
+      </td>
+      <td>
+        <select ng-model="book.quantity">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </td>
+    </tr>
+
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+<script>
+
+var app = angular.module('App', []);
+
+app.controller('BooksCtrl', function($scope) {
+
+    $scope.books = [
+    {
+      name: 'Modern Operating Systems',
+      author: 'Andrew S. Tanenbaum',
+      summary: 'The widely anticipated revision of this worldwide best-seller incorporates the latest developments in operating systems technologies.',
+      cover: 'img/1.jpg'
+    },
+    {
+      name: 'Design Patterns',
+      author: 'Gang of 4',
+      summary: 'Capturing a wealth of experience about the design of object-oriented software, four top-notch designers present a catalog of simple and succinct solutions to commonly occurring design problems.',
+      cover: 'img/2.jpg'
+    },
+    {
+      name: 'Structure and interpretation of computer programs',
+      author: 'Gerald Jay Sussman and Hal Abelson',
+      summary: 'I think that it\'s extraordinarily important that we in computer science keep fun in computing. When it started out, it was an awful lot of fun.',
+      cover: 'img/3.jpg'
+    },
+    {
+      name: 'Getting Started with Electronics',
+      author: 'Forrest M. Mims',
+      summary: 'Author Forrest Mims teaches you the basics, takes you on a tour of analog and digital components, explains how they work, and shows you how they are combines for various applications.',
+      cover: 'img/4.jpg'
+    },
+    {
+      name: 'Code Complete',
+      author: 'Steve McConnell',
+      summary: 'Widely considered one of the best practical guides to programming, Steve McConnell’s original CODE COMPLETE has been helping developers write better software for more than a decade.',
+      cover: 'img/5.jpg'
+    },
+    {
+      name: 'Design of Everyday Things',
+      author: 'Donald A. Norman',
+      summary: 'First, businesses discovered quality as a key competitive edge; next came service. Now, Donald A. Norman, former Director of the Institute for Cognitive Science at the University of California, reveals how smart design is the new competitive frontier.',
+      cover: 'img/6.jpg'
+    },
+    {
+      name: 'The Feynman Lectures on Physics',
+      author: 'Richard Feynman',
+      summary: 'Caltech and The Feynman Lectures Website are pleased to present this online edition of The Feynman Lectures on Physics. Now, anyone with internet access and a web browser can enjoy reading a high-quality up-to-date copy of Feynman\'s legendary lectures.',
+      cover: 'img/7.jpg'
+    },
+    {
+      name: 'Universal Principles of Design',
+      author: 'William Lidwell, Kritina Holden, Jill Butler',
+      summary: 'Whether a marketing campaign or a museum exhibit, a video game or a complex control system, the design we see is the culmination of many concepts and practices brought together from a variety of disciplines.',
+      cover: 'img/8.jpg'
+    }
+    ]
+})
+
+</script>
+
+</body>
+</html>

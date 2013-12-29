@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Book Club reading for 2014</title>
+</head>
+<body ng-app="App">
+
+<div ng-controller="BooksCtrl">
+  <input type="text" ng-model="searchBooks">
+  <ol>
+    <li ng-repeat='book in books | filter:searchBooks'>
+      <strong>{{book.name}}</strong> by {{book.author}}
+    </li>
+  </ol>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+<script>
+
+var app = angular.module('App', []);
+
+app.controller('BooksCtrl', function($scope) {
+
+  $scope.books = [
+    { name: 'Modern Operating Systems', author: 'Andrew S. Tanenbaum' },
+    { name: 'Design Patterns', author: 'Gang of 4' },
+    { name: 'Structure and interpretation of computer programs', author: 'Gerald Jay Sussman and Hal Abelson' },
+    { name: 'Getting Started with Electronics', author: 'Forrest M. Mims' },
+    { name: 'Code Complete', author: 'Steve McConnell' },
+    { name: 'Design of Everyday Things', author: 'Donald A. Norman' },
+    { name: 'The Feynman Lectures on Physics', author: 'Richard Feynman' },
+    { name: 'Universal Principles of Design', author: 'William Lidwell, Kritina Holden, Jill Butler' }
+  ];
+})
+
+</script>
+
+</body>
+</html>

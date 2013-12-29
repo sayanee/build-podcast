@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Book Club reading for 2014</title>
+</head>
+<body ng-app="App">
+
+<div ng-controller="HelloCtrl">
+  <p>{{message}}</p>
+  <p>uppercase: {{uppercase(message)}}</p>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+<script>
+
+var app = angular.module('App', []);
+
+app.controller('HelloCtrl', function($scope) {
+  $scope.message = "Hello!"
+
+  $scope.uppercase = function(word) {
+    return word.toUpperCase();
+  }
+});
+
+</script>
+
+</body>
+</html>

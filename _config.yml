@@ -59,5 +59,6 @@ exclude: ['sass', 'node_modules', 'Gruntfile.js', 'package.json', 'readme.md', '
   '052-tmux',
   '053-command-line-apps',
   '054-d3js',
-  '055-ubuntu'
+  '055-ubuntu',
+  '056-angularjs'
 ]
