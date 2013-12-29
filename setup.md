@@ -9,7 +9,7 @@ permalink: /setup/
 
 ##Equipment and tools used for capturing and editing:
 
-Big thanks to the open source community and free softwares!
+Big thanks to the open source community and free software!
 
 1. [C01U USB Studio Condensor Microphone](http://www.samsontech.com/samson/products/microphones/usb-microphones/c01u/)
 1. [SwitchResX 4](http://www.madrau.com/download/latest/latest.html) to switch my screen resolution to `1280 x 720` and keep my notes in a dual monitor to refer while speaking and recording
