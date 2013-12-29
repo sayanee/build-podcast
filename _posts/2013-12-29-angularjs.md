@@ -364,6 +364,7 @@ The summaries and cover images of these books in the project were taken from the
 1. [Egghead videos](http://egghead.io/lessons)
 1. [AngularJS Oreilly book](http://shop.oreilly.com/product/0636920028055.do)
 1. [Tutsplus video course](https://tutsplus.com/course/easier-js-apps-with-angular/)
+1. [BackboneJS](http://backbonejs.org/) and [EmberJS](http://emberjs.com/) - other frontend mvc frameworks
 
 
 ##Build Link of this episode
