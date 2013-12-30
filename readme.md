@@ -44,10 +44,10 @@ When preparing the show notes in local machine, execute the following in the com
     
 If there's and error for invalid byte sequence in US-ASCII, try to reset the locale settings
 
-    ```
-    LC_CTYPE="en_US.UTF-8"
-    LANG="en_US.UTF-8"
-    ```
+```
+LC_CTYPE="en_US.UTF-8"
+LANG="en_US.UTF-8"
+```
 
 ##Automation
 
