@@ -66,5 +66,4 @@ I wanna learn a tonne of things. Here are some stuff I wanna pick up, go in dept
 1. [RasberryPI](http://www.raspberrypi.org/)
 1. [Johnny Five](https://github.com/rwaldron/johnny-five)
 1. [Espruino](http://www.espruino.com/)
-1. [AngularJS](http://angularjs.org/)
 1. [EmberJS](http://emberjs.com/)

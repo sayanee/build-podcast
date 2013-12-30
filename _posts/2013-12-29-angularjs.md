@@ -34,7 +34,7 @@ length: 176798683
     - `ng-app` portion of the html for angularjs to act upon
     - `script` tag to link to the angularjs cdn
     - `ng-model` change the model to update the control
-    - `{{message}}` display the data
+    - `{{ "{{hello" }}}}`  display the datas
 
     ```
     <!doctype html>
@@ -45,12 +45,12 @@ length: 176798683
       <title>Things to learn in 2014!</title>
     </head>
     <body ng-app>
-    
+
     <input type="text" ng-model="message">
-    <p>{{message}}</p>
-    
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
-    
+    <p>{{ "{{message" }}}}</p>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+
     </body>
     </html>
     ```
@@ -63,31 +63,31 @@ length: 176798683
     <body ng-app>
 
     <div ng-controller="HelloCtrl">
-      <p>{{message}}</p>
+      <p>{{ "{{message" }}}}</p>
     </div>
-    
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
     <script>
     function HelloCtrl($scope){
       $scope.message = "Hello World";
     }
     </script>
-    
+
     </body>
     ```
 1. functions within controllers
 
     ```
     <div ng-controller="HelloCtrl">
-      <p>{{message}}</p>
-      <p>uppercase: {{uppercase(message)}}</p>
+      <p>{{ "{{message" }}}}</p>
+      <p>uppercase: {{ "{{uppercase(message)" }}}}</p>
     </div>
-    
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
     <script>
     function HelloCtrl($scope){
       $scope.message = "Hello World";
-    
+
       $scope.uppercase = function(word) {
         return word.toUpperCase();
       }
@@ -104,7 +104,7 @@ length: 176798683
 
     <div ng-controller="HelloCtrl">
       <input type="text" ng-model="message">
-      <p>{{uppercase(message)}}</p>
+      <p>{{ "{{uppercase(message)" }}}}</p>
     </div>
     ```
 
@@ -115,15 +115,15 @@ length: 176798683
     <script>
 
     var app = angular.module('App', []);
-    
+
     app.controller('HelloCtrl', function ($scope) {
-    
+
       $scope.message = 'hello';
       $scope.uppercase = function(word) {
         return word.toUpperCase();
       }
     })
-    
+
     </script>
     ...
     ```
@@ -134,7 +134,7 @@ length: 176798683
 
     ```
     ...
-    <p>uppercase: {{message | uppercase}}</p>
+    <p>uppercase: {{ "{{message | uppercase" }}}}</p>
     ...
     <script>
     ...
@@ -145,50 +145,46 @@ length: 176798683
     ```
 1. [in-built filters](http://docs.angularjs.org/api/ng.filter:currency)
 
-    - currency
-    
     ```
+    <!-- currency -->
     ...
-    <p>price: {{price | currency:"EUR "}}</p>
+    <p>price: {{ "{{price | currency:"EUR "" }}}}</p>
     ...
     $scope.price = 23.556;
     ...
-    ```
-    
-    - date
-    
-    ```
+
+    <!-- time -->
     ...
-    <p>now: {{startingTime | date:"medium"}}</p>
+    <p>now: {{ "{{startingTime | date:"medium"" }}}}</p>
     ...
     $scope.startingTime = Date.now();
     ...
     ```
 
 ###5. repeated data `ng-repeat`
-    
+
 1. a list of books to read that can be filtered:
-    
+
     ```
     <div ng-controller="BooksCtrl">
       <input type="text" ng-model="search">
       <ol>
         <li ng-repeat='book in books | filter:search'>
-          <strong>{{book.name}}</strong> by {{book.author}}
+          <strong>{{ "{{book.name" }}}}</strong> by {{ "{{book.author" }}}}
         </li>
       </ol>
     </div>
-    
+
     ```
 2. with the following data structure and script:
 
-    ```  
+    ```
     <script>
-    
+
     var app = angular.module('App', []);
-    
+
     app.controller('BooksCtrl', function ($scope) {
-    
+
       $scope.books = [
         { name: 'Modern Operating Systems', author: 'Andrew S. Tanenbaum' },
         { name: 'Design Patterns', author: 'Gang of 4' },
@@ -199,16 +195,16 @@ length: 176798683
         { name: 'The Feynman Lectures on Physics', author: 'Richard Feynman' },
         { name: 'Universal Principles of Design', author: 'William Lidwell, Kritina Holden, Jill Butler' }
       ]
-    
+
     })
-    
+
     </script>
     ```
 
 ###6. display data if chosen `ng-if`
 
 1. select for a quick look of the book with a summary and cover image:
-    
+
     ```
     <div ng-controller="BooksCtrl">
         <input type="text" ng-model="search">
@@ -219,18 +215,18 @@ length: 176798683
             <th>Book detail</th>
         </tr>
         <tr ng-repeat='book in books | filter:search'>
-            <td>{{ $index +1 }}</td>
+            <td>{{ "{{ $index +1 " }}}}</td>
             <td>
             <input type="checkbox" ng-model="selected">
-            <strong>{{book.name}}</strong> by {{book.author}}
+            <strong>{{ "{{book.name" }}}}</strong> by {{ "{{book.author" }}}}
             <div ng-if="selected">
-                <p>{{ book.summary }}</p>
-                <img src="{{book.cover}}" alt="{{ book.name }}">
+                <p>{{ "{{ book.summary " }}}}</p>
+                <img ng-src="{{"{{book.cover" }}}}" alt="{{"{{ book.name " }}}}">
             </div>
             </td>
         </tr>
         </table>
-        {{reading}}
+        {{ "{{reading" }}}}
     </div>
     ```
 2. structure of the books will now include the image and summary:
@@ -266,12 +262,12 @@ length: 176798683
       <th>Book detail</th>
       <th>Quantity</th>
     </tr>
-    … 
-    
-    <tr ng-repeat='book in books | filter:search' ng-class="{selected: (book.quantity > 0)}">
-    
     …
-    
+
+    <tr ng-repeat='book in books | filter:search' ng-class="{selected: (book.quantity > 0)}">
+
+    …
+
     <td>
         <select ng-model="book.quantity">
             <option value="0" selected>0</option>
@@ -285,7 +281,7 @@ length: 176798683
 ###8. do something upon an action `ng-change`
 
 1. upon adding each book
-   
+
     ```
     <select ng-model="book.quantity" ng-change="addBooks(book)">
     ```
@@ -293,9 +289,9 @@ length: 176798683
 
     ```
     $scope.selectedBooks = {};
-    
+
     ...
-    
+
     $scope.addBooks = function(book) {
         $scope.selectedBooks[book.name] = {'name': book.name, 'quantity': parseInt(book.quantity, 10) };
         if(book.quantity === '0') {
@@ -309,7 +305,7 @@ length: 176798683
     ```
     <ol>
         <li ng-repeat="book in selectedBooks">
-          <strong>{{book.name}}</strong> [{{ book.quantity }}]
+          <strong>{{ "{{book.name" }}}}</strong> [{{ "{{ book.quantity " }}}}]
         </li>
     </ol>
     ```
@@ -320,12 +316,12 @@ length: 176798683
 
     ```
     <button ng-hide="dispatched" ng-click="getBooks()">GET THE BOOKS!</button>
-    ```   
+    ```
 2. define what `getBooks()` does
 
     ```
     $scope.dispatched = false;
-    
+
     $scope.getBooks = function() {
         $scope.dispatched = true;
     }
@@ -337,7 +333,7 @@ length: 176798683
     <hr ng-hide="dispatched">
     <table ng-hide="dispatched" border=1 cellpadding=5>
     …
-    
+
     <button ng-hide="dispatched" ng-click="getBooks()">GET THE BOOKS!</button>
 
     <p ng-show="dispatched">Hurray! Your books are on the way ;-)</p>
@@ -349,8 +345,8 @@ length: 176798683
 The summaries and cover images of these books in the project were taken from the following websites:
 
 1. [Amazon](http://www.amazon.com/Modern-Operating-Systems-3rd-Edition/dp/0136006639): Modern Operating Systems by Andrew S. Tanenbaum
-1. [Amazon](http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612): Design Patterns by Gang of 4	
-1. [MIT Press](http://mitpress.mit.edu/sicp/full-text/book/book.html): Structure and interpretation of computer programs by Gerald Jay Sussman and Hal Abelson	
+1. [Amazon](http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612): Design Patterns by Gang of 4
+1. [MIT Press](http://mitpress.mit.edu/sicp/full-text/book/book.html): Structure and interpretation of computer programs by Gerald Jay Sussman and Hal Abelson
 1. [Amazon](http://www.amazon.com/Getting-Started-Electronics-Forrest-Mims/dp/0945053282): Getting Started with Electronics by Forrest M. Mims
 1. [Amazon](http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670): Code Complete by Steve McConnell
 1. [Amazon](http://www.amazon.com/Design-Everyday-Things-Donald-Norman/dp/0465067107): Design of Everyday Things by Donald A. Norman
