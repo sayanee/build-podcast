@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/sayanee/build-podcast.png)](https://travis-ci.org/sayanee/build-podcast)
+
+
 ####[Build Podcast](http://build-podcast.com) is a show about technology tools for design and development. Each episode, [Sayanee](http://sayan.ee) will be creating a screencast that will take you through step-by-step in using one tool to build a little project, all in the fun spirit of hacking, creating and building stuff!
 
 Related links:
@@ -17,31 +20,31 @@ This Github repository consists of sample code for each episode and the entire w
 
 When preparing the show notes in local machine, execute the following in the command line in git branch `master`:
 
-   - **to build**: 
-   
+   - **to build**:
+
        ```
        LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll build
        ```
 
    - **to add new posts**:  to start the [Jekyll](http://jekyllrb.com/) server with development configurations
-       
+
        ```
        LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll serve --watch --config _dev_config.yml
        ```
    - **to edit css and javascript**: to start the [GruntJS](http://gruntjs.com/) continuous compilation for CSS and JavaScript
-   
+
        ```
        grunt
-       ``` 
+       ```
    - **to sync to the github pages** change to git branch `gh-pages` and do a git rebase
-    
+
        ```
-       git checkout gh-pages 
-       git rebase master 
-       git push origin gh-pages 
-       git checkout master 
+       git checkout gh-pages
+       git rebase master
+       git push origin gh-pages
+       git checkout master
        ```
-    
+
 If there's and error for invalid byte sequence in US-ASCII, try to reset the locale settings
 
 ```
@@ -55,7 +58,7 @@ Automation with [scripts](/scripts):
 
 a. After exporting the edited video, normalise audio with the [shell script norm](/scripts/norm) which will output an mp4 video file:
 
-    
+
     ```
     $ norm screencast.mov
     ```
