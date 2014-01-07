@@ -1,0 +1,11 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.0.0
+
+install: gem install jekyll
+script: jekyll build
+
+branches:
+  only:
+    - gh-pages
