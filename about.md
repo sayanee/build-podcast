@@ -30,6 +30,8 @@ I wanna learn a tonne of things. Here are some stuff I wanna pick up, go in dept
 
 *Hint*: These are also an approximate indication of my future episodes :)
 
+1. [Gulp](http://gulpjs.com/)
+1. [Ghost](https://ghost.org/)
 1. [OAuth](http://oauth.net/)
 1. [Mocha](http://visionmedia.github.io/mocha/) with [Chai](http://chaijs.com/)
 1. [Puppet](http://puppetlabs.com/solutions/devops) with [Boxen](http://boxen.github.com/)
