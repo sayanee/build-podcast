@@ -1,0 +1,8 @@
+{{!< default}}
+
+{{#foreach posts}}
+  <h2><a href="{{url}}">{{title}}</a></h2>
+  <p>{{excerpt}}</p>
+  <span datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MM YYYY"}}</span>
+
+{{/foreach}}
