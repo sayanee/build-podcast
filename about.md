@@ -28,11 +28,14 @@ If you found Build Podcast useful, [i would be really happy to hear it](http://t
 
 I wanna learn a tonne of things. Here are some stuff I wanna pick up, go in depth and use in my daily dabbling with technology. These will probably take me more than a couple years to learn, but it's exciting!
 
-*Hint*: These are also an approximate indication of my future episodes :)
+*Hint*: These are also an approximate indication of my future episodes (in no order) :)
 
 1. [Gulp](http://gulpjs.com/)
 1. [OAuth](http://oauth.net/)
 1. [Atom](https://atom.io/)
+1. [OOCSS](http://oocss.org/)
+1. [Semantic UI](https://github.com/semantic-org/semantic-ui/)
+1. [Docker](https://www.docker.io/)
 1. [Mocha](http://visionmedia.github.io/mocha/) with [Chai](http://chaijs.com/)
 1. [Puppet](http://puppetlabs.com/solutions/devops) with [Boxen](http://boxen.github.com/)
 1. [ECMAScript 6](http://www.ecmascript.org/)
