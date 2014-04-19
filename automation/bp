@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+var configFile = '/Users/sayanee/Workspace/build-podcast/episode.json';
+
 var program = require('commander');
 var exec = require('child_process').exec;
 var sh = require('execSync');
@@ -10,21 +12,20 @@ var spawn = require('child_process').spawn;
 var Client = require('ftp');
 var ncp = require('ncp').ncp;
 
-program.version('0.1.0');
+program.version('0.2.0');
 
 program
-  .command('new [configFile]')
+  .command('new')
   .description('start a brand new episode with configuration data')
   .action(function(configFile) {
 
     var config, shellReturn, newReadme, templateReadme, newPost, templatePost;
 
     if (!configFile) program.help();
+    config = extractConfig();
 
-    config = extractConfig(configFile);
-
+    // edit _config.yml
     fs.readFile(config.configYMLFile, 'utf8', function(error, data) {
-
       if (error) { console.log(error); }
 
       var pastEpisode = '\'' + config.prevEpisodeNum + '-' + config.prevEpisode + '\'';
@@ -39,8 +40,8 @@ program
 
     });
 
+    // edit _dev_config.yml
     fs.readFile(config.devConfigYMLFile, 'utf8', function(error, data) {
-
       if (error) { console.log(error); }
 
       var pastEpisode = '\'' + config.prevEpisodeNum + '-' + config.prevEpisode + '\'';
@@ -55,19 +56,22 @@ program
 
     });
 
-
+    // make new folder for demo code
     shellReturn = sh.exec('mkdir ' + config.repoDir + config.num + '-' + config.episodeLowercase);
     if (shellReturn.code === 0) console.log('Created new sample code directory')
     else console.log('Failed to create new sample code directory:\n' + shellReturn.stdout);
 
+    // make new folder in desktop to be used during recording
     shellReturn = sh.exec('mkdir ' + config.desktopDir + config.episodeLowercase);
     if (shellReturn.code === 0) console.log('Created new sample code directory in desktop')
     else console.log('Failed to create new sample code directory in desktop:\n' + shellReturn.stdout);
 
+    // open desktop folder
     shellReturn = sh.exec('open ' + config.desktopDir + config.episodeLowercase);
     if (shellReturn.code === 0) console.log('Opened sample code directory in desktop')
     else console.log('Failed to open new sample code directory in desktop:\n' + shellReturn.stdout);
 
+    // open desktop folder in text editor
     shellReturn = sh.exec('subl ' + config.desktopDir + config.episodeLowercase);
     if (shellReturn.code === 0) console.log('Opened sample code directory in desktop in text editor')
     else console.log('Failed to open new sample code directory in desktop in text editor:\n' + shellReturn.stdout);
@@ -79,12 +83,12 @@ program
     if (shellReturn.code === 0) console.log('Opened sample code directory ')
     else console.log('Failed to open sample code directory:\n' + shellReturn.stdout);
 
+    // make readme from template
     shellReturn = sh.exec('cp ' + templateReadme + ' ' + newReadme);
     if (shellReturn.code === 0) console.log('Copied sample code readme from template')
     else console.log('Failed to copy sample code readme from template:\n' + shellReturn.stdout);
 
     fs.readFile(newReadme, 'utf8', function(error, data) {
-
       if (error) { console.log(error); }
       data = data.replace(/{{NUM}}/g, config.num);
       data = data.replace(/{{EPISODE}}/g, config.episode);
@@ -97,6 +101,7 @@ program
 
     });
 
+    // make show notes post from template
     templatePost = config.repoDir + config.templateDir + config.templatePost;
     newPost = config.postDate + '-' + config.episodeLowercase + '.md';
 
@@ -105,7 +110,6 @@ program
     else console.log('Failed to copy sample post from template:\n' + shellReturn.stdout);
 
     fs.readFile(newPost, 'utf8', function(error, data) {
-
       if (error) {return console.log(error); }
       data = data.replace(/{{NUM}}/g, config.num);
       data = data.replace(/{{EPISODE}}/g, config.episode);
@@ -119,6 +123,7 @@ program
 
     });
 
+    // open tower version control
     shellReturn = sh.exec('open ' + config.app.tower);
     if (shellReturn.code === 0) console.log('Opened Tower')
     else console.log('Failed to open tower:\n' + shellReturn.stdout);
@@ -363,7 +368,7 @@ program.parse(process.argv);
 
 if (process.argv.length < 3) program.help();
 
-function extractConfig(configFile) {
+function extractConfig() {
 
   var config = fs.readFileSync(configFile);
   config = JSON.parse(config);
