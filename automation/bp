@@ -1,6 +1,11 @@
 #!/usr/bin/env node
 
-var configFile = '/Users/sayanee/Workspace/build-podcast/episode.json';
+// downloads
+// brew install ffmeg sox
+// https://code.google.com/p/youtube-upload/downloads/list
+// https://code.google.com/p/gdata-python-client/downloads/list
+
+var defaultConfigFile = '/Users/sayanee/Workspace/build-podcast/episode.json';
 
 var program = require('commander');
 var exec = require('child_process').exec;
@@ -14,15 +19,17 @@ var ncp = require('ncp').ncp;
 
 program.version('0.2.0');
 
+// bp new
 program
-  .command('new')
+  .command('new [configFile]')
   .description('start a brand new episode with configuration data')
   .action(function(configFile) {
-
     var config, shellReturn, newReadme, templateReadme, newPost, templatePost;
 
-    if (!configFile) program.help();
-    config = extractConfig();
+    if (!configFile){
+      configFile = defaultConfigFile;
+    }
+    config = extractConfig(configFile);
 
     // edit _config.yml
     fs.readFile(config.configYMLFile, 'utf8', function(error, data) {
@@ -127,45 +134,51 @@ program
     shellReturn = sh.exec('open ' + config.app.tower);
     if (shellReturn.code === 0) console.log('Opened Tower')
     else console.log('Failed to open tower:\n' + shellReturn.stdout);
-
   });
 
+// bp open
 program
   .command('open [configFile]')
   .description('run an on-going episode with configuration data')
   .action(function(configFile) {
-
-    if (!configFile) program.help();
+    if (!configFile){
+      configFile = defaultConfigFile;
+    }
 
     var config = extractConfig(configFile);
     var shellReturn;
 
+    // open post folder
     shellReturn = sh.exec('open ' + config.postDir);
     if (shellReturn.code === 0) console.log('Opened post folder')
     else console.log('Failed to open post folder: ' + shellReturn.stdout);
 
+    // open post file
     shellReturn = sh.exec('open ' + config.postFile);
     if (shellReturn.code === 0) console.log('Opened episode shownotes')
     else console.log('Failed to open episode shownotes: ' + shellReturn.stdout);
 
+    // open demo directory
     shellReturn = sh.exec('open ' + config.demoDir);
     if (shellReturn.code === 0) console.log('Opened demo directory')
     else console.log('Failed to open demo directory: ' + shellReturn.stdout);
 
+    // open demo directory in text editor
     shellReturn = sh.exec('subl ' + config.demoDir);
     if (shellReturn.code === 0) console.log('Opened demo folder in text editor')
     else console.log('Failed to open demo folder in text editor: ' + shellReturn.stdout);
 
     console.log(clc.red('On-going episode ' + config.num + ' ' + config.episode +' opened!'));
-
   });
 
+// bp record
 program
   .command('record [configFile]')
   .description('start recording screencast for a new episode with configuration data')
   .action(function(configFile) {
-
-    if (!configFile) program.help();
+    if (!configFile){
+      configFile = defaultConfigFile;
+    }
 
     var config = extractConfig(configFile);
     var startFile = config.repoDir + 'start/index.html';
@@ -184,8 +197,8 @@ program
 
       if (result.yesno === 'y') {
 
+        // edit start page
         fs.readFile(startFile, 'utf8', function(error, data) {
-
           if (error) { console.log(error); }
 
           data = data.replace(/<h1>(.*)<\/h1>/g, '<h1>' + config.num + ' ' + config.episode + '</h1>');
@@ -196,12 +209,11 @@ program
             if (error) console.log('Write to start file index.html:  ' + error);
             console.log('Start file index.html\'s data is filled in.');
           });
-
         });
 
         sh.run('open ' + config.repoDir + 'start');
         sh.run('subl ' + config.repoDir + 'start/index.html');
-        sh.run('sudo apachectl start && open http://dev.build-podcast.com');
+        sh.run('sudo nginx && open http://dev.build-podcast.com');
         console.log('Start screen is opened at dev.build-podcast.com');
 
         sh.run('open ' + config.postFile);
@@ -225,15 +237,16 @@ program
     });
   });
 
+// bp pub
 program
   .command('pub [configFile]')
   .description('publish a screencast for a new episode with configuration data')
   .action(function(configFile) {
-
-    if (!configFile) program.help();
+    if (!configFile){
+      configFile = defaultConfigFile;
+    }
 
     var config = extractConfig(configFile);
-
     var c = new Client();
     var source = config.desktopDir + config.episodeLowercase;
     var destination = config.repoDir + config.num + '-' + config.episodeLowercase;
@@ -243,9 +256,9 @@ program
     var isPostUpdated = false;
 
     // Stop Apache server
-    console.log('Stopping Apache server. Please put your password');
-    sh.run('sudo apachectl stop');
-    console.log(clc.red('Stopped apache server'));
+    console.log('Stopping Nginx. Please put your password');
+    sh.run('sudo nginx -s stop');
+    console.log(clc.red('Stopped nginx'));
 
     // Normalise video
     console.log(clc.blue('Normalising the audio in the screencast video file'));
@@ -346,7 +359,7 @@ program
         prompt.get(property, function (err, result) {
 
           if (result.githubpages === 'y') {
-            sh.run('cd ' + config.repoDir + ' && git status && git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master');
+            sh.run('cd ' + config.repoDir + ' && git status');
             sh.run('open http://github.com/sayanee/build-podcast');
             sh.run('open ' + config.postFile);
           } else {
@@ -368,8 +381,7 @@ program.parse(process.argv);
 
 if (process.argv.length < 3) program.help();
 
-function extractConfig() {
-
+function extractConfig(configFile) {
   var config = fs.readFileSync(configFile);
   config = JSON.parse(config);
 
@@ -384,8 +396,6 @@ function extractConfig() {
   config.demoDir = config.desktopDir + config.episodeLowercase;
   config.configYMLFile = config.repoDir + '_config.yml';
   config.devConfigYMLFile = config.repoDir + '_dev_config.yml';
-
-  // console.log(config);
 
   return config;
 }
