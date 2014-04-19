@@ -33,7 +33,7 @@ program
 
     // edit _config.yml
     fs.readFile(config.configYMLFile, 'utf8', function(error, data) {
-      if (error) { console.log(error); }
+      if(error) { console.error(error); }
 
       var pastEpisode = '\'' + config.prevEpisodeNum + '-' + config.prevEpisode + '\'';
       var re = new RegExp(pastEpisode,'g');
@@ -44,7 +44,6 @@ program
         if (error) console.log('Write to _config.yml:  ' + error);
         console.log('_config.yml included the current episode directory to ignore.');
       });
-
     });
 
     // edit _dev_config.yml
@@ -60,7 +59,6 @@ program
         if (error) console.log('Write to _dev_config.yml:  ' + error);
         console.log('_dev_config.yml included the current episode directory to ignore.');
       });
-
     });
 
     // make new folder for demo code
@@ -255,7 +253,7 @@ program
     var isUploadedToVimeo = false;
     var isPostUpdated = false;
 
-    // Stop Apache server
+    // Stop Nginx server
     console.log('Stopping Nginx. Please put your password');
     sh.run('sudo nginx -s stop');
     console.log(clc.red('Stopped nginx'));
@@ -266,114 +264,132 @@ program
     sh.run('norm ' + config.desktopDir + config.folder + '.mov');
     console.log(clc.blue('Normalised video: ' + config.video));
 
-    // Upload video via FTP
-    console.log(clc.yellow('Uploading video with FTP'));
-    c.on('ready', function() {
-      c.put(config.video, config.path , function(error) {
-        if (error) console.log('ERROR >>>>>>>> Uploading video via FTP:\n' + error);
-        c.end();
-        console.log(clc.yellow('Video file uploaded to http://video.build-podcast.com/' + config.video));
-        spawn('open', [ 'http://video.build-podcast.com/'.concat(config.video) ]);
-        isVideoNormalised = true;
-        updatePost();
-      });
-    });
-    c.connect(config);
+    prompt.start();
 
-    // Upload video to YouTube and add to playlist
-    console.log(clc.green('Uploading video to Youtube'));
-    exec(
-      'youtube-upload --email=' + config.youtubeEmail + ' --password=' + config.youtubePassword + ' --title="' + config.title + '" --description="' + config.videoDescription + '" --category="Tech" --keywords="' + config.tags + '" ' + config.video,
-      function(error, stdout, stderr) {
-        if (error) console.log('ERROR >>>>>>>> Uploading video to YouTube:  ' + error);
-        console.log(clc.green('Youtube video url: ' + stdout));
-        spawn('open', [ stdout ]);
+    var property = {
+      name: 'yesno',
+      message: 'Have you updated episode.json with tags and summary? (y/n) ',
+      validator: /y[es]*|n[o]?/,
+      warning: 'Must respond yes or no'
+    };
 
-        exec(
-          'youtube-upload --email=' + config.youtubeEmail + ' --password=' + config.youtubePassword + ' --add-to-playlist=' + config.youtubePlaylist + ' ' + stdout,
-          function(error, stdout, stderr) {
-            if (error) console.log('ERROR >>>>>>>> Adding YouTube video to playlist: ' + error);
-            console.log(clc.green('Youtube video added to playlist: ' + config.youtubePlaylistURL));
-            spawn('open', [ config.youtubePlaylistURL ]);
-            isUploadedToYoutube = true;
-            pushToGithub();
-        });
-    });
+    prompt.get(property, function (err, result) {
 
-    // Upload video to Vimeo and add to channel
-    exec('vimeo upload ' + configFile, function(error, stdout, stderr) {
-      if (error) {
-        console.log('ERROR >>>>>>>> Uploading video to Vimeo:  ' + error);
-      }
-      else {
-        console.log(stdout);
-        isUploadedToVimeo = true;
-        pushToGithub();
-      }
-    });
+      if (result.yesno === 'y') {
 
-    // Copy demo source code to repo
-    ncp(source, destination, function (error) {
-      if (error) console.error('ERROR >>>>>>>> Copying demo source code to repo: ' + error);
-      console.log('Demo source code files are transferred.');
-    });
-
-    // Update post with tag and length information
-    function updatePost() {
-      fs.stat(config.video , function (error, stats) {
-        var videoSize = stats.size;
-
-        fs.readFile(config.postFile, 'utf8', function(err, fileContents) {
-
-          if (error) console.log('ERROR >>>>>>>> Read file to update meta tags: ' + error);
-          fileContents = fileContents.replace(/{{LENGTH}}/g, videoSize);
-          fileContents = fileContents.replace(/{{TAGS}}/g, config.tags);
-          fileContents = fileContents.replace(/{{DESCRIPTION}}/g, config.summary);
-
-          fs.writeFile(config.postFile, fileContents, 'utf8', function(error) {
-            if (error) console.log('ERROR >>>>>>>> Writing meta data:  ' + error);
-            console.log(clc.red('Meta data for video length, description and tags are added to the Post.'));
-            isPostUpdated = true;
-            pushToGithub();
+        // Upload video via FTP
+        console.log(clc.yellow('Uploading video with FTP'));
+        c.on('ready', function() {
+          c.put(config.video, config.path , function(error) {
+            if (error) {
+              throw({
+                toString: function() {
+                  return 'ERROR >>>>>>>> Uploading video via FTP:\n' + error;
+                }
+              });
+            }
+            c.end();
+            console.log(clc.yellow('Video file uploaded to http://video.build-podcast.com/' + config.video));
+            spawn('open', [ 'http://video.build-podcast.com/'.concat(config.video) ]);
+            isVideoNormalised = true;
+            updatePost();
           });
-
         });
-      });
-    }
+        c.connect(config);
 
-    // Gush to github pages and Jekyll gh-pages branch
-    function pushToGithub() {
-      if (isPostUpdated == true && isUploadedToYoutube == true && isUploadedToVimeo == true)
-      {
-        sh.run('open ' + config.app.tower);
+        // Upload video to YouTube and add to playlist
+        console.log(clc.green('Uploading video to Youtube'));
+        exec(
+          'youtube-upload --email=' + config.youtubeEmail + ' --password=' + config.youtubePassword + ' --title="' + config.title + '" --description="' + config.videoDescription + '" --category="Tech" --keywords="' + config.tags + '" ' + config.video,
+          function(error, stdout, stderr) {
+            if (error) console.log('ERROR >>>>>>>> Uploading video to YouTube:  ' + error);
+            console.log(clc.green('Youtube video url: ' + stdout));
+            spawn('open', [ stdout ]);
 
-        prompt.start();
+            exec(
+              'youtube-upload --email=' + config.youtubeEmail + ' --password=' + config.youtubePassword + ' --add-to-playlist=' + config.youtubePlaylist + ' ' + stdout,
+              function(error, stdout, stderr) {
+                if (error) console.log('ERROR >>>>>>>> Adding YouTube video to playlist: ' + error);
+                console.log(clc.green('Youtube video added to playlist: ' + config.youtubePlaylistURL));
+                spawn('open', [ config.youtubePlaylistURL ]);
+                isUploadedToYoutube = true;
+                pushToGithub();
+            });
+        });
 
-        var property = {
-          name: 'githubpages',
-          message: 'Is the post complete? Have you committed everything? (y/n) ',
-          validator: /y[es]*|n[o]?/,
-          warning: 'Must respond yes or no'
-        };
-
-        prompt.get(property, function (err, result) {
-
-          if (result.githubpages === 'y') {
-            sh.run('cd ' + config.repoDir + ' && git status');
-            sh.run('open http://github.com/sayanee/build-podcast');
-            sh.run('open ' + config.postFile);
-          } else {
-            console.log('You have uncommitted changes');
+        // Upload video to Vimeo and add to channel
+        exec('vimeo upload ' + defaultConfigFile, function(error, stdout, stderr) {
+          if (error) {
+            console.log('ERROR >>>>>>>> Uploading video to Vimeo:  ' + error);
+          }
+          else {
+            console.log(stdout);
+            isUploadedToVimeo = true;
+            pushToGithub();
           }
         });
+
+        // Copy demo source code to repo
+        ncp(source, destination, function (error) {
+          if (error) console.error('ERROR >>>>>>>> Copying demo source code to repo: ' + error);
+          console.log('Demo source code files are transferred.');
+        });
+
+        // Update post with tag and length information
+        function updatePost() {
+          fs.stat(config.video , function (error, stats) {
+            var videoSize = stats.size;
+
+            fs.readFile(config.postFile, 'utf8', function(err, fileContents) {
+
+              if (error) console.log('ERROR >>>>>>>> Read file to update meta tags: ' + error);
+              fileContents = fileContents.replace(/{{LENGTH}}/g, videoSize);
+              fileContents = fileContents.replace(/{{TAGS}}/g, config.tags);
+              fileContents = fileContents.replace(/{{DESCRIPTION}}/g, config.summary);
+
+              fs.writeFile(config.postFile, fileContents, 'utf8', function(error) {
+                if (error) console.log('ERROR >>>>>>>> Writing meta data:  ' + error);
+                console.log(clc.red('Meta data for video length, description and tags are added to the Post.'));
+                isPostUpdated = true;
+                pushToGithub();
+              });
+
+            });
+          });
+        }
+
+        // Gush to github pages and Jekyll gh-pages branch
+        function pushToGithub() {
+          if (isPostUpdated == true && isUploadedToYoutube == true && isUploadedToVimeo == true)
+          {
+            sh.run('open ' + config.app.tower);
+            sh.run('cd ' + config.repoDir + ' && git status');
+            prompt.start();
+
+            var property = {
+              name: 'githubpages',
+              message: 'Is the post complete? Have you committed everything? (y/n) ',
+              validator: /y[es]*|n[o]?/,
+              warning: 'Must respond yes or no'
+            };
+
+            prompt.get(property, function (err, result) {
+
+              if (result.githubpages === 'y') {
+                // sh.run('cd ' + config.repoDir + ' && git commit ');
+                sh.run('open http://github.com/sayanee/build-podcast');
+                sh.run('open ' + config.postFile);
+              } else {
+                console.log('You have uncommitted changes');
+              }
+            });
+          }
+        }
+      } else {
+        console.log(clc.red('Update episode.json file with tags and summary information.'));
       }
-      else {
-        console.log(clc.yellow('Not ready to push to Github!'));
-        console.log('Post updated? ' + isPostUpdated);
-        console.log('YouTube uploaded? ' + isUploadedToYoutube);
-        console.log('Vimeo uploaded? ' + isUploadedToVimeo);
-      }
-    }
+
+    })
 
   });
 
