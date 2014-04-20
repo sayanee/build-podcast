@@ -26,9 +26,7 @@
     "grunt-contrib-watch": "0.5.3",
     "mocha": "latest",
     "chai": "latest",
-    "webdriverjs": "latest"
-  },
-  "dependencies": {
-    "webdriverjs": "^1.6.1"
+    "colors": "latest",
+    "selenium-webdriver": "latest"
   }
 }
