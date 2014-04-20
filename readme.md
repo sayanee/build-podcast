@@ -22,28 +22,28 @@ When preparing the show notes in local machine, execute the following in the com
 
    - **to build**:
 
-       ```
-       LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll build
-       ```
+     ```
+     LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll build
+     ```
 
    - **to add new posts**:  to start the [Jekyll](http://jekyllrb.com/) server with development configurations
 
-       ```
-       LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll serve --watch --config _dev_config.yml
-       ```
+     ```
+     LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll serve --watch --config _dev_config.yml
+     ```
    - **to edit css and javascript**: to start the [GruntJS](http://gruntjs.com/) continuous compilation for CSS and JavaScript
 
-       ```
-       grunt
-       ```
+     ```
+     grunt
+     ```
    - **to sync to the github pages** change to git branch `gh-pages` and do a git rebase
 
-       ```
-       git checkout gh-pages
-       git rebase master
-       git push origin gh-pages
-       git checkout master
-       ```
+     ```
+     git checkout gh-pages
+     git rebase master
+     git push origin gh-pages
+     git checkout master
+     ```
 
 If there's and error for invalid byte sequence in US-ASCII, try to reset the locale settings
 
@@ -52,23 +52,34 @@ LC_CTYPE="en_US.UTF-8"
 LANG="en_US.UTF-8"
 ```
 
+##Test
+
+1. [Download](http://docs.seleniumhq.org/download/) Selenium Webdriver `*.jar` file
+1. Start the stand alone server
+
+	```
+	java -jar selenium-server-standalone-2.41.0.jar
+	```
+1. Start Jekyll server
+
+	```
+	LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll serve --watch --config _dev_config.yml
+	```	
+1. Run Mocha test
+
+	```
+	mocha
+	```
+
 ##Automation
 
 Automation with [scripts](/scripts):
 
-a. After exporting the edited video, normalise audio with the [shell script norm](/scripts/norm) which will output an mp4 video file:
+1. Start a new episode: `bp new`
+1. Open an existing episode: `bp open`
+1. Record aa new episode: `bp record`
+1. Publish a new episode: `bp pub`
 
-
-    ```
-    $ norm screencast.mov
-    ```
-
-a. Upload `screencast.mp4` via ftp using the [shell script fit-build](/scripts/ftp-build) that will upload the latest file (screencast.mp4) on the Desktop:
-
-
-    ```
-    $ ftp-build [server] [username] [password]
-    ```
 
 ##License
 
