@@ -19,7 +19,7 @@ length: 134501989
 
 **Similar episodes**: [004 GIT](/git), [019 Bash](/bash/), [022 SSH](/ssh/),  [015 Github](/github), [033 AWS](/aws),
 
-**Version**: 2.14.2
+**Version**: 2.14.2 (For current Version 3, start with the [Readme](https://github.com/capistrano/capistrano/blob/master/README.md))
 
 ##Background on Capistrano
 
