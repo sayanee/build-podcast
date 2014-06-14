@@ -34,6 +34,8 @@ I wanna learn a tonne of things. Here are some stuff I wanna pick up, go in dept
 1. [OAuth](http://oauth.net/)
 1. [Atom](https://atom.io/)
 1. [OOCSS](http://oocss.org/)
+1. [ReactJS](http://facebook.github.io/react/)
+1. Cloud IDEs
 1. [Semantic UI](https://github.com/semantic-org/semantic-ui/)
 1. [Docker](https://www.docker.io/)
 1. [Mocha](http://visionmedia.github.io/mocha/) with [Chai](http://chaijs.com/)
