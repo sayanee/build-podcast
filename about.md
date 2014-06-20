@@ -30,6 +30,7 @@ I wanna learn a tonne of things. Here are some stuff I wanna pick up, go in dept
 
 *Hint*: These are also an approximate indication of my future episodes (in no order) :)
 
+1. [Browserify](http://browserify.org/)
 1. [Gulp](http://gulpjs.com/)
 1. [OAuth](http://oauth.net/)
 1. [Atom](https://atom.io/)
