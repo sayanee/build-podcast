@@ -9,11 +9,11 @@ enclosure: http://video.build-podcast.com/{{NUM}}-{{EPISODE_LOWERCASE}}.mp4
 length: {{LENGTH}}
 ---
 
-<div id="video"><iframe src="//player.vimeo.com/video/{{VIMEOURL}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+<div id="video"><iframe width="560" height="315" src="//www.youtube.com/embed/{{YOUTUBEURL}}" frameborder="0" allowfullscreen></iframe></div>
 
 [{{EPISODE}}](#)
 
-**Download video**: [mp4](http://video.build-podcast.com/{{NUM}}-{{EPISODE_LOWERCASE}}.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/{{NUM}}-{{EPISODE_LOWERCASE}}.mp4" download="build-podcast-{{NUM}}-{{EPISODE_LOWERCASE}}.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/{{NUM}}-{{EPISODE_LOWERCASE}})
 
