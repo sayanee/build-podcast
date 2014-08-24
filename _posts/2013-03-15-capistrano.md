@@ -13,7 +13,7 @@ length: 134501989
 
 [Capistrano](http://capistranorb.com/) is remote multi-server automation tool that is often used for deployment. In this episode, we will first learn how to execute command line tasks in several servers, then we will deploy a [github](https://github.com/) repo on a newly fired up [EC2](http://aws.amazon.com/ec2/) instance.
 
-**Download video**: [mp4](http://video.build-podcast.com/035-capistrano.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/035-capistrano.mp4" download="build-podcast-035-capistrano.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/035-capistrano)
 

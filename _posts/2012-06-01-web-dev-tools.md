@@ -13,7 +13,7 @@ length: 26881809
 
 We will explore the developer console of the various browsers - Chrome, Firefox, Safari and Opera.
 
-**Download video**: [mp4](http://video.build-podcast.com/001-web-dev-tools.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/001-web-dev-tools" download="build-podcast-001-web-dev-tools.mp4">mp4</a></p>
 
 ##Tools used:
 

@@ -13,7 +13,7 @@ length: 110673514
 
 [PhantomJS](http://phantomjs.org/) is a headless Webkit. We can make use of it to do some website testing, screen capture, page automating and network monitoring. We will explore all these features of PhantomJS in this episode.
 
-**Download video**: [mp4](http://video.build-podcast.com/048-phantomjs.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/048-phantomjs.mp4" download="build-podcast-048-phantomjs.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/048-phantomjs)
 

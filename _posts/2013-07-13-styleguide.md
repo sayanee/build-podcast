@@ -13,7 +13,7 @@ length: 141777238
 
 Automatic living styleguide helps to create styleguides from documentation in our CSS styles. We will explore 2 tools [KSS-Node](https://github.com/hughsk/kss-node) and [StyleDocco](http://jacobrask.github.io/styledocco/) with CSS and CSS pre-processor, SASS along with its plugin in [GruntJS](http://gruntjs.com/) build tool.
 
-**Download video**: [mp4](http://video.build-podcast.com/047-styleguide.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/047-styleguide.mp4" download="build-podcast-047-styleguide.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/047-styleguide)
 

@@ -13,7 +13,7 @@ length: 15650408
 
 We often want to test and develop our applications locally. Here we will learn how to setup local web servers with some simple configurations in 3 ways - (1) built-in MAC [Apache](http://httpd.apache.org/) (2) [MAMP](http://www.mamp.info/en/index.html) with [Wordpress](http://wordpress.org/) installation (3) Nginx.
 
-**Download video**: [mp4](http://video.build-podcast.com/014-local-web-servers.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/014-local-web-servers.mp4" download="build-podcast-014-local-web-servers.mp4">mp4</a></p>
 
 ##Tools used for Local Web Servers:
 

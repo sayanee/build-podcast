@@ -13,8 +13,7 @@ length: 176798683
 
 [AngularJS](http://angularjs.org/) is a frontend JavaScript framework. In this episode we will build a tiny project to learn on how to implement controllers, hide or show certain sections of the dom, change styling conditionally all in the fun of building single-page-applications.
 
-<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/056-angularjs" download="build-podcast-056-angularjs">mp4</a></p>
-
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/056-angularjs.mp4" download="build-podcast-056-angularjs.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/056-angularjs)
 

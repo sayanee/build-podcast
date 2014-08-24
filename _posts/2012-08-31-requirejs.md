@@ -13,7 +13,7 @@ length: 57138056
 
 [Require.js](http://requirejs.org/) is a JavaScript file and module loader. A modular approach can improve the maintainability and quality of our code. In this episode, we will see how we can convert a project containing many script tags to just a single script tag, with greater support for dependancies and modules.
 
-**Download video**: [mp4](http://video.build-podcast.com/013-requirejs.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/013-requirejs.mp4" download="build-podcast-013-requirejs.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/013-requirejs)
 

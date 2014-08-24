@@ -13,7 +13,7 @@ length: 109939436
 
 [HTML5 Boilerplate](http://html5boilerplate.com/) is a starter kit for any frontend web project.
 
-**Download video**: [mp4](http://video.build-podcast.com/003-html5-boilerplate.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/003-html5-boilerplate.mp4" download="build-podcast-003-html5-boilerplate.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/003-html5boilerplate)
 

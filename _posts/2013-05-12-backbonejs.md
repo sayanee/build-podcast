@@ -13,7 +13,7 @@ length: 162744767
 
 [BackboneJS](http://backbonejs.org/) is a client-side MV* framework that will help us structure our code, provide templates to inject the data as well as render a fast changes UI with ajax. In this episode we will create a simple client-side reading list of computing books!
 
-**Download video**: [mp4](http://video.build-podcast.com/042-backbonejs.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/042-backbonejs.mp4" download="build-podcast-042-backbonejs.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/042-backbonejs)
 

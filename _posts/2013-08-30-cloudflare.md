@@ -13,7 +13,7 @@ length: 230396715
 
 [CloudFlare](https://www.cloudflare.com/) makes our websites secure and load faster. We can get started with it with just some simple DNS settings to host our pages from github, aws ec2 or even our own computer. In this episode, with CloudFlare's free plan we will explore DNS records, CDN, apps and more!
 
-**Download video**: [mp4](http://video.build-podcast.com/049-cloudflare.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/049-cloudflare.mp4" download="build-podcast-049-cloudflare.mp4">mp4</a></p>
 
 **Similar episodes**: [014 Local Web Servers](/local-web-servers/), [016 YSlow](/yslow/), [033 AWS](/aws/)
 

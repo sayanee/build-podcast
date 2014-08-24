@@ -13,7 +13,7 @@ length: 129337396
 
 [VirtualBox](https://www.virtualbox.org/) is an amazing tool where we can run different operating systems in our MAC OSX machines! In this episode, we will learn how to run a Windows 8, Arch and Ubuntu operating systems and run them in the same machine all in the spirit of exploring different philosophies and technologies of operating systems!
 
-**Download video**: [mp4](http://video.build-podcast.com/025-virtualbox.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/025-virtualbox.mp4" download="build-podcast-025-virtualbox.mp4">mp4</a></p>
 
 **Version**: 4.2.4
 

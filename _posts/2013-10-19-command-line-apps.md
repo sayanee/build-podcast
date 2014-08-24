@@ -13,7 +13,7 @@ length: 143078113
 
 Command line apps provide automation, one time batch processing or even execute an app in the command line. In this episode we will see how we can create such apps in cli using a programming language of our choice such as [NodeJS](http://nodejs.org/) and [Ruby](https://www.ruby-lang.org/en/). We will then move on to create a full-fledged apps using [Commander](http://visionmedia.github.io/commander.js/) (with NodeJS) and [Thor](http://whatisthor.com/) (with Ruby) to create a skeleton for a started web project.
 
-**Download video**: [mp4](http://video.build-podcast.com/053-command-line-apps.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/053-command-line-apps.mp4" download="build-podcast-053-command-line-apps.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/053-command-line-apps)
 

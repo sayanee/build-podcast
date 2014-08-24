@@ -13,7 +13,7 @@ length: 79251472
 
 If you are creating a hi-fidelity mockup for your web application, then [Adobe Fireworks](http://www.adobe.com/products/fireworks.html) is a great software! We will build a little project to learn how to view CSS properties, build hover effects, insert html, rounded ractangles, styles and more. At the same time we will get to review some of the common design principles and legends such as Dieter Rams.
 
-**Download video**: [mp4](http://video.build-podcast.com/018-fireworks.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/018-fireworks.mp4" download="build-podcast-018-fireworks.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/018-fireworks)
 

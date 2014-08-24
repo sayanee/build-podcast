@@ -13,7 +13,7 @@ length: 121152232
 
 [Wordpress](http://wordpress.org/) is an open source blogging engine that can be downloaded and installed for your own use and customisation. Here we will install Wordpress, create a sub-domain and have a blog website running in no time. We will also explore some common features, plugins and themes for Wordpress.
 
-**Download video**: [mp4](http://video.build-podcast.com/006-wordpress.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/006-wordpress.mp4" download="build-podcast-006-wordpress.mp4">mp4</a></p>
 
 **Version**: 3.4.1
 

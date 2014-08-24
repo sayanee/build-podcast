@@ -13,7 +13,7 @@ length: 126478550
 
 [Sublime Text](http://www.sublimetext.com/) is a powerful text editor for coding. We will explore it's features like plugins, multiple selections and accessing projects, files and folders.
 
-**Download video**: [mp4](http://video.build-podcast.com/008-sublime-text.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/008-sublime-text.mp4" download="build-podcast-008-sublime-text.mp4">mp4</a></p>
 
 **Version**: 2216
 

@@ -13,7 +13,7 @@ length: 65294584
 
 [Zen Coding](http://code.google.com/p/zen-coding/) is available as an editor plugin for high-speed coding and editing especially in html. You can type in some shortcuts which will expand into html. It's excellent for productive coding.
 
-**Download video**: [mp4](http://video.build-podcast.com/012-zen-coding.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/012-zen-coding.mp4" download="build-podcast-012-zen-coding.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/012-zen-coding)
 

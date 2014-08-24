@@ -13,7 +13,7 @@ length: 261684701
 
 [Modernizr](http://modernizr.com/) is a library for detecting whether the user's browsers have certain features and based on the availability, we developers will trigger certain functions or styles. In this episode, we will take a simple slideshow and use both javascript and css3 to make the transitions based on features available with libraries such as [yepnope](http://yepnopejs.com/) and [html5shiv](https://github.com/aFarkas/html5shiv). Most importantly, we will scratch the surface of what is [graceful degradation](http://en.wikipedia.org/wiki/Graceful_degradation) and [progressive enhancement](http://en.wikipedia.org/wiki/Progressive_enhancement).
 
-**Download video**: [mp4](http://video.build-podcast.com/026-modernizr.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/026-modernizr.mp4" download="build-podcast-026-modernizr.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/026-modernizr)
 

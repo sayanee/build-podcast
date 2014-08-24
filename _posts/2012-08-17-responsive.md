@@ -13,7 +13,7 @@ length: 12020813
 
 Using 3 JavaScript libraries, we will create a completely responsive, fluid one pager on Space Exploration! We will use [Fittext.js](http://fittextjs.com/) for adaptable text, [Fitvid.js](http://fitvidsjs.com/) for adaptable video and [Responsive Slides](http://responsive-slides.viljamis.com/p) for adaptable slideshow.
 
-**Download video**: [mp4](http://video.build-podcast.com/011-responsive.mp4)
+<p><strong>Download video</strong>: <a href="http://video.build-podcast.com/011-responsive.mp4" download="build-podcast-011-responsive.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/011-responsive)
 
