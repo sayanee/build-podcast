@@ -64,5 +64,6 @@ exclude: ['sass', 'node_modules', 'Gruntfile.js', 'package.json', 'readme.md', '
   '057-ghost',
   '058-rspec',
   '059-git-flow',
-  '060-gulp'
+  '060-gulp',
+  '061-docker'
 ]

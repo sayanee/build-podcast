@@ -18,6 +18,12 @@
     "tools"
   ],
   "devDependencies": {
+    "chai": "latest",
+    "cli-color": "0.3.2",
+    "colors": "latest",
+    "commander": "2.3.0",
+    "execSync": "1.0.1-pre",
+    "ftp": "0.3.7",
     "grunt": "0.4.1",
     "grunt-cli": "0.1.9",
     "grunt-contrib-clean": "0.5.0",
@@ -25,8 +31,8 @@
     "grunt-contrib-uglify": "0.2.4",
     "grunt-contrib-watch": "0.5.3",
     "mocha": "latest",
-    "chai": "latest",
-    "colors": "latest",
+    "ncp": "0.6.0",
+    "prompt": "0.2.13",
     "selenium-webdriver": "latest"
   }
 }
