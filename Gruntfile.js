@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     clean: {
-      assets: ['style.css']
+      assets: ['style.css', 'script.js']
     },
     compass: {
       production: {
@@ -22,8 +22,8 @@ module.exports = function(grunt) {
       production: {
         files: {
           'script.js': [
-            'js/lib/jquery.js',
-            'js/lib/fitvids.js',
+            'js/lib/jquery/dist/jquery.min.js',
+            'js/lib/fitvids/jquery.fitvids.js',
             'js/script.js'
           ]
         }
