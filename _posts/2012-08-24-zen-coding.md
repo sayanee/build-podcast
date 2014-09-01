@@ -1,7 +1,6 @@
 ---
 title: 012 Zen Coding
 title_lowercase: 012 zen coding
-layout: post
 tags: tutorial, screencast, technology, development, technology, programming, coding, css, productivity, sublime, text, zen
 description: Zen Coding is available as an editor plugin for high-speed coding and editing especially in html. You can type in some shortcuts which will expand into html. It's excellent for productive coding.
 permalink: /zen-coding/

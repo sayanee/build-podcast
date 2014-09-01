@@ -1,7 +1,6 @@
 ---
 title: 009 Package Managers
 title_lowercase: 009 package managers
-layout: post
 tags: tutorial, screencast, technology, development, programming, coding, package, managers, dependencies, npm, nodes, pip, python, rubygems, ruby, composer, php
 description: Package manager is a collection of tools for installing, upgrading, configuring and removing software packages in a computer. We will explore some commonly used ones such as RubyGems for ruby, Pip for python, Composer for php and NPM for NodeJS.
 permalink: /package-managers/

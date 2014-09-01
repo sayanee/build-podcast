@@ -1,7 +1,6 @@
 ---
 title: 053 Command line apps
 title_lowercase: 053 command-line-apps
-layout: post
 tags: tutorial, screencast, technology, development, cli, command line, terminal, thor, commander, ruby, node, shebang, options, arguments
 description: Command line apps provide automation, one time batch processing or even execute an app in the command line. In this episode we will see how we can create such apps in cli using a programming language of our choice such as NodeJS and Ruby. We will then move on to create a full-fledged apps using Commander (with NodeJS) and Thor (with Ruby) to create a skeleton for a started web project.
 permalink: /command-line-apps/

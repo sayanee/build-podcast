@@ -1,7 +1,6 @@
 ---
 title: 008 Sublime Text
 title_lowercase: 008 sublime text
-layout: post
 tags: tutorial, screencast, technology, development, programming, coding, text, editor, sublime, plugin, code, plain
 description: Sublime Text is a powerful text editor for coding. We will explore it's features like plugins, multiple selections and accessing projects, files and folders.
 permalink: /sublime-text/

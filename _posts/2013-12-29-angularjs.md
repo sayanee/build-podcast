@@ -1,7 +1,6 @@
 ---
 title: 056 AngularJS
 title_lowercase: 056 angularjs
-layout: post
 tags: tutorial, screencast, technology, development, angularjs, frontend, javascript, mvc, ajax
 description: AngularJS is a frontend JavaScript framework. In this episode we will build a tiny project to learn on how to implement controllers, hide or show certain sections of the dom, change styling conditionally all in the fun of building single-page-applications.
 permalink: /angularjs/

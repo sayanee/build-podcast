@@ -1,7 +1,6 @@
 ---
 title: 014 Local Web Servers
 title_lowercase: 014 local web servers
-layout: post
 tags: tutorial, screencast, technology, development, programming, web, servers, apache, mamp, mysql, nginx, localhost, virtual, hosts, wordpress, local
 description: We often want to test and develop our applications locally. Here we will learn how to setup local web servers with some simple configurations in 3 ways - (1) built-in MAC Apache (2) MAMP with Wordpress installation (3) Nginx.
 permalink: /local-web-servers/

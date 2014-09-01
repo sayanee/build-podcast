@@ -1,7 +1,6 @@
 ---
 title: 006 WordPress
 title_lowercase: 006 wordpress
-layout: post
 tags: tutorial, screencast, technology, development, wordpress, wordpress.org, blogging, blog, open source, html, css, php, cpanel, softaculous, installation
 description: Wordpress is an open source blogging engine that can be downloaded and installed for your own use and customisation. Here we will install Wordpress, create a sub-domain and have a blog website running in no time. We will also explore some common features, plugins and themes for Wordpress.
 permalink: /wordpress/

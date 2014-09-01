@@ -1,7 +1,6 @@
 ---
 title: 013 RequireJS
 title_lowercase: 013 requirejs
-layout: post
 tags: tutorial, screencast, technology, development, technology, programming, javascript, Asynchronous, Modular, Definition, AMD, requirejs
 description: RequireJS is a JavaScript file and module loader. A modular approach can improve the maintainability and quality of our code. In this episode, we will see how we can convert a project containing many script tags to just a single script tag, with greater support for dependancies and modules.
 permalink: /requirejs/
