@@ -2,7 +2,7 @@
 # ln -s /Users/sayanee/Sites/build-podcast/shownotes/build-podcast.yml /Users/sayanee/.tmuxinator/build-podcast.yml
 
 name: build-podcast
-root: /Users/sayanee/Sites/build-podcast/shownotes
+root: ~/Workspace/build-podcast/shownotes
 
 # Optional tmux socket
 # socket_name: foo
