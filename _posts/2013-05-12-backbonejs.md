@@ -1,7 +1,6 @@
 ---
 title: 042 BackboneJS
 title_lowercase: 042 backbonejs
-layout: post
 tags: tutorial, screencast, technology, development, javascript, client-side, framework, mvc, backbonejs
 description: BackboneJS is a client-side MV* framework that will help us structure our code, provide templates to inject the data as well as render a fast changes UI with ajax. In this episode we will create a simple client-side reading list of computing books!
 permalink: /backbonejs/

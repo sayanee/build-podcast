@@ -1,7 +1,6 @@
 ---
 title: 001 Web Dev Tools
 title_lowercase: 001 web dev tools
-layout: post
 tags: tutorial, screencast, technology, development, browser, tools, console, opera, chrome, firefox, safari
 description: We will explore the developer console of the various browsers - Chrome, Firefox, Safari and Opera.
 permalink: /web-dev-tools/

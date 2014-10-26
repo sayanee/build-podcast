@@ -1,7 +1,6 @@
 ---
 title: 035 Capistrano
 title_lowercase: 035 capistrano
-layout: post
 tags: tutorial, screencast, technology, development, capistrano, server, commands, github, git, deployment
 description: Capistrano is remote multi-server automation tool that is often used for deployment. In this episode, we will first learn how to execute command line tasks in several servers, then we will deploy a Github repo on a newly fired up EC2 instance.
 permalink: /capistrano/

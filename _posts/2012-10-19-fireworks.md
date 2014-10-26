@@ -1,7 +1,6 @@
 ---
 title: 018 Fireworks
 title_lowercase: 018 fireworks
-layout: post
 tags: tutorial, screencast, technology, development, template, fireworks, adobe, style, hover, html, vector, pixel, mockup, export, jpg, png, gif
 description: If you are creating a hi-fidelity mockup for your web application, then Adobe Fireworks is a great software! We will build a little project to learn how to view CSS properties, build hover effects, insert html, rounded ractangles, styles and more. At the same time we will get to review some of the common design principles and legends such as Dieter Rams.
 permalink: /fireworks/

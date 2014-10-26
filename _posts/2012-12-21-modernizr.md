@@ -1,7 +1,6 @@
 ---
 title: 026 Modernizr
 title_lowercase: 026 modernizr
-layout: post
 tags: tutorial, screencast, technology, development, tutorial, screencast, technology, development, workflow, development, yeoman, build, automation, optimisation, minification, scaffolding, generators, package managers
 description: Modernizr is a library for detecting whether the user's browsers have certain features and based on the availability, we developers will trigger certain functions or styles. In this episode, we will take a simple slideshow and use both javascript and css3 to make the transitions based on features available with libraries such as yepnope and html5shiv. Most importantly, we will scratch the surface of what is graceful degradation and progressive enhancement.
 permalink: /modernizr/

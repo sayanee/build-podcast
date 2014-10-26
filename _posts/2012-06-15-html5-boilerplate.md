@@ -1,7 +1,6 @@
 ---
 title: 003 HTML5 Boilerplate
 title_lowercase: 003 html5 boilerplate
-layout: post
 tags: tutorial, screencast, technology, development, html5boilerplate, html5, front-end, javascript, css3
 description: HTML5 Boilerplate is a starter kit for any frontend web project.
 permalink: /html5-boilerplate/

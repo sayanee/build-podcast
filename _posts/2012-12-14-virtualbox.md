@@ -1,7 +1,6 @@
 ---
 title: 025 VirtualBox
 title_lowercase: 025 virtualbox
-layout: post
 tags: tutorial, screencast, technology, development, virtualbox, virutaliser, operating systems, linux, windows, arch, ubuntu, win8. metro ui
 description: VirtualBox is an amazing tool where we can run different operating systems in our MAC OSX machines! In this episode, we will learn how to run a Windows 8, Arch and Ubuntu operating systems and run them in the same machine all in the spirit of exploring different philosophies and technologies of operating systems!
 permalink: /virtualbox/

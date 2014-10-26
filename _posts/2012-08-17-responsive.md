@@ -1,7 +1,6 @@
 ---
 title: 011 Responsive
 title_lowercase: 011 responsive
-layout: post
 tags: tutorial, screencast, technology, development, css, responsive, fluid, adaptable, video, map, slides, text, css3, media, queries, fittext
 description: Using 3 JavaScript libraries, we will create a completely responsive, fluid one pager on Space Exploration! We will use FittextJS for adaptable text, FitvidJS for adaptable video and Responsive Slides for adaptable slideshow.
 permalink: /responsive/

@@ -1,7 +1,6 @@
 ---
 title: 048 PhantomJS
 title_lowercase: 048 phantomjs
-layout: post
 tags: tutorial, screencast, technology, development, javascript, phantomjs, headless, browser, automation, testing
 description: PhantomJS is a headless Webkit. We can make use of it to do some website testing, screen capture, page automating and network monitoring. We will explore all these features of PhantomJS in this episode.
 permalink: /phantomjs/

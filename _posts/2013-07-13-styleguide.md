@@ -1,7 +1,6 @@
 ---
 title: 047 Styleguide
 title_lowercase: 047 styleguide
-layout: post
 tags: tutorial, screencast, technology, development, css, styleguide, sass, styledocco, kss, node
 description: Automatic living styleguide helps to create styleguides from documentation in our CSS styles. We will explore 2 tools KSS-Node and StyleDocco with CSS and CSS pre-processor, SASS along with its plugin in GruntJS build tool.
 permalink: /styleguide/

@@ -4,6 +4,13 @@ permalink: /:title
 markdown: redcarpet
 url: http://build-podcast.com
 
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "post"
+
 exclude: ['sass', 'node_modules', 'Gruntfile.js', 'package.json', 'readme.md', 'js', 'scripts', 'build-podcast.yml', 'templates',
   '001-webdevtools',
   '002-terminal',

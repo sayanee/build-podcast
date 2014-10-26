@@ -1,0 +1,25 @@
+{
+  "name": "build-podcast",
+  "version": "0.1.0",
+  "authors": [
+    "Sayanee <sayanee@gmail.com>"
+  ],
+  "description": "screencasts on tech tools",
+  "main": "index.html",
+  "keywords": [
+    "screencasts",
+    "technology",
+    "tools",
+    "development"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "js/lib"
+  ],
+  "dependencies": {
+    "fitvids": "1.1.0",
+    "jquery": "2.1.1"
+  }
+}

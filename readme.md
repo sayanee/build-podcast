@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/sayanee/build-podcast.png)](https://travis-ci.org/sayanee/build-podcast)
-
+[![Build Status](https://travis-ci.org/sayanee/build-podcast.png)](https://travis-ci.org/sayanee/build-podcast) [![Dependency Status](https://gemnasium.com/sayanee/build-podcast.svg)](https://gemnasium.com/sayanee/build-podcast)
 
 ####[Build Podcast](http://build-podcast.com) is a show about technology tools for design and development. Each episode, [Sayanee](http://sayan.ee) will be creating a screencast that will take you through step-by-step in using one tool to build a little project, all in the fun spirit of hacking, creating and building stuff!
 
@@ -51,6 +50,29 @@ If there's and error for invalid byte sequence in US-ASCII, try to reset the loc
 LC_CTYPE="en_US.UTF-8"
 LANG="en_US.UTF-8"
 ```
+###install with docker
+
+1. Install [Docker](https://docs.docker.com/) 
+- Take note of `$DOCKER_HOST` IP address
+- Edit `line 5` to replace `localhost` with `$DOCKER_HOST` IP address. E.g.
+
+	```
+	url: http://192.168.59.103:4000
+	```
+- Start docker E.g. for MAC OSX
+
+	```
+	boot2docker start
+	export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
+	```	
+- Build the image and run it
+
+	```
+	docker build -t bp .
+	docker run -d -p 4000:4000 bp
+	```
+- Open in browser E.g. `http://192.168.59.103:4000`
+
 
 ##Test
 

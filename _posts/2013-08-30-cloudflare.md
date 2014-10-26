@@ -1,7 +1,6 @@
 ---
 title: 049 CloudFlare
 title_lowercase: 049 cloudflare
-layout: post
 tags: tutorial, screencast, technology, development, cloudflare, dns, dns records, a record, cname, cdn, performance, security
 description: CloudFlare makes our websites secure and load faster. We can get started with it with just some simple DNS settings to host our pages from github, aws ec2 or even our own computer. In this episode, with CloudFlare's free plan we will explore DNS records, CDN, apps and more!
 permalink: /cloudflare/
