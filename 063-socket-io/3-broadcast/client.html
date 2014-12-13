@@ -1,0 +1,24 @@
+<style>
+  .circle {width: 100px; height: 100px; background: green; border-radius: 50%; display: block; }
+</style>
+
+<div class="circle" id="circle"></div>
+<button id="blue">blue</button>
+
+<script src="node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
+<script>
+var socket = io('http://localhost:8000')
+var circle = document.getElementById('circle')
+var blue = document.getElementById('blue')
+
+socket.on('color', function(color) {
+  circle.style.background = color
+  blue.style.display = 'block'
+})
+
+blue.addEventListener('click', function() {
+  circle.style.background = 'blue'
+  socket.emit('color', 'blue')
+  blue.style.display = 'none'
+})
+</script>
