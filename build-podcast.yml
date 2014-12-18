@@ -1,21 +1,11 @@
 # ~/.tmuxinator/build-podcast.yml
-# ln -s /Users/sayanee/Sites/build-podcast/shownotes/build-podcast.yml /Users/sayanee/.tmuxinator/build-podcast.yml
+# ln -s /Users/username/Workspace/build-podcast/shownotes/build-podcast.yml /Users/username/.tmuxinator/build-podcast.yml
+
+# tmuxinator build-podcast
 
 name: build-podcast
 root: ~/Workspace/build-podcast/shownotes
-
-# Optional tmux socket
-# socket_name: foo
-
-# Runs before everything. Use it to start daemons etc.
 pre: jekyll build
-
-# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: rbenv shell 2.0.0-p247
-
-# Pass command line options to tmux. Useful for specifying a different tmux.conf.
-# tmux_options: -f ~/.tmux.mac.conf
-
 windows:
   - jekyll:
       layout: main-vertical
