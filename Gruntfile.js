@@ -22,8 +22,7 @@ module.exports = function(grunt) {
       production: {
         files: {
           'script.js': [
-            'js/lib/jquery/dist/jquery.min.js',
-            'js/lib/fitvids/jquery.fitvids.js',
+            'js/lib/fluidvids/dist/fluidvids.min.js',
             'js/script.js'
           ]
         }
