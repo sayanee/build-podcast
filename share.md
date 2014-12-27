@@ -12,6 +12,8 @@ permalink: /share/
 <a name="note"></a>
 ##Things to take note
 
+Before re-using the materials, take note of the following:
+
 1. **Date** *[column 2]*
   - Each episode has a release date. The more recent the date, the more accurate is the information.
 - **Episode version vs current version** *[column 3 & 4]*
@@ -23,6 +25,7 @@ permalink: /share/
 
 Links for the **video files** and **show notes** are found in the table below.
 
+<a name="links"></a>
 ##Quick links
 
 <table>
@@ -40,8 +43,8 @@ Links for the **video files** and **show notes** are found in the table below.
     <td>{{ post.date | date_to_string }}</td>
     <td>{{ post.version }}</td>
     <td>{% if post.website %}<a href="{{ post.website }}">current version</a>{% endif %}</td>
-    <td><a href="{{ site.url }}{{ post.url }}">link</a></td>
-    <td><a href="{{post.enclosure}}">link</a></td>
+    <td><a href="{{ site.url }}{{ post.url }}">notes</a></td>
+    <td><a href="{{post.enclosure}}">video</a></td>
   </tr>
   {% endfor %}
 </table>
