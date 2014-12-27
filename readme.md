@@ -13,6 +13,15 @@ Related links:
 - [Twitter](http://twitter.com/buildpodcast)
 - [Github](https://github.com/sayanee/build-podcast) and [open issues](https://github.com/sayanee/build-podcast/issues?page=1&state=open)
 
+##Install
+
+1. Install various packages:
+
+  ```shell
+  $ bundle install
+  $ npm install
+  ```
+
 ##Development
 
 This Github repository consists of sample code for each episode and the entire website for [Build Podcast](http://build-podcast.com).
@@ -52,7 +61,7 @@ LANG="en_US.UTF-8"
 ```
 ###install with docker
 
-1. Install [Docker](https://docs.docker.com/) 
+1. Install [Docker](https://docs.docker.com/)
 - Take note of `$DOCKER_HOST` IP address
 - Edit `line 5` to replace `localhost` with `$DOCKER_HOST` IP address. E.g.
 
@@ -64,7 +73,7 @@ LANG="en_US.UTF-8"
 	```
 	boot2docker start
 	export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
-	```	
+	```
 - Build the image and run it
 
 	```
@@ -86,7 +95,7 @@ LANG="en_US.UTF-8"
 
 	```
 	LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll serve --watch --config _dev_config.yml
-	```	
+	```
 1. Run Mocha test
 
 	```

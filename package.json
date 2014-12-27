@@ -18,21 +18,21 @@
     "tools"
   ],
   "devDependencies": {
-    "chai": "1.9.1",
+    "chai": "1.10.0",
     "cli-color": "0.3.2",
-    "colors": "latest",
-    "commander": "2.3.0",
+    "colors": "1.0.3",
+    "commander": "2.5.1",
     "execSync": "1.0.2",
-    "ftp": "0.3.7",
+    "ftp": "0.3.8",
     "grunt": "0.4.5",
     "grunt-cli": "0.1.13",
     "grunt-contrib-clean": "0.6.0",
-    "grunt-contrib-compass": "0.9.1",
+    "grunt-contrib-compass": "1.0.1",
     "grunt-contrib-uglify": "0.5.1",
     "grunt-contrib-watch": "0.6.1",
-    "mocha": "1.21.4",
-    "ncp": "0.6.0",
-    "prompt": "0.2.13",
-    "selenium-webdriver": "latest"
+    "mocha": "2.1.0",
+    "ncp": "1.0.1",
+    "prompt": "0.2.14",
+    "selenium-webdriver": "2.44.0"
   }
 }
