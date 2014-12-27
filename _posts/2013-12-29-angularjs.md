@@ -6,6 +6,8 @@ description: AngularJS is a frontend JavaScript framework. In this episode we wi
 permalink: /angularjs/
 enclosure: http://video.build-podcast.com/056-angularjs.mp4
 length: 176798683
+version: 1.2.6
+website: http://angularjs.org
 ---
 
 <div id="video"><iframe width="560" height="315" src="//www.youtube.com/embed/CTYXOfnKcNE" frameborder="0" allowfullscreen></iframe></div>

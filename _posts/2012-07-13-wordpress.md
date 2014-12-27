@@ -6,6 +6,8 @@ description: Wordpress is an open source blogging engine that can be downloaded 
 permalink: /wordpress/
 enclosure: http://video.build-podcast.com/006-wordpress.mp4
 length: 121152232
+version: 3.4.1
+website: http://wordpress.org
 ---
 
 <div id="video"><iframe src="//player.vimeo.com/video/45683134" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>

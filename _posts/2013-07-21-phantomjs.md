@@ -6,6 +6,8 @@ description: PhantomJS is a headless Webkit. We can make use of it to do some we
 permalink: /phantomjs/
 enclosure: http://video.build-podcast.com/048-phantomjs.mp4
 length: 110673514
+version: 1.9.1
+website: http://phantomjs.org
 ---
 
 <div id="video"><iframe src="//player.vimeo.com/video/70712887" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>

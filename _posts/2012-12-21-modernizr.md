@@ -6,6 +6,8 @@ description: Modernizr is a library for detecting whether the user's browsers ha
 permalink: /modernizr/
 enclosure: http://video.build-podcast.com/026-modernizr.mp4
 length: 261684701
+version: 2.6.2
+website: http://modernizr.com
 ---
 
 <div id="video"><iframe src="//player.vimeo.com/video/56059371" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>

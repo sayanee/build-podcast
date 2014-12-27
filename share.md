@@ -12,22 +12,34 @@ permalink: /share/
 <a name="note"></a>
 ##Things to take note
 
-1. **Date** - Each episode has a date. The more recent the date, the more accurate will be the information.
-- **Version** - Each episode has a version number of the tool discussed. Before re-sharing or re-editing take note of the tool's current version and the episode's tool version compatibility.
+1. **Date** *[column 2]*
+  - Each episode has a release date. The more recent the date, the more accurate is the information.
+- **Episode version vs current version** *[column 3 & 4]*
+  - Each episode has a version number of the tool discussed. Before re-sharing or re-editing take note of the tool's current version and the episode's tool [version compatibility](http://semver.org/).
+- **Note** *[column 5]*
+  - Scan through the notes to check what the video screencast covers. This will take a much shorter time than watching the screencast itself.
+
+##Materials
+
+Links for the **video files** and **show notes** are found in the table below.
 
 ##Quick links
 
 <table>
   <tr>
     <th>Title</th>
-    <th>Episode released Date</th>
-    <th>Show Notes</th>
+    <th>Date</th>
+    <th>Episode version</th>
+    <th>Current version</th>
+    <th>Notes</th>
     <th>Video file</th>
   </tr>
   {% for post in site.posts %}
   <tr>
     <td>{{post.title}}</td>
     <td>{{ post.date | date_to_string }}</td>
+    <td>{{ post.version }}</td>
+    <td>{% if post.website %}<a href="{{ post.website }}">current version</a>{% endif %}</td>
     <td><a href="{{ site.url }}{{ post.url }}">link</a></td>
     <td><a href="{{post.enclosure}}">link</a></td>
   </tr>

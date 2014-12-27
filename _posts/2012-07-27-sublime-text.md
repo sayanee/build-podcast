@@ -6,6 +6,8 @@ description: Sublime Text is a powerful text editor for coding. We will explore 
 permalink: /sublime-text/
 enclosure: http://video.build-podcast.com/008-sublime-text.mp4
 length: 126478550
+version: 2216
+website: http://www.sublimetext.com
 ---
 
 <div id="video"><iframe src="//player.vimeo.com/video/46485954" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>

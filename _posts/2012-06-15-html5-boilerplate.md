@@ -5,6 +5,8 @@ tags: tutorial, screencast, technology, development, html5boilerplate, html5, fr
 description: HTML5 Boilerplate is a starter kit for any frontend web project.
 permalink: /html5-boilerplate/
 enclosure: http://video.build-podcast.com/003-html5-boilerplate.mp4
+version: 3.0
+website: http://html5boilerplate.com/
 length: 109939436
 ---
 

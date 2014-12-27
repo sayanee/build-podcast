@@ -6,6 +6,8 @@ description: If you are creating a hi-fidelity mockup for your web application, 
 permalink: /fireworks/
 enclosure: http://video.build-podcast.com/018-fireworks.mp4
 length: 79251472
+version: CS6
+website: http://www.adobe.com/products/fireworks.html
 ---
 
 <div id="video"><iframe src="//player.vimeo.com/video/51724586" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>

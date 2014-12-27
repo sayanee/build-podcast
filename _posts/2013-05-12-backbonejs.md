@@ -6,6 +6,8 @@ description: BackboneJS is a client-side MV* framework that will help us structu
 permalink: /backbonejs/
 enclosure: http://video.build-podcast.com/042-backbonejs.mp4
 length: 162744767
+version: 1.0.0
+website: http://backbonejs.org
 ---
 
 <div id="video"><iframe src="//player.vimeo.com/video/65965899" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>

@@ -6,6 +6,8 @@ description: Capistrano is remote multi-server automation tool that is often use
 permalink: /capistrano/
 enclosure: http://video.build-podcast.com/035-capistrano.mp4
 length: 134501989
+version: 2.14.2
+website: http://capistranorb.com
 ---
 
 <div id="video"><iframe src="//player.vimeo.com/video/61887298" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>

@@ -6,6 +6,8 @@ description: VirtualBox is an amazing tool where we can run different operating 
 permalink: /virtualbox/
 enclosure: http://video.build-podcast.com/025-virtualbox.mp4
 length: 129337396
+version: 4.2.4
+website: https://www.virtualbox.org
 ---
 
 <div id="video"><iframe src="//player.vimeo.com/video/55579849" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>

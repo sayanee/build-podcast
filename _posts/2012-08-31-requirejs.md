@@ -6,6 +6,8 @@ description: RequireJS is a JavaScript file and module loader. A modular approac
 permalink: /requirejs/
 enclosure: http://video.build-podcast.com/013-requirejs.mp4
 length: 57138056
+version: 2.0.6
+website: http://requirejs.org
 ---
 
 <div id="video"><iframe src="//player.vimeo.com/video/48598103" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
