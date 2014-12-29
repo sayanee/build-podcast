@@ -8,9 +8,8 @@ require "launchy"
 
 class App < Thor
 
-  desc "upload FILE", "start uploading to vimeo with FILE"
+  desc "upload FILEPATH", "start uploading to vimeo with FILE"
   def upload configfile
-    puts "Starting to upload video to Vimeo"
     # puts "Config filename: #{configfile}!"
     config_data = JSON.parse( IO.read(configfile) )
 
@@ -30,13 +29,6 @@ class App < Thor
     channel.add_video(config_data["vimeoChannel"], @video_id)
     # puts "Title, description, tags and channel are set."
     Launchy.open("http://vimeo.com/#{@video_id}")
-
-    post_file = config_data["bpDir"] + config_data["shownotesDir"] + config_data["postsDir"] + config_data["postDate"] + "-" + config_data["episodeLowercase"] + ".md"
-    text = File.read(post_file)
-    text = text.gsub(/{{VIMEOURL}}/, "#{@video_id}")
-    File.open(post_file, "r+") {|f| f.write(text) }
-    puts "New Vimeo video URL is in #{post_file}."
-
   end
 
 end

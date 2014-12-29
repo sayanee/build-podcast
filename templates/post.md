@@ -7,17 +7,19 @@ description: {{DESCRIPTION}}
 permalink: /{{EPISODE_LOWERCASE}}/
 enclosure: http://video.build-podcast.com/{{NUM}}-{{EPISODE_LOWERCASE}}.mp4
 length: {{LENGTH}}
+version: {{VERSION}}
+website: {{WEBSITE}}
 ---
 
 <div id="video"><iframe width="560" height="315" src="//www.youtube.com/embed/{{YOUTUBEURL}}" frameborder="0" allowfullscreen></iframe></div>
 
-[{{EPISODE}}](#)
+[{{EPISODE}}]({{WEBSITE}})
 
 <p><strong>Download video</strong>: <a href="http://video.build-podcast.com/{{NUM}}-{{EPISODE_LOWERCASE}}.mp4" download="build-podcast-{{NUM}}-{{EPISODE_LOWERCASE}}.mp4">mp4</a></p>
 
 **Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/{{NUM}}-{{EPISODE_LOWERCASE}})
 
-**Version**:
+**Version**: {{VERSION}}
 
 **Similar episodes**:
 

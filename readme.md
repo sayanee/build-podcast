@@ -15,11 +15,83 @@ Related links:
 
 ##Install
 
+### for website
+
 1. Install various packages:
 
   ```shell
-  $ bundle install
-  $ npm install
+  $ bundle install # for jekyll
+  $ gem install vimeo tempfile json thor launchy # for vimeo script
+  $ npm install # for assets and automation scripts
+  $ brew install ffmeg sox # for post-processing video and audio
+  ```
+
+###for tmuxinator
+
+1. link tmux script `bp.yml` for starting up
+
+  ```shell
+  $ ln -s /Users/{username}/Workspace/path/to/folder/bp.yml /Users/{username}/.tmuxinator/bp.yml # create a symlink
+  $ tmuxinator bp
+  ```
+
+###for recording screencast and post-processing
+
+1. create `episode.json` in one up level of hierarchy
+
+  ```shell
+  $ cp automation/episode.sample.json ../episode.json
+  # edit file episode.json accordingly
+  ```
+- symlink scripts `bp`, `norm` and `vimeo`
+
+  ```shell
+  $ ln -s /Users/{username}/Workspace/path/to/folder/automation/bp /Users/{username}/path/to/folder/bp
+  $ ln -s /Users/{username}/Workspace/path/to/folder/automation/norm /Users/{username}/path/to/folder/norm
+  $ ln -s /Users/{username}/Workspace/path/to/folder/automation/vimeo /Users/{username}/path/to/folder/vimeo
+  ```
+- [download python google data](https://code.google.com/p/gdata-python-client/downloads/list) and [install it](https://code.google.com/p/youtube-upload/wiki/Readme#Download_&_Install)
+- [download youtube-upload](https://code.google.com/p/youtube-upload/downloads/list) and [install it](https://code.google.com/p/youtube-upload/wiki/Readme#Download_&_Install)
+- install both packages with the following commands:
+
+  ```shell
+  $ tar xvzf {package}.tar.gz
+  $ cd {package}
+  $ sudo python setup.py install
+  ```
+
+###setup dev.build-podcast in local
+
+1. edit `/etc/hosts`
+
+  ```
+  ...
+  127.0.0.1 dev.build-podcast.com
+  ...
+  ```
+- edit nginx config file `/usr/local/etc/nginx/nginx.conf`
+
+  ```
+  http {
+      ...
+      include /usr/local/etc/nginx/sites-enabled/*;
+      ...
+
+      server {
+          listen       80;
+          server_name  dev.build-podcast.com;
+
+          charset utf-8;
+          add_header "X-UA-Compatible" "IE=Edge,chrome=1";
+          index   index.html;
+
+          location / {
+              expires -1;
+              add_header Pragma "no-cache";
+              add_header Cache-Control "no-store, no-cache, must-revalidate, post-check=0, pre-check=0";
+              root    /Users/{username}/path/to/build-podcast/start;
+          }
+      }
   ```
 
 ##Development
@@ -30,35 +102,42 @@ When preparing the show notes in local machine, execute the following in the com
 
    - **to build**:
 
-     ```
-     LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll build
+     ```shell
+     $ LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll build
      ```
 
    - **to add new posts**:  to start the [Jekyll](http://jekyllrb.com/) server with development configurations
 
-     ```
-     LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll serve --watch --config _dev_config.yml
+     ```shell
+     $ LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll serve --watch --config _dev_config.yml
      ```
    - **to edit css and javascript**: to start the [GruntJS](http://gruntjs.com/) continuous compilation for CSS and JavaScript
 
-     ```
-     grunt
+     ```shell
+     $ grunt
      ```
    - **to sync to the github pages** change to git branch `gh-pages` and do a git rebase
 
-     ```
-     git checkout gh-pages
-     git rebase master
-     git push origin gh-pages
-     git checkout master
+     ```shell
+     $ git checkout gh-pages
+     $ git rebase master
+     $ git push origin gh-pages
+     $ git checkout master
      ```
 
 If there's and error for invalid byte sequence in US-ASCII, try to reset the locale settings
 
-```
+```shell
 LC_CTYPE="en_US.UTF-8"
 LANG="en_US.UTF-8"
 ```
+
+For quickly firing up all the above commands, use tmux:
+
+```shell
+tmuxinator bp
+```
+
 ###install with docker
 
 1. Install [Docker](https://docs.docker.com/)
