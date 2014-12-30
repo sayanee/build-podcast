@@ -26,17 +26,20 @@ module.exports = function(config) {
             function(next) { uploadViaFTP(config, next) },
             function(next) { uploadToYoutube(config, next) },
             function(next) { uploadToVimeo(config, next) }
-          ])
-        },
+          ], function() {
 
-        function(next) { copyDemoCodeToRepo(config, next) },
-        function(next) { updatePost(config, next) },
-        function(next) { checkPostInfo(config, next) }
+            async.series([
+              function(next) { copyDemoCodeToRepo(config, next) },
+              function(next) { updatePost(config, next) },
+              function(next) { checkPostInfo(config, next) }
+            ], function() {
+              console.log(clc.green.bold('It was another great learning with episode ' + config.num + ' ' + config.episode));
+            })
 
+          })
+        }
       ])
-
-    });
-
+    })
 }
 
 function isOnDesktop(callback) {
@@ -47,6 +50,7 @@ function isOnDesktop(callback) {
     return;
   }
 }
+
 function stopNginx(callback) {
   console.log(clc.blue('Key in the admin password to stop Nginx server'));
 
@@ -68,7 +72,7 @@ function normaliseVideo(config, callback) {
     console.log('SUCCESS: Renamed video from mov to mp4');
   }
 
-  if(exec('norm ' + outputFile).code !== 0) {
+  if(exec('norm ' + outputFile + ' 2> /dev/null').code !== 0) {
     return;
   } else {
     console.log('SUCCESS: Normalised video from mov to mp4');
@@ -108,7 +112,7 @@ function isEpisodeInfoFilledIn(config, callback) {
 function uploadViaFTP(config, callback) {
   var c = new Client();
   var videoFilepath = config.desktopDir + config.video;
-  console.log(videoFilepath);
+
   console.log(clc.yellow('IN PROGRESS: Uploading video via FTP'));
 
   c.on('ready', function() {
@@ -141,6 +145,7 @@ function uploadToYoutube(config, callback) {
     + ' --password=' + config.youtubePassword
     + ' --add-to-playlist=' + config.youtubePlaylist + ' ';
   var youtubeVideoUrl;
+  var regexMatchUrlParams = new RegExp(/\?v=(.*)/);
 
   console.log(clc.yellow('IN PROGRESS: Uploading video to Youtube'));
 
@@ -151,7 +156,8 @@ function uploadToYoutube(config, callback) {
     }
 
     youtubeVideoUrl = getUrls(output)[2];
-    config.youtubeUrl = youtubeVideoUrl;
+    config.youtubeUrl = youtubeVideoUrl.match(regexMatchUrlParams)[1];
+
     console.log( clc.green('SUCCESS: Video file uploaded to Youtube: ' + youtubeVideoUrl ));
     exec('open ' + youtubeVideoUrl);
 
@@ -171,7 +177,6 @@ function uploadToYoutube(config, callback) {
     })
 
   })
-
 }
 
 function uploadToVimeo(config, callback) {
@@ -203,10 +208,6 @@ function copyDemoCodeToRepo(config, callback) {
 }
 
 function updatePost(config, callback) {
-  console.log('URPATE POST:');
-  console.log(config.video);
-  console.log(config.youtubeUrl)
-
   fs.stat(config.video , function (error, stats) {
     var videoSize = stats.size;
 
@@ -220,7 +221,7 @@ function updatePost(config, callback) {
       fileContents = fileContents.replace(/{{LENGTH}}/g, videoSize);
       fileContents = fileContents.replace(/{{TAGS}}/g, config.tags);
       fileContents = fileContents.replace(/{{DESCRIPTION}}/g, config.summary);
-      fileContents = fileContents.replace(/{{YOUTUBEURL}}/g, config.youtubeUrlId);
+      fileContents = fileContents.replace(/{{YOUTUBEURL}}/g, config.youtubeUrl);
 
       fs.writeFile(config.postFile, fileContents, 'utf8', function(error) {
         if (error) {
@@ -252,14 +253,12 @@ function checkPostInfo(config, callback) {
 
     if (result.postCheck === 'y') {
       exec('open http://github.com/sayanee/build-podcast');
-      console.log(clc.blue('Publish Build Podcast:\n'));
-      console.log(clc.blue('j shownotes'); // with autojump
-      console.log(clc.blue('git add . && git commit -m "episode ' + config.num + ' ' + config.episode + '"');
+      console.log(clc.blue('Publish Build Podcast:\n\n'));
+      console.log(clc.blue('j shownotes')); // with autojump
+      console.log(clc.blue('git add . && git commit -m "episode ' + config.num + ' ' + config.episode + '"'));
 
-      console.log(clc.blue('gj\n');
+      console.log(clc.blue('gj\n\n'));
       // alias gj='git push origin master && git status && git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master && git status'
-
-      console.log(clc.green('It was another great learning ;-) Well done!'));
 
       callback(null);
     } else {

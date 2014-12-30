@@ -81,14 +81,13 @@ function openStartPage(config, callback) {
     console.log('SUCCESS: Opened start directory in text editor');
   }
 
-  if (exec('open http://dev.build-podcast.com && sudo nginx -s stop && sudo nginx').code !== 0) {
+  if (exec('sudo nginx').code !== 0) {
     // edit: /etc/hosts to add 127.0.0.1 dev.build-podcast.com
     // edit: nginx config file /usr/local/etc/nginx/nginx.conf
     return;
-  } else {
-    console.log('SUCCESS: Opened dev.build-podcast.com server');
   }
 
+  exec('open http://dev.build-podcast.com');
   console.log('SUCCESS: Start screen opened at dev.build-podcast.com');
   callback(null);
 }

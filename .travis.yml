@@ -3,7 +3,7 @@ cache: bundler
 rvm:
   - 2.2.0
 
-install: gem install jekyll
+install: bundle install
 script: jekyll build --safe
 
 branches:

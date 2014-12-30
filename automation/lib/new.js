@@ -2,6 +2,7 @@ var program = require('commander');
 var fs = require('fs');
 var async = require('async');
 var path = require('path');
+var clc = require('cli-color');
 require('shelljs/global');
 
 module.exports = function(config) {
@@ -15,7 +16,9 @@ module.exports = function(config) {
         function(next) { createFolders(config, next) },
         function(next) { createFileFromTemplate(config, next) },
         function(next) { openFoldersAndApps(config, next) }
-      ]);
+      ], function() {
+        console.log(clc.green('New episode created: ' + config.num + ' ' + config.episode));
+      });
 
     });
 }
@@ -70,7 +73,11 @@ function createFileFromTemplate(config, callback) {
 
   [newReadme, newPost].forEach(function(file) {
     fs.readFile(file, 'utf8', function(error, data) {
-      if (error) { console.log(error); }
+      if (error) {
+        console.log(error);
+        return;
+      }
+
       data = data.replace(/{{NUM}}/g, config.num);
       data = data.replace(/{{EPISODE}}/g, config.episode);
       data = data.replace(/{{EPISODE_LOWERCASE}}/g, config.episodeLowercase);
