@@ -183,7 +183,7 @@ tmuxinator bp
 
 ##Automation
 
-Automation with [scripts](/scripts):
+Automation with [scripts](https://github.com/sayanee/build-podcast/tree/master/automation):
 
 1. Start a new episode: `bp new`
 1. Open an existing episode: `bp open`
