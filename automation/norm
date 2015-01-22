@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # This script takes a movie *.mov file and outputs with its normalized audio
-# requires ffmpeg and sox - brew install ffmeg && brew install sox
+# requires ffmpeg and sox - brew install ffmpeg && brew install sox
 # USAGE in the command line:
 # norm movie.mov
 
