@@ -23,7 +23,7 @@ Related links:
   $ bundle install # for jekyll
   $ gem install vimeo tempfile json thor launchy # for vimeo script
   $ npm install # for assets and automation scripts
-  $ brew install ffmeg sox # for post-processing video and audio
+  $ brew install ffmpeg sox # for post-processing video and audio
   ```
 
 ###for tmuxinator
@@ -50,17 +50,20 @@ Related links:
   $ ln -s /Users/{username}/Workspace/path/to/folder/automation/norm /Users/{username}/path/to/folder/norm
   $ ln -s /Users/{username}/Workspace/path/to/folder/automation/vimeo /Users/{username}/path/to/folder/vimeo
   ```
-- [download python google data](https://code.google.com/p/gdata-python-client/downloads/list) and [install it](https://code.google.com/p/youtube-upload/wiki/Readme#Download_&_Install)
-- [download youtube-upload](https://code.google.com/p/youtube-upload/downloads/list) and [install it](https://code.google.com/p/youtube-upload/wiki/Readme#Download_&_Install)
-- install both packages with the following commands:
+- install python packages
+  1. [download python google data](https://code.google.com/p/gdata-python-client/downloads/list) and [install it](https://code.google.com/p/youtube-upload/wiki/Readme#Download_&_Install)
+  - [download youtube-upload](https://code.google.com/p/youtube-upload/downloads/list) and [install it](https://code.google.com/p/youtube-upload/wiki/Readme#Download_&_Install)
+  - install both packages with the following commands:
 
-  ```shell
-  $ tar xvzf {package}.tar.gz
-  $ cd {package}
-  $ sudo python setup.py install
-  ```
+    ```shell
+    $ tar xvzf {package}.tar.gz
+    $ cd {package}
+    $ sudo python setup.py install
+    ```
 
 ###setup dev.build-podcast in local
+
+This is to display the introduction page at the start of each screencast.
 
 1. edit `/etc/hosts`
 
