@@ -45,12 +45,12 @@ I wanna learn a tonne of things. Here are some stuff I wanna pick up, go in dept
 - [Jenkins](http://jenkins-ci.org/)
 - [iPython](http://ipython.org/)
 - [Arch](https://www.archlinux.org/) Linux
-- [Function programming](http://en.wikipedia.org/wiki/Functional_programming) with Haskell/JS
+- [Functional programming](http://en.wikipedia.org/wiki/Functional_programming) with Haskell/JS
 - [MongoDB](http://www.mongodb.org/)
 - [PostgreSQL](http://www.postgresql.org/)
 - [Memcached](http://memcached.org/)
 - [CasperJS](http://casperjs.org/)
-- [C](http://en.wikipedia.org/wiki/C_(programming_language\))
+- [C](http://en.wikipedia.org/wiki/C_programming_language)
 - [Sketch](http://www.bohemiancoding.com/sketch/)
 - [Design Patterns](http://www.amazon.com/Design-Patterns-Elements-Object-Oriented-ebook/dp/B000SEIBB8) maybe [with JS](http://shop.oreilly.com/product/0636920025832.do)
 - [Redis](http://redis.io/)
