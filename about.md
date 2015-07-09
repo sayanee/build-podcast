@@ -36,6 +36,8 @@ I wanna learn a tonne of things. Here are some stuff I wanna pick up, go in dept
 - [Electron](http://electron.atom.io/)
 - [ReactJS](http://facebook.github.io/react/)
 - [OAuth](http://oauth.net/)
+- [Babel JS](https://babeljs.io/)
+- [JSPM](http://jspm.io/)
 - Basic [Electronics](http://www.amazon.com/Getting-Started-Electronics-Forrest-Mims/dp/0945053282)
 - [Charles Proxy](http://www.charlesproxy.com/)
 - [ECMAScript 6](http://www.ecmascript.org/)
