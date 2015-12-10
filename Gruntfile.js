@@ -46,6 +46,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
+  grunt.registerTask('default', ['clean', 'compass', 'uglify']);
   grunt.registerTask('default', ['clean', 'compass', 'uglify', 'watch']);
-
 };

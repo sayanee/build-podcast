@@ -1,41 +1,44 @@
 {
   "name": "build-podcast",
   "version": "1.0.0",
-  "author": "Sayanee <sayanee@gmail.com>",
+  "private": true,
   "description": "screencasts for tech tools",
-  "contributors": [
-    {
-      "name": "Chinmay",
-      "email": "notthetup@gmail.com"
-    }
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/sayanee/build-podcast.git"
   },
   "keywords": [
     "screencast",
-    "tools"
+    "tools",
+    "technology",
+    "web",
+    "electronics"
   ],
+  "scripts": {
+    "build": "LANG=\"en_US.UTF-8\" && LC_CTYPE=\"en_US.UTF-8\" && jekyll build && grunt",
+    "start": "jekyll serve --config _dev_config.yml",
+    "new": "bp new",
+    "deploy": "git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master"
+  },
   "devDependencies": {
-    "async": "0.9.0",
-    "chai": "1.10.0",
-    "cli-color": "0.3.2",
-    "colors": "1.0.3",
-    "commander": "2.6.0",
+    "async": "1.5.0",
+    "chai": "3.4.1",
+    "cli-color": "1.1.0",
+    "colors": "1.1.2",
+    "commander": "2.9.0",
     "execSync": "1.0.2",
-    "ftp": "0.3.8",
-    "get-urls": "3.0.0",
+    "ftp": "0.3.10",
+    "get-urls": "5.0.0",
     "grunt": "0.4.5",
     "grunt-cli": "0.1.13",
-    "grunt-contrib-clean": "0.6.0",
-    "grunt-contrib-compass": "1.0.1",
-    "grunt-contrib-uglify": "0.7.0",
+    "grunt-contrib-clean": "0.7.0",
+    "grunt-contrib-compass": "1.0.4",
+    "grunt-contrib-uglify": "0.11.0",
     "grunt-contrib-watch": "0.6.1",
-    "mocha": "2.1.0",
-    "ncp": "1.0.1",
+    "mocha": "2.3.4",
+    "ncp": "2.0.0",
     "prompt": "0.2.14",
-    "selenium-webdriver": "2.44.0",
-    "shelljs": "0.3.0"
+    "selenium-webdriver": "2.48.2",
+    "shelljs": "0.5.3"
   }
 }

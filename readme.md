@@ -13,7 +13,7 @@ Related links:
 - [Twitter](http://twitter.com/buildpodcast)
 - [Github](https://github.com/sayanee/build-podcast) and [open issues](https://github.com/sayanee/build-podcast/issues?page=1&state=open)
 
-##Install
+## install
 
 ### for website
 
@@ -97,7 +97,7 @@ This is to display the introduction page at the start of each screencast.
       }
   ```
 
-##Development
+## development
 
 This Github repository consists of sample code for each episode and the entire website for [Build Podcast](http://build-podcast.com).
 
@@ -141,50 +141,7 @@ For quickly firing up all the above commands, use tmux:
 tmuxinator bp
 ```
 
-###install with docker
-
-1. Install [Docker](https://docs.docker.com/)
-- Take note of `$DOCKER_HOST` IP address
-- Edit `line 5` to replace `localhost` with `$DOCKER_HOST` IP address. E.g.
-
-	```
-	url: http://192.168.59.103:4000
-	```
-- Start docker E.g. for MAC OSX
-
-	```
-	boot2docker start
-	export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
-	```
-- Build the image and run it
-
-	```
-	docker build -t bp .
-	docker run -d -p 4000:4000 bp
-	```
-- Open in browser E.g. `http://192.168.59.103:4000`
-
-
-##Test
-
-1. [Download](http://docs.seleniumhq.org/download/) Selenium Webdriver `*.jar` file
-1. Start the stand alone server
-
-	```
-	java -jar selenium-server-standalone-2.41.0.jar
-	```
-1. Start Jekyll server
-
-	```
-	LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll serve --watch --config _dev_config.yml
-	```
-1. Run Mocha test
-
-	```
-	mocha
-	```
-
-##Automation
+## scripts
 
 Automation with [scripts](https://github.com/sayanee/build-podcast/tree/master/automation):
 
@@ -194,12 +151,11 @@ Automation with [scripts](https://github.com/sayanee/build-podcast/tree/master/a
 1. Publish a new episode: `bp pub`
 
 
-##License
+## license
 
 All content belongs to YOU under [CC0 1.0 Public Domain Dedication](http://creativecommons.org/publicdomain/zero/1.0/). You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
 
-
-##Donate
+## donate
 
 I buy eBooks, electronics and good chocolates for myself with the donated money :)
 
