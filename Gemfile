@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'github-pages'
+gem 'github-pages', '40'
 gem 'tmuxinator', '0.7.0'
 gem 'compass', '1.0.3'
 gem 'vimeo', '1.5.4'
