@@ -1,6 +1,6 @@
-[![Dependency Status](https://gemnasium.com/sayanee/build-podcast.svg)](https://gemnasium.com/sayanee/build-podcast)
+# Build Podcast [![Dependency Status](https://gemnasium.com/sayanee/build-podcast.svg)](https://gemnasium.com/sayanee/build-podcast)
 
-####[Build Podcast](http://build-podcast.com) is a show about technology tools for design and development. Each episode, [Sayanee](http://sayan.ee) will be creating a screencast that will take you through step-by-step in using one tool to build a little project, all in the fun spirit of hacking, creating and building stuff!
+> [Build Podcast](http://build-podcast.com) is a screencast about technology tools for design and development. Each episode, [Sayanee](http://sayan.ee) will be creating a screencast that will take you through step-by-step in using one tool to build a little project, all in the fun spirit of hacking, creating and building stuff!
 
 Related links:
 
@@ -12,6 +12,19 @@ Related links:
 - [iTunes subscriptionn](https://itunes.apple.com/us/podcast/build-podcast-screencast/id538677863)
 - [Twitter](http://twitter.com/buildpodcast)
 - [Github](https://github.com/sayanee/build-podcast) and [open issues](https://github.com/sayanee/build-podcast/issues?page=1&state=open)
+
+## getting started
+
+1. install dependencies
+
+  ```sh
+  $ bundle install && npm install
+  ```
+- start the website
+
+  ```sh
+  $ npm start
+  ```
 
 ## install
 
@@ -26,7 +39,7 @@ Related links:
   $ brew install ffmpeg sox # for post-processing video and audio
   ```
 
-###for tmuxinator
+### for tmuxinator
 
 1. link tmux script `bp.yml` for starting up
 
@@ -35,7 +48,7 @@ Related links:
   $ tmuxinator bp
   ```
 
-###for recording screencast and post-processing
+### for recording screencast and post-processing
 
 1. create `episode.json` in one up level of hierarchy
 
@@ -61,7 +74,7 @@ Related links:
     $ sudo python setup.py install
     ```
 
-###setup dev.build-podcast in local
+### setup dev.build-podcast in local
 
 This is to display the introduction page at the start of each screencast.
 
@@ -76,25 +89,26 @@ This is to display the introduction page at the start of each screencast.
 
   ```
   http {
-      ...
-      include /usr/local/etc/nginx/sites-enabled/*;
-      ...
+    ...
+    include /usr/local/etc/nginx/sites-enabled/*;
+    ...
 
-      server {
-          listen       80;
-          server_name  dev.build-podcast.com;
+    server {
+      listen       80;
+      server_name  dev.build-podcast.com;
 
-          charset utf-8;
-          add_header "X-UA-Compatible" "IE=Edge,chrome=1";
-          index   index.html;
+      charset utf-8;
+      add_header "X-UA-Compatible" "IE=Edge,chrome=1";
+      index   index.html;
 
-          location / {
-              expires -1;
-              add_header Pragma "no-cache";
-              add_header Cache-Control "no-store, no-cache, must-revalidate, post-check=0, pre-check=0";
-              root    /Users/{username}/path/to/build-podcast/start;
-          }
+      location / {
+        expires -1;
+        add_header Pragma "no-cache";
+        add_header Cache-Control "no-store, no-cache, must-revalidate, post-check=0, pre-check=0";
+        root    /Users/{username}/path/to/build-podcast/start;
       }
+    }
+  }
   ```
 
 ## development
@@ -118,14 +132,6 @@ When preparing the show notes in local machine, execute the following in the com
 
      ```shell
      $ grunt
-     ```
-   - **to sync to the github pages** change to git branch `gh-pages` and do a git rebase
-
-     ```shell
-     $ git checkout gh-pages
-     $ git rebase master
-     $ git push origin gh-pages
-     $ git checkout master
      ```
 
 If there's and error for invalid byte sequence in US-ASCII, try to reset the locale settings
