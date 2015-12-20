@@ -1,3 +1,5 @@
+![](screenshot.png)
+
 # Build Podcast [![Dependency Status](https://gemnasium.com/sayanee/build-podcast.svg)](https://gemnasium.com/sayanee/build-podcast)
 
 > [Build Podcast](http://build-podcast.com) is a screencast about technology tools for design and development. Each episode, [Sayanee](http://sayan.ee) will be creating a screencast that will take you through step-by-step in using one tool to build a little project, all in the fun spirit of hacking, creating and building stuff!

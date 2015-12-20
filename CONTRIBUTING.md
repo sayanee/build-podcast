@@ -6,7 +6,7 @@
 
 Please raise any tool-specific questions on [Stackoverflow](https://stackoverflow.com/questions/ask) or their respective chat channel.
 
-## for spotting mistakes in show notes
+## for spotting mistakes in show notes and giving feedback / ideas on new episodes
 
 1. Mistakes in the show notes, steps or documentation is a good bug to fix.
 - Please check the version of the tool in the episode that you are trying to fix. Since the screencast is time-specific, the mistake might not be there in the version used during the episode.
