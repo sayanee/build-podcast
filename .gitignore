@@ -5,3 +5,4 @@ js/lib
 _publish
 test/screenshots
 .bundle
+dump.rdb

@@ -61,7 +61,6 @@ function stopNginx(callback) {
 }
 
 function normaliseVideo(config, callback) {
-
   var inputFile = config.desktopDir + config.video; // original file mp4 format
   var outputFile = config.desktopDir + config.folder + '.mov';
 
@@ -100,12 +99,12 @@ function isEpisodeInfoFilledIn(config, callback) {
   };
 
   prompt.get(property, function (err, result) {
-      if (result.yesno === 'y') {
-        callback(null);
-      } else {
-        console.log(clc.red('Fill in tags and summary in episode.json'));
-        return;
-      }
+    if (result.yesno === 'y') {
+      callback(null);
+    } else {
+      console.log(clc.red('Fill in tags and summary in episode.json'));
+      return;
+    }
   })
 }
 
