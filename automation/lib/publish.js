@@ -1,39 +1,36 @@
-var program = require('commander');
-var async = require('async');
-var clc = require('cli-color');
-var fs = require('fs');
-var prompt = require('prompt');
-var Client = require('ftp');
-var getUrls = require('get-urls');
-require('shelljs/global');
+var program = require('commander')
+var async = require('async')
+var clc = require('cli-color')
+var fs = require('fs')
+var prompt = require('prompt')
+var Client = require('ftp')
+var getUrls = require('get-urls')
+require('shelljs/global')
 
-module.exports = function(config) {
-
+module.exports = function (config) {
   // bp pub
   program
     .command('pub')
     .description('publish episode')
-    .action(function(configFile) {
-
+    .action(function (configFile) {
       async.series([
-        function(next) { isOnDesktop(next) },
-        function(next) { stopNginx(next) },
-        function(next) { normaliseVideo(config, next) },
-        function(next) { isEpisodeInfoFilledIn(config, next) },
+        function (next) { isOnDesktop(next) },
+        function (next) { stopNginx(next) },
+        function (next) { normaliseVideo(config, next) },
+        function (next) { isEpisodeInfoFilledIn(config, next) },
 
-        function(next) {
+        function (next) {
           async.parallel([
-            function(next) { uploadViaFTP(config, next) },
-            function(next) { uploadToYoutube(config, next) },
-            function(next) { uploadToVimeo(config, next) }
-          ], function() {
-
+            function (next) { uploadViaFTP(config, next) },
+            function (next) { uploadToYoutube(config, next) },
+            function (next) { uploadToVimeo(config, next) }
+          ], function () {
             async.series([
-              function(next) { copyDemoCodeToRepo(config, next) },
-              function(next) { updatePost(config, next) },
-              function(next) { checkPostInfo(config, next) }
-            ], function() {
-              console.log(clc.green.bold('It was another great learning with episode ' + config.num + ' ' + config.episode));
+              function (next) { copyDemoCodeToRepo(config, next) },
+              function (next) { updatePost(config, next) },
+              function (next) { checkPostInfo(config, next) }
+            ], function () {
+              console.log(clc.green.bold('It was another great learning with episode ' + config.num + ' ' + config.episode))
             })
 
           })
@@ -42,95 +39,95 @@ module.exports = function(config) {
     })
 }
 
-function isOnDesktop(callback) {
+function isOnDesktop (callback) {
   if (process.cwd().indexOf('Desktop') > -1) {
     callback(null)
   } else {
-    console.log(clc.red('ERROR: Execute this script from desktop'));
-    return;
+    console.log(clc.red('ERROR: Execute this script from desktop'))
+    return
   }
 }
 
-function stopNginx(callback) {
-  console.log(clc.blue('Key in the admin password to stop Nginx server'));
+function stopNginx (callback) {
+  console.log(clc.blue('Key in the admin password to stop Nginx server'))
 
   exec('sudo nginx -s stop')
-  console.log('SUCCESS: Stopped Nginx');
+  console.log('SUCCESS: Stopped Nginx')
 
   callback(null)
 }
 
-function normaliseVideo(config, callback) {
-  var inputFile = config.desktopDir + config.video; // original file mp4 format
-  var outputFile = config.desktopDir + config.folder + '.mov';
+function normaliseVideo (config, callback) {
+  var inputFile = config.desktopDir + config.video // original file mp4 format
+  var outputFile = config.desktopDir + config.folder + '.mov'
 
   // input file must be *.mov
-  if(exec('mv ' + inputFile + ' ' + outputFile).code !== 0) {
-    return;
+  if (exec('mv ' + inputFile + ' ' + outputFile).code !== 0) {
+    return
   } else {
-    console.log('SUCCESS: Renamed video from mov to mp4');
+    console.log('SUCCESS: Renamed video from mov to mp4')
   }
 
-  if(exec('norm ' + outputFile + ' 2> /dev/null').code !== 0) {
-    return;
+  if (exec('norm ' + outputFile + ' 2> /dev/null').code !== 0) {
+    return
   } else {
-    console.log('SUCCESS: Normalised video from mov to mp4');
+    console.log('SUCCESS: Normalised video from mov to mp4')
   }
 
-  callback(null);
+  callback(null)
 }
 
-function isEpisodeInfoFilledIn(config, callback) {
+function isEpisodeInfoFilledIn (config, callback) {
   // open episode.json
-  var episodeJson = config.bpDir + 'episode.json';
+  var episodeJson = config.bpDir + 'episode.json'
   if (exec('subl ' + episodeJson).code !== 0) {
-    return;
+    return
   } else {
-    console.log('SUCCESS: Opened episode.json in text editor');
+    console.log('SUCCESS: Opened episode.json in text editor')
   }
 
-  prompt.start();
+  prompt.start()
 
   var property = {
     name: 'yesno',
     message: 'Have you updated episode.json with tags and summary? (y/n) ',
     validator: /y[es]*|n[o]?/,
     warning: 'Must respond yes or no'
-  };
+  }
 
   prompt.get(property, function (err, result) {
     if (result.yesno === 'y') {
-      callback(null);
+      callback(null)
     } else {
-      console.log(clc.red('Fill in tags and summary in episode.json'));
-      return;
+      console.log(clc.red('Fill in tags and summary in episode.json'))
+      return
     }
   })
 }
 
-function uploadViaFTP(config, callback) {
-  var c = new Client();
-  var videoFilepath = config.desktopDir + config.video;
+function uploadViaFTP (config, callback) {
+  var c = new Client()
+  var videoFilepath = config.desktopDir + config.video
 
-  console.log(clc.yellow('IN PROGRESS: Uploading video via FTP'));
+  console.log(clc.yellow('IN PROGRESS: Uploading video via FTP'))
 
-  c.on('ready', function() {
-    c.put(videoFilepath, config.path , function(error) {
+  c.on('ready', function () {
+    c.put(videoFilepath, config.path , function (error) {
       if (error) {
-        console.log(clc.red('ERROR: Uploading video via FTP: ' + error));
-        return;
+        console.log(clc.red('ERROR: Uploading video via FTP: ' + error))
+        return
       }
 
-      console.log(clc.green('SUCCESS: Video file uploaded via FTP to http://video.build-podcast.com/' + config.video));
-      exec('open ' + 'http://video.build-podcast.com/' + config.video);
-      c.end();
-      callback(null);
-    });
-  });
-  c.connect(config);
+      console.log(clc.green('SUCCESS: Video file uploaded via FTP to http://video.build-podcast.com/' + config.video))
+      exec('open ' + 'http://video.build-podcast.com/' + config.video)
+      c.end()
+      callback(null)
+    })
+  })
+  c.connect(config)
 }
 
-function uploadToYoutube(config, callback) {
+function uploadToYoutube (config, callback) {
   var youtubeUploadCommand = 'youtube-upload'
     + ' --email=' + config.youtubeEmail
     + ' --password=' + config.youtubePassword
@@ -138,130 +135,128 @@ function uploadToYoutube(config, callback) {
     + '" --description="' + config.videoDescription
     + '" --category="Tech" '
     + '--keywords="' + config.tags + '" '
-    + config.video;
+    + config.video
   var youtubeAddToPlaylistCommand = 'youtube-upload'
     + ' --email=' + config.youtubeEmail
     + ' --password=' + config.youtubePassword
-    + ' --add-to-playlist=' + config.youtubePlaylist + ' ';
-  var youtubeVideoUrl;
-  var regexMatchUrlParams = new RegExp(/\?v=(.*)/);
+    + ' --add-to-playlist=' + config.youtubePlaylist + ' '
+  var youtubeVideoUrl
+  var regexMatchUrlParams = new RegExp(/\?v=(.*)/)
 
-  console.log(clc.yellow('IN PROGRESS: Uploading video to Youtube'));
+  console.log(clc.yellow('IN PROGRESS: Uploading video to Youtube'))
 
-  exec(youtubeUploadCommand, function(code, output) {
+  exec(youtubeUploadCommand, function (code, output) {
     if (code !== 0) {
-      console.log(clc.red('ERROR: Uploading video to Youtube'));
-      return;
+      console.log(clc.red('ERROR: Uploading video to Youtube'))
+      return
     }
 
-    youtubeVideoUrl = getUrls(output)[2];
-    config.youtubeUrl = youtubeVideoUrl.match(regexMatchUrlParams)[1];
+    youtubeVideoUrl = getUrls(output)[2]
+    config.youtubeUrl = youtubeVideoUrl.match(regexMatchUrlParams)[1]
 
-    console.log( clc.green('SUCCESS: Video file uploaded to Youtube: ' + youtubeVideoUrl ));
-    exec('open ' + youtubeVideoUrl);
+    console.log(clc.green('SUCCESS: Video file uploaded to Youtube: ' + youtubeVideoUrl))
+    exec('open ' + youtubeVideoUrl)
 
-    console.log(clc.yellow('IN PROGRESS: Adding video to Youtube playlist'));
-    youtubeAddToPlaylistCommand += youtubeVideoUrl;
+    console.log(clc.yellow('IN PROGRESS: Adding video to Youtube playlist'))
+    youtubeAddToPlaylistCommand += youtubeVideoUrl
 
-    exec(youtubeAddToPlaylistCommand, function(code, output) {
+    exec(youtubeAddToPlaylistCommand, function (code, output) {
       if (code !== 0) {
-        console.log(clc.red('ERROR: Adding video to Youtube playlist'));
-        return;
+        console.log(clc.red('ERROR: Adding video to Youtube playlist'))
+        return
       }
 
-      console.log(clc.green('SUCCESS: Video file added to Youtube playlist: ' + config.youtubePlaylistURL));
-      exec('open ' + config.youtubePlaylistURL);
+      console.log(clc.green('SUCCESS: Video file added to Youtube playlist: ' + config.youtubePlaylistURL))
+      exec('open ' + config.youtubePlaylistURL)
 
-      callback(null);
+      callback(null)
     })
 
   })
 }
 
-function uploadToVimeo(config, callback) {
-  var filepath = config.bpDir + 'episode.json';
+function uploadToVimeo (config, callback) {
+  var filepath = config.bpDir + 'episode.json'
 
-  console.log(clc.yellow('IN PROGRESS: Uploading video to Vimeo'));
-  exec('vimeo upload ' + filepath, function(code, output) {
+  console.log(clc.yellow('IN PROGRESS: Uploading video to Vimeo'))
+  exec('vimeo upload ' + filepath, function (code, output) {
     if (code !== 0) {
-      console.log(clc.red('ERROR: Uploading video to Vimeo: '));
-      return;
+      console.log(clc.red('ERROR: Uploading video to Vimeo: '))
+      return
     }
 
-    console.log(clc.green('SUCCESS: Video file added to Vimeo: ' + getUrls(output)[0]));
-    callback(null);
-  });
+    console.log(clc.green('SUCCESS: Video file added to Vimeo: ' + getUrls(output)[0]))
+    callback(null)
+  })
 }
 
-function copyDemoCodeToRepo(config, callback) {
-  var source = config.desktopDir + config.episodeLowercase + '/.';
-  var destination = config.repoDir + config.num + '-' + config.episodeLowercase;
+function copyDemoCodeToRepo (config, callback) {
+  var source = config.desktopDir + config.episodeLowercase + '/.'
+  var destination = config.repoDir + config.num + '-' + config.episodeLowercase
 
   if (exec('cp -R ' + source + ' ' + destination).code !== 0) {
-    console.log(clc.red('ERROR: Copy demo files to repo'));
-    return;
+    console.log(clc.red('ERROR: Copy demo files to repo'))
+    return
   }
 
-  console.log(clc.green('SUCCESS: Copied demo files to the repo'));
-  callback(null);
+  console.log(clc.green('SUCCESS: Copied demo files to the repo'))
+  callback(null)
 }
 
-function updatePost(config, callback) {
+function updatePost (config, callback) {
   fs.stat(config.video , function (error, stats) {
-    var videoSize = stats.size;
+    var videoSize = stats.size
 
-    fs.readFile(config.postFile, 'utf8', function(err, fileContents) {
-
+    fs.readFile(config.postFile, 'utf8', function (err, fileContents) {
       if (error) {
-        console.log(clc.red('ERROR: Read file to update meta tags: ' + error));
-        return;
+        console.log(clc.red('ERROR: Read file to update meta tags: ' + error))
+        return
       }
 
-      fileContents = fileContents.replace(/{{LENGTH}}/g, videoSize);
-      fileContents = fileContents.replace(/{{TAGS}}/g, config.tags);
-      fileContents = fileContents.replace(/{{DESCRIPTION}}/g, config.summary);
-      fileContents = fileContents.replace(/{{YOUTUBEURL}}/g, config.youtubeUrl);
+      fileContents = fileContents.replace(/{{LENGTH}}/g, videoSize)
+      fileContents = fileContents.replace(/{{TAGS}}/g, config.tags)
+      fileContents = fileContents.replace(/{{DESCRIPTION}}/g, config.summary)
+      fileContents = fileContents.replace(/{{YOUTUBEURL}}/g, config.youtubeUrl)
 
-      fs.writeFile(config.postFile, fileContents, 'utf8', function(error) {
+      fs.writeFile(config.postFile, fileContents, 'utf8', function (error) {
         if (error) {
-          console.log(clc.red('ERROR: Write file with meta data:  ' + error));
-          return;
+          console.log(clc.red('ERROR: Write file with meta data:  ' + error))
+          return
         }
-        console.log(clc.green('SUCCESS: Info added to the Post.'));
-        callback(null);
-      });
+        console.log(clc.green('SUCCESS: Info added to the Post.'))
+        callback(null)
+      })
 
-    });
-  });
+    })
+  })
 }
 
-function checkPostInfo(config, callback) {
+function checkPostInfo (config, callback) {
   exec('open ' + config.postFile)
-  exec('open ' + config.app.gitx);
+  exec('open ' + config.app.gitx)
 
-  prompt.start();
+  prompt.start()
 
   var property = {
     name: 'postCheck',
     message: 'Is the post complete? Have you committed everything? (y/n) ',
     validator: /y[es]*|n[o]?/,
     warning: 'Must respond yes or no'
-  };
+  }
 
   prompt.get(property, function (err, result) {
-
     if (result.postCheck === 'y') {
-      exec('open http://github.com/sayanee/build-podcast');
-      console.log(clc.blue('Publish Build Podcast:\n\n'));
-      console.log(clc.blue('j shownotes')); // with autojump
-      console.log(clc.blue('git add . && git commit -m "episode ' + config.num + ' ' + config.episode + '"'));
+      exec('open http://github.com/sayanee/build-podcast')
+      console.log(clc.blue('Publish Build Podcast:\n\n'))
+      console.log(clc.blue('j shownotes')) // with autojump
+      console.log(clc.blue('git add . && git commit -m "episode ' + config.num + ' ' + config.episode + '"'))
 
-      console.log(clc.blue('gj\n\n'));
+      console.log(clc.blue('gj\n\n'))
       // alias gj='git push origin master && git status && git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master && git status'
 
-      callback(null);
+      callback(null)
     } else {
-      console.log(clc.red('ERROR: Edit the post file: ' + config.postFile));
+      console.log(clc.red('ERROR: Edit the post file: ' + config.postFile))
     }
-  });
+  })
 }

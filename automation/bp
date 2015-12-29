@@ -5,33 +5,33 @@
 // https://code.google.com/p/gdata-python-client/downloads/list
 // https://code.google.com/p/youtube-upload/downloads/list
 
-var config = extractConfig(require('../../episode'));
-// console.log(config);
+var config = extractConfig(require('../../episode'))
+// console.log(config)
 
-var program = require('commander');
-program.version('1.0.0');
+var program = require('commander')
+program.version('1.0.0')
 
-require('./lib/new')(config); // bp new
-require('./lib/open')(config); // bp open
-require('./lib/record')(config); // bp record
-require('./lib/publish')(config); // bp pub
+require('./lib/new')(config) // bp new
+require('./lib/open')(config) // bp open
+require('./lib/record')(config) // bp record
+require('./lib/publish')(config) // bp pub
 
-program.parse(process.argv);
+program.parse(process.argv)
 
-if (process.argv.length < 3) program.help();
+if (process.argv.length < 3) program.help()
 
-function extractConfig(config) {
-  config.folder = config.num + '-' + config.episodeLowercase;
-  config.video = config.folder + '.mp4';
-  config.path = 'public_html/build/videos/' + config.video;
-  config.title = 'Build Podcast ' + config.num + ' ' + config.episode;
-  config.videoDescription = 'Show notes: http://build-podcast.com/' + config.episodeLowercase;
-  config.repoDir = config.bpDir + config.shownotesDir;
-  config.postFile = config.repoDir + '_posts/' + config.postDate + '-' + config.episodeLowercase + '.md';
-  config.postDir = config.repoDir + '_posts/';
-  config.demoDir = config.desktopDir + config.episodeLowercase;
-  config.configYMLFile = config.repoDir + '_config.yml';
-  config.devConfigYMLFile = config.repoDir + '_dev_config.yml';
+function extractConfig (config) {
+  config.folder = config.num + '-' + config.episodeLowercase
+  config.video = config.folder + '.mp4'
+  config.path = 'public_html/build/videos/' + config.video
+  config.title = 'Build Podcast ' + config.num + ' ' + config.episode
+  config.videoDescription = 'Show notes: http://build-podcast.com/' + config.episodeLowercase
+  config.repoDir = config.bpDir + config.shownotesDir
+  config.postFile = config.repoDir + '_posts/' + config.postDate + '-' + config.episodeLowercase + '.md'
+  config.postDir = config.repoDir + '_posts/'
+  config.demoDir = config.desktopDir + config.episodeLowercase
+  config.configYMLFile = config.repoDir + '_config.yml'
+  config.devConfigYMLFile = config.repoDir + '_dev_config.yml'
 
-  return config;
+  return config
 }

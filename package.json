@@ -15,7 +15,7 @@
     "electronics"
   ],
   "scripts": {
-    "build": "LANG=\"en_US.UTF-8\" && LC_CTYPE=\"en_US.UTF-8\" && jekyll build && grunt",
+    "build": "standard-format automation/bp automation/lib/new.js automation/lib/open.js automation/lib/publish.js automation/lib/record.js -w && LANG=\"en_US.UTF-8\" && LC_CTYPE=\"en_US.UTF-8\" && jekyll build && grunt",
     "deploy": "git checkout gh-pages && git rebase master && git push origin gh-pages && git checkout master && git push origin master",
     "new": "bp new",
     "start": "jekyll serve --config _dev_config.yml",
@@ -40,6 +40,7 @@
     "ncp": "2.0.0",
     "prompt": "0.2.14",
     "selenium-webdriver": "2.48.2",
-    "shelljs": "0.5.3"
+    "shelljs": "0.5.3",
+    "standard-format": "^2.1.0"
   }
 }
