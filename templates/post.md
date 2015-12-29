@@ -13,26 +13,29 @@ website: {{WEBSITE}}
 
 <div id="video"><iframe width="560" height="315" src="//www.youtube.com/embed/{{YOUTUBEURL}}" frameborder="0" allowfullscreen></iframe></div>
 
-[{{EPISODE}}]({{WEBSITE}})
+[{{EPISODE}}]({{WEBSITE}}) is a ... short description
 
 <p><strong>Download video</strong>: <a href="http://video.build-podcast.com/{{NUM}}-{{EPISODE_LOWERCASE}}.mp4" download="build-podcast-{{NUM}}-{{EPISODE_LOWERCASE}}.mp4">mp4</a></p>
 
-**Sample code**: [Github](https://github.com/sayanee/build-podcast/tree/master/{{NUM}}-{{EPISODE_LOWERCASE}})
+**Sample code**:  [Github](https://github.com/sayanee/build-podcast/tree/master/{{NUM}}-{{EPISODE_LOWERCASE}})
 
 **Version**: {{VERSION}}
 
 **Similar episodes**:
 
-##Background on {{EPISODE}}
+## Background on {{EPISODE}}
+
 1.
 
-##Things to learn with {{EPISODE}}
+## Things to learn with {{EPISODE}}
 
 
-##More Resources on {{EPISODE}}
+## More Resources on {{EPISODE}}
+
 1.
 
-##Credits
+## Credits
+
 1.
 
-##Build Link of this episode
+## Build Link of this episode
