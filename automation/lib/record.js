@@ -7,26 +7,24 @@ require('shelljs/global')
 
 module.exports = function (config) {
   program
-    .command('record')
-    .description('start recording screencast')
-    .action(function () {
-      async.series([
-        function (next) { isMicConnected(next) },
-        function (next) { editStartPage(config, next) },
-        function (next) { openStartPage(config, next) },
-        function (next) { isEpisodeLogoAdded(next) },
-        function (next) { openApps(config, next) }
-      ])
-
-    })
-
+  .command('record')
+  .description('start recording screencast')
+  .action(function () {
+    async.series([
+      function (next) { isMicConnected(next) },
+      function (next) { editStartPage(config, next) },
+      function (next) { openStartPage(config, next) },
+      function (next) { isEpisodeLogoAdded(next) },
+      function (next) { openApps(config, next) }
+    ])
+  })
 }
 
 function isMicConnected (callback) {
   prompt.start()
   prompt.get({
     name: 'yesno',
-    message: 'Have you connected the microphone? (y/n) ',
+    message: 'Have you connected the microphone, cleared menubar and browner buttons? (y/n) ',
     validator: /y[es]*|n[o]?/,
     warning: 'Must respond yes or no'
   }, function (error, result) {

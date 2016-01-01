@@ -10,33 +10,33 @@ require('shelljs/global')
 module.exports = function (config) {
   // bp pub
   program
-    .command('pub')
-    .description('publish episode')
-    .action(function (configFile) {
-      async.series([
-        function (next) { isOnDesktop(next) },
-        function (next) { stopNginx(next) },
-        function (next) { normaliseVideo(config, next) },
-        function (next) { isEpisodeInfoFilledIn(config, next) },
+  .command('pub')
+  .description('publish episode')
+  .action(function (configFile) {
+    async.series([
+      function (next) { isOnDesktop(next) },
+      function (next) { stopNginx(next) },
+      function (next) { normaliseVideo(config, next) },
+      function (next) { isEpisodeInfoFilledIn(config, next) },
 
-        function (next) {
-          async.parallel([
-            function (next) { uploadViaFTP(config, next) },
-            function (next) { uploadToYoutube(config, next) },
-            function (next) { uploadToVimeo(config, next) }
+      function (next) {
+        async.parallel([
+          function (next) { uploadViaFTP(config, next) },
+          function (next) { uploadToYoutube(config, next) },
+          function (next) { uploadToVimeo(config, next) }
+        ], function () {
+          async.series([
+            function (next) { copyDemoCodeToRepo(config, next) },
+            function (next) { updatePost(config, next) },
+            function (next) { checkPostInfo(config, next) }
           ], function () {
-            async.series([
-              function (next) { copyDemoCodeToRepo(config, next) },
-              function (next) { updatePost(config, next) },
-              function (next) { checkPostInfo(config, next) }
-            ], function () {
-              console.log(clc.green.bold('It was another great learning with episode ' + config.num + ' ' + config.episode))
-            })
-
+            console.log(clc.green.bold('It was another great learning with episode ' + config.num + ' ' + config.episode))
           })
-        }
-      ])
-    })
+
+        })
+      }
+    ])
+  })
 }
 
 function isOnDesktop (callback) {
