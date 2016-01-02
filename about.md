@@ -35,7 +35,7 @@ I wanna learn a tonne of things. Here are some stuff I wanna pick up, go in dept
 - [Electron](http://electron.atom.io/)
 - [ReactJS](http://facebook.github.io/react/)
 - [OAuth](http://oauth.net/)
-- [Babel JS](https://babeljs.io/)
+- [Babel](https://babeljs.io/)
 - [JSPM](http://jspm.io/)
 - Basic [Electronics](http://www.amazon.com/Getting-Started-Electronics-Forrest-Mims/dp/0945053282)
 - [Charles Proxy](http://www.charlesproxy.com/)
@@ -57,3 +57,4 @@ I wanna learn a tonne of things. Here are some stuff I wanna pick up, go in dept
 - [Swift](https://swift.org/)
 - [iOS](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Introduction/Introduction.html)
 - [MQTT](http://mqtt.org/)
+- [Make](https://www.gnu.org/software/make/manual/make.html)
