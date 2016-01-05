@@ -4,14 +4,22 @@
 
 ## for tool specific questions
 
-Please raise any tool-specific questions on [Stackoverflow](https://stackoverflow.com/questions/ask) or their respective chat channel.
+Please raise any tool-specific questions on [Stackoverflow](https://stackoverflow.com/questions/ask) or its chat channel.
 
-## for spotting mistakes in show notes and giving feedback / ideas on new episodes
+## for ideas on future episodes
 
-1. Mistakes in the show notes, steps or documentation is a good bug to fix.
-- Please check the version of the tool in the episode that you are trying to fix. Since the screencast is time-specific, the mistake might not be there in the version used during the episode.
+1. Fork this repository
+- Create a new patch branch `add-new-episode-{name}`
+- Add the suggested episode in `about.md`, section **Upcoming**
+- Write a good commit message
+- [Pull request](https://help.github.com/articles/using-pull-requests) using the new patch branch
+
+## for correcting mistakes
+
+1. Mistakes in the show notes, steps or documentation is a good bug to fix
+- Please check the **version of the tool used in the episode** that you are trying to fix. Since the screencast is time-specific, the mistake might not be there when the episode was recorded.
 - Fork this repository
 - Create a new patch branch
 - Code code code
-- Write a [good commit message](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit-message-format)
-- [Pull request](https://help.github.com/articles/using-pull-requests/) using the new patch branch
+- Write a good commit message
+- [Pull request](https://help.github.com/articles/using-pull-requests) using the new patch branch
