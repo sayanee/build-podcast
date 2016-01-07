@@ -2,20 +2,16 @@
 
 # Build Podcast [![Dependency Status](https://gemnasium.com/sayanee/build-podcast.svg)](https://gemnasium.com/sayanee/build-podcast)
 
-> [Build Podcast](http://build-podcast.com) is a screencast about technology tools for design and development. Each episode, [Sayanee](http://sayan.ee) will be creating a screencast that will take you through step-by-step in using one tool to build a little project, all in the fun spirit of hacking, creating and building stuff!
+> [Build Podcast](http://build-podcast.com) is a screencast about technology tools :nut_and_bolt: :electric_plug: :battery: :abcd: :computer: for design and development. Each episode, [Sayanee](http://sayan.ee) will be creating a screencast that will take you through step-by-step in using one tool to build a little project, all in the fun spirit of hacking, creating and building stuff!
 
 Related links:
 
 - [Main website](http://build-podcast.com)
-- [Github pages](http://sayanee.github.io/build-podcast)
+- [Twitter](http://twitter.com/buildpodcast) for feedback
 - [RSS Feed](http://feeds.feedburner.com/BuildPodcastVideos)
-- [Youtube channel](http://www.youtube.com/playlist?list=PL9wSRifxQqRrLalGxTs-8FmfftbueLk5u)
-- [Vimeo channel](https://vimeo.com/channels/441355)
-- [iTunes subscriptionn](https://itunes.apple.com/us/podcast/build-podcast-screencast/id538677863)
-- [Twitter](http://twitter.com/buildpodcast)
-- [Github](https://github.com/sayanee/build-podcast) and [open issues](https://github.com/sayanee/build-podcast/issues?page=1&state=open)
+- Videos: [Youtube](http://www.youtube.com/playlist?list=PL9wSRifxQqRrLalGxTs-8FmfftbueLk5u), [Vimeo](https://vimeo.com/channels/441355) or [iTunes](https://itunes.apple.com/us/podcast/build-podcast-screencast/id538677863)
 
-## getting started
+## Quick start
 
 1. install dependencies
 
@@ -28,39 +24,39 @@ Related links:
   $ npm start
   ```
 
-## install
+## Install
 
-### for website
+### For website
 
 1. Install various packages:
 
-  ```shell
+  ```sh
   $ bundle install # for jekyll
   $ gem install vimeo tempfile json thor launchy # for vimeo script
   $ npm install # for assets and automation scripts
   $ brew install ffmpeg sox # for post-processing video and audio
   ```
 
-### for tmuxinator
+### For tmuxinator
 
 1. link tmux script `bp.yml` for starting up
 
-  ```shell
+  ```sh
   $ ln -s /Users/{username}/Workspace/path/to/folder/bp.yml /Users/{username}/.tmuxinator/bp.yml # create a symlink
   $ tmuxinator bp
   ```
 
-### for recording screencast and post-processing
+### For recording screencast and post-processing
 
 1. create `episode.json` in one up level of hierarchy
 
-  ```shell
+  ```sh
   $ cp automation/episode.sample.json ../episode.json
   # edit file episode.json accordingly
   ```
 - symlink scripts `bp`, `norm` and `vimeo`
 
-  ```shell
+  ```sh
   $ ln -s /Users/{username}/Workspace/path/to/folder/automation/bp /Users/{username}/path/to/folder/bp
   $ ln -s /Users/{username}/Workspace/path/to/folder/automation/norm /Users/{username}/path/to/folder/norm
   $ ln -s /Users/{username}/Workspace/path/to/folder/automation/vimeo /Users/{username}/path/to/folder/vimeo
@@ -70,26 +66,26 @@ Related links:
   - [download youtube-upload](https://code.google.com/p/youtube-upload/downloads/list) and [install it](https://code.google.com/p/youtube-upload/wiki/Readme#Download_&_Install)
   - install both packages with the following commands:
 
-    ```shell
+    ```sh
     $ tar xvzf {package}.tar.gz
     $ cd {package}
     $ sudo python setup.py install
     ```
 
-### setup dev.build-podcast in local
+### Setup dev.build-podcast in local
 
 This is to display the introduction page at the start of each screencast.
 
 1. edit `/etc/hosts`
 
-  ```
+  ```sh
   ...
   127.0.0.1 dev.build-podcast.com
   ...
   ```
 - edit nginx config file `/usr/local/etc/nginx/nginx.conf`
 
-  ```
+  ```nginx
   http {
     ...
     include /usr/local/etc/nginx/sites-enabled/*;
@@ -113,43 +109,41 @@ This is to display the introduction page at the start of each screencast.
   }
   ```
 
-## development
+## Development
 
 This Github repository consists of sample code for each episode and the entire website for [Build Podcast](http://build-podcast.com).
 
 When preparing the show notes in local machine, execute the following in the command line in git branch `master`:
+ - **to build**:
 
-   - **to build**:
+   ```sh
+   $ LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll build
+   ```
+ - **to add new posts**:  to start the [Jekyll](http://jekyllrb.com/) server with development configurations
 
-     ```shell
-     $ LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll build
-     ```
+   ```sh
+   $ LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll serve --watch --config _dev_config.yml
+   ```
+ - **to edit css and javascript**: to start the [GruntJS](http://gruntjs.com/) continuous compilation for CSS and JavaScript
 
-   - **to add new posts**:  to start the [Jekyll](http://jekyllrb.com/) server with development configurations
-
-     ```shell
-     $ LANG="en_US.UTF-8" && LC_CTYPE="en_US.UTF-8" && jekyll serve --watch --config _dev_config.yml
-     ```
-   - **to edit css and javascript**: to start the [GruntJS](http://gruntjs.com/) continuous compilation for CSS and JavaScript
-
-     ```shell
-     $ grunt
-     ```
+   ```sh
+   $ grunt
+   ```
 
 If there's and error for invalid byte sequence in US-ASCII, try to reset the locale settings
 
-```shell
+```sh
 LC_CTYPE="en_US.UTF-8"
 LANG="en_US.UTF-8"
 ```
 
 For quickly firing up all the above commands, use tmux:
 
-```shell
+```sh
 tmuxinator bp
 ```
 
-## scripts
+## Scripts
 
 Automation with [scripts](https://github.com/sayanee/build-podcast/tree/master/automation):
 
@@ -159,12 +153,12 @@ Automation with [scripts](https://github.com/sayanee/build-podcast/tree/master/a
 1. Publish a new episode: `bp pub`
 
 
-## license
+## License
 
 All content belongs to YOU under [CC0 1.0 Public Domain Dedication](http://creativecommons.org/publicdomain/zero/1.0/). You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
 
-## donate
+## Donate
 
-I buy eBooks, electronics and good chocolates for myself with the donated money :)
+:sparkles: I buy :books: :chocolate_bar: :nut_and_bolt: :electric_plug: :battery: with the donated money :sparkles:
 
 <a href='http://www.pledgie.com/campaigns/19089'><img alt='Click here to lend your support to: Build Podcast and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/19089.png?skin_name=chrome' border='0' /></a>
