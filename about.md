@@ -39,6 +39,7 @@ I wanna learn a tonne of things. Here are some stuff I wanna pick up, go in dept
 - [JSPM](http://jspm.io/)
 - Basic [Electronics](http://www.amazon.com/Getting-Started-Electronics-Forrest-Mims/dp/0945053282)
 - [Charles Proxy](http://www.charlesproxy.com/)
+- [Nginx](https://www.nginx.com/) - as [a proxy, load balancer](https://twitter.com/thomasdarimont/status/685045430577688576) and [configs](https://twitter.com/thomasdarimont/status/685045617299722240) including [Mozilla SSL config generator](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
 - [Polymer](http://www.polymer-project.org/)
 - [IRC](http://en.wikipedia.org/wiki/Internet_Relay_Chat)
 - [Wireshark](http://www.wireshark.org/) (Computer networking)
