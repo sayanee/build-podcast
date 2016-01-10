@@ -24,7 +24,7 @@ function isMicConnected (callback) {
   prompt.start()
   prompt.get({
     name: 'yesno',
-    message: 'Have you connected the microphone, cleared menubar and browner buttons? (y/n) ',
+    message: 'Have you connected the microphone, cleared menubar and hide browser buttons? (y/n) ',
     validator: /y[es]*|n[o]?/,
     warning: 'Must respond yes or no'
   }, function (error, result) {
