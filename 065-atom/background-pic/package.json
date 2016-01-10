@@ -1,0 +1,14 @@
+{
+  "name": "background-pic",
+  "main": "./lib/background-pic",
+  "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "keywords": [],
+  "repository": "",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {}
+}
