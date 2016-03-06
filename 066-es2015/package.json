@@ -1,0 +1,19 @@
+{
+  "name": "es2015",
+  "version": "1.0.0",
+  "description": "Learn ES2015",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13"
+  },
+  "scripts": {
+    "compile": "babel in.js -o out.js",
+    "start": "node out.js"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "plugins": []
+}

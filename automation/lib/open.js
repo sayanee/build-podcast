@@ -16,7 +16,7 @@ module.exports = function (config) {
       }
     })
 
-    if (exec('subl ' + config.demoDir).code !== 0) {
+    if (exec('atom ' + config.demoDir).code !== 0) {
       return
     } else {
       console.log('SUCCESS: Opened ' + config.demoDir + ' in text editor')
