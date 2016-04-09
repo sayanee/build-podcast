@@ -7,17 +7,17 @@ require('shelljs/global')
 
 module.exports = function (config) {
   program
-  .command('record')
-  .description('start recording screencast')
-  .action(function () {
-    async.series([
-      function (next) { isMicConnected(next) },
-      function (next) { editStartPage(config, next) },
-      function (next) { openStartPage(config, next) },
-      function (next) { isEpisodeLogoAdded(next) },
-      function (next) { openApps(config, next) }
-    ])
-  })
+    .command('record')
+    .description('start recording screencast')
+    .action(function () {
+      async.series([
+        function (next) { isMicConnected(next) },
+        function (next) { editStartPage(config, next) },
+        function (next) { openStartPage(config, next) },
+        function (next) { isEpisodeLogoAdded(next) },
+        function (next) { openApps(config, next) }
+      ])
+    })
 }
 
 function isMicConnected (callback) {

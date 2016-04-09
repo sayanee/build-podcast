@@ -7,18 +7,18 @@ require('shelljs/global')
 
 module.exports = function (config) {
   program
-  .command('new')
-  .description('create a new episode with configuration data')
-  .action(function () {
-    async.series([
-      function (next) { createFolders(next) },
-      function (next) { createFileFromTemplate(next) },
-      function (next) { editConfigYML(next) },
-      function (next) { openFoldersAndApps(next) }
-    ], function () {
-      console.log(clc.green('New episode created: ' + config.num + ' ' + config.episode))
+    .command('new')
+    .description('create a new episode with configuration data')
+    .action(function () {
+      async.series([
+        function (next) { createFolders(next) },
+        function (next) { createFileFromTemplate(next) },
+        function (next) { editConfigYML(next) },
+        function (next) { openFoldersAndApps(next) }
+      ], function () {
+        console.log(clc.green('New episode created: ' + config.num + ' ' + config.episode))
+      })
     })
-  })
 
   function editConfigYML (callback) {
     [config.configYMLFile, config.devConfigYMLFile].forEach(function (file) {
