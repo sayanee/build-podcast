@@ -2,6 +2,6 @@ language: ruby
 cache: bundler
 rvm:
   - 2.2.0
-
+sudo: false
 install: bundle install
 script: jekyll build --safe
