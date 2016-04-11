@@ -5,7 +5,3 @@ rvm:
 
 install: bundle install
 script: jekyll build --safe
-
-branches:
-  only:
-    - gh-pages
