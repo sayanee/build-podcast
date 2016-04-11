@@ -1,15 +1,10 @@
-![](screenshot.png)
-
-# Build Podcast [![Dependency Status](https://gemnasium.com/sayanee/build-podcast.svg)](https://gemnasium.com/sayanee/build-podcast)
+# Build Podcast [![Dependency Status](https://gemnasium.com/sayanee/build-podcast.svg)](https://gemnasium.com/sayanee/build-podcast) [![Dependency Travis CI](https://travis-ci.org/sayanee/build-podcast.svg)](https://travis-ci.org/sayanee/build-podcast)
 
 > [Build Podcast](http://build-podcast.com) is a screencast about technology tools :nut_and_bolt: :electric_plug: :battery: :abcd: :computer: for design and development. Each episode, [Sayanee](http://sayan.ee) will be creating a screencast that will take you through step-by-step in using one tool to build a little project, all in the fun spirit of hacking, creating and building stuff!
 
-Related links:
+Related links: [Main website](http://build-podcast.com), [Twitter](http://twitter.com/buildpodcast), [RSS Feed](http://feeds.feedburner.com/BuildPodcastVideos), [Youtube](http://www.youtube.com/playlist?list=PL9wSRifxQqRrLalGxTs-8FmfftbueLk5u), [Vimeo](https://vimeo.com/channels/441355), [iTunes](https://itunes.apple.com/us/podcast/build-podcast-screencast/id538677863)
 
-- [Main website](http://build-podcast.com)
-- [Twitter](http://twitter.com/buildpodcast) for feedback
-- [RSS Feed](http://feeds.feedburner.com/BuildPodcastVideos)
-- Videos: [Youtube](http://www.youtube.com/playlist?list=PL9wSRifxQqRrLalGxTs-8FmfftbueLk5u), [Vimeo](https://vimeo.com/channels/441355) or [iTunes](https://itunes.apple.com/us/podcast/build-podcast-screencast/id538677863)
+![](screenshot.png)
 
 ## Quick start
 
