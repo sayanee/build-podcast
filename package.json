@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "async": "1.5.0",
-    "chai": "3.4.1",
+    "chai": "3.5.0",
     "cli-color": "1.1.0",
     "colors": "1.1.2",
     "commander": "2.9.0",
@@ -36,11 +36,11 @@
     "grunt-contrib-compass": "1.0.4",
     "grunt-contrib-uglify": "0.11.0",
     "grunt-contrib-watch": "0.6.1",
-    "mocha": "2.3.4",
+    "mocha": "2.4.5",
     "ncp": "2.0.0",
     "prompt": "0.2.14",
-    "selenium-webdriver": "2.48.2",
-    "shelljs": "0.5.3",
-    "standard-format": "^2.1.0"
+    "selenium-webdriver": "2.53.1",
+    "shelljs": "0.6.0",
+    "standard-format": "2.1.1"
   }
 }
