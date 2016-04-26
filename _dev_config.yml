@@ -1,7 +1,7 @@
 name: Build Podcast
 destination: ./_publish
 permalink: /:title
-markdown: redcarpet
+markdown: kramdown
 url: http://localhost:4000
 
 defaults:

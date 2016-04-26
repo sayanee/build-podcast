@@ -1,7 +1,7 @@
 name: Build Podcast
 destination: ./_publish
 permalink: /:title
-markdown: redcarpet
+markdown: kramdown
 url: https://build-podcast.com
 
 defaults:
