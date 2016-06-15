@@ -20,6 +20,10 @@ Please raise any tool-specific questions on [Stackoverflow](https://stackoverflo
 - Please check the **version of the tool used in the episode** that you are trying to fix. Since the screencast is time-specific, the mistake might not be there when the episode was recorded.
 - Fork this repository
 - Create a new patch branch
+- Which files to edit?
+  - To fix content on **show notes**, edit the files under the folder [`_posts`](_posts)
+  - To edit content on the **code**, check the episode folder in the root starting with the episode number `NN-XXXX`
+  - If you cannot find the content in show notes or the code, [make a search with some key words](https://github.com/sayanee/build-podcast/search)
 - Code code code
 - Write a good commit message
 - [Pull request](https://help.github.com/articles/using-pull-requests) using the new patch branch
