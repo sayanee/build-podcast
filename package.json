@@ -30,17 +30,17 @@
     "execSync": "1.0.2",
     "ftp": "0.3.10",
     "get-urls": "5.0.0",
-    "grunt": "1.0.1",
+    "grunt": "^1.0.4",
     "grunt-cli": "1.2.0",
     "grunt-contrib-clean": "1.0.0",
     "grunt-contrib-compass": "1.1.1",
     "grunt-contrib-uglify": "1.0.1",
-    "grunt-contrib-watch": "1.0.0",
-    "mocha": "2.4.5",
+    "grunt-contrib-watch": "^1.1.0",
+    "mocha": "^6.1.4",
     "ncp": "2.0.0",
     "prompt": "1.0.0",
-    "selenium-webdriver": "2.53.1",
+    "selenium-webdriver": "^3.6.0",
     "shelljs": "0.6.0",
-    "standard-format": "2.1.1"
+    "standard-format": "^2.2.4"
   }
 }
